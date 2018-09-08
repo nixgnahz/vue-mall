@@ -1,12 +1,15 @@
 <template>
     <section>
-        cart
+        <TabBar/>
     </section>
 </template>
 
 <script>
+    import TabBar from '../Menu/Index.vue'
     export default {
-
+        components: {
+            TabBar
+        }
     }
 </script>
 

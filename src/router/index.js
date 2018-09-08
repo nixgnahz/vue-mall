@@ -34,7 +34,7 @@ export default new Router({
       component: Category
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       component: GoodsDetail
     },
@@ -49,8 +49,8 @@ export default new Router({
       component: Login
     },
     {
-      path: '/personal',
-      name: 'personal',
+      path: '/person',
+      name: 'person',
       component: Personal
     },
     {
