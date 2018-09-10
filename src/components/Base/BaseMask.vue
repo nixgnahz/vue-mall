@@ -1,11 +1,17 @@
 <template>
-    <div class='mask-box'>
+    <div class='mask-box' @click='hide'>
         <slot></slot>
     </div>
 </template>
 
 <script>
-
+    export default {
+        methods: {
+            hide () {
+                this.$emit('hide')
+            }
+        }
+    }
 </script>
 
 <style lang='scss'>

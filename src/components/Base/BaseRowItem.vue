@@ -1,0 +1,47 @@
+<template>
+    <router-link :to='{name: "detail", param: {id: data.id}}'>
+        <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
+        <div class='desc'>{{data.title}}</div>
+        <div class='detail'>
+            <p>¥{{data.price}}</p>
+            <p>已售{{data.sales}}件</p>
+        </div>
+    </router-link>
+</template>
+
+<script>
+    export default {
+        props: ['data']
+    }
+</script>
+
+<style lang='scss' scoped>
+    @import "../../index.scss";
+    a {
+        .cover {
+            background-size: cover;
+            width: 100%;
+            height: 7rem;
+        }
+        .desc {
+            margin: 0.25rem;
+            @include multiline-text-overflow;
+            font-size: 0.5rem;
+        }
+        .detail {
+            margin: 0.45rem 0.25rem;
+            @include flex-row-between;
+            p {
+                &:first-child {
+                    color: $red-color;
+                    font-size: 0.5rem;
+                }
+                &:last-child {
+                    font-size: 0.5rem;
+                    color: $light-gray;
+                    @include scale(0.8);
+                }
+            }
+        }
+    }
+</style>

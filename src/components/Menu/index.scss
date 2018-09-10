@@ -1,0 +1,24 @@
+@import "../../index.scss";
+
+.menu-list {
+  @include flex-row-between;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid $border-color;
+  background-color: #ffffff;
+  a {
+    font-size: 0.45rem;
+    @include flex-1;
+    @include flex-column-center;
+    color: $dark-gray;
+    img {
+      @include square-img(1.2rem);
+    }
+    &.router-link-active {
+      p {
+        color: $red-color;
+      }
+    }
+  }
+}

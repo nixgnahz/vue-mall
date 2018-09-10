@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.recommend {
+  background-color: $bg-color;
+  &-title {
+    background-color: #ffffff;
+    @include flex-row-center;
+    padding: 0.4rem 0px;
+    img {
+      width: 1rem;
+      height: 1rem;
+    }
+    p {
+      color: $red-color;
+      font-size: 0.55rem;
+    }
+  }
+  &-list {
+    @include flex-row-between;
+    @include flex-wrap;
+    a {
+      background-color: #ffffff;
+      width: 49%;
+      margin-bottom: 2%;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+@import "../../index.scss";
+
+.person {
+  background-color: $bg-color;
+  &-info {
+    background-color: #ffffff;
+    @include flex;
+    @include flex-row;
+    margin-bottom: 0.25rem;
+    padding: 0.5rem;
+    &-avatar {
+      @include cover;
+      width: 2.2rem;
+      height: 2.2rem;
+      @include radius(50%);
+      margin-right: 0.5rem;
+    }
+    &-user {
+      @include flex;
+      @include flex-column;
+      justify-content: space-around;
+      &-name {
+        font-size: 0.6rem;
+      }
+      &-account {
+        font-size: 0.55rem;
+        color: $light-gray;
+      }
+    }
+  }
+  &-order {
+    background-color: #ffffff;
+    margin-bottom: 0.25rem;
+    padding: 0.5rem 0px 0.7rem;
+    &-title {
+      @include flex-row-between;
+      padding: 0px 0.75rem 0.75rem;
+      p {
+        font-size: 0.65rem;
+      }
+      a {
+        color: $light-gray;
+        font-size: 0.5rem;
+        @include flex-row-center;
+        img {
+          width: 0.6rem;
+          height: 0.6rem;
+          margin-left: 0.25rem;
+        }
+      }
+    }
+    &-list {
+      @include flex;
+      @include flex-row;
+      font-size: 0.5rem;
+      a {
+        @include flex-1;
+        @include flex-column-center;
+        img {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+    }
+  }
+  &-row {
+    background-color: #ffffff;
+    margin-bottom: 0.25rem;
+    font-size: 0.55rem;
+    @include flex-row-around;
+    padding: 0.7rem 0rem;
+    a {
+      @include flex-column-center;
+    }
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  &-column {
+    background-color: #ffffff;
+    margin-bottom: 0.25rem;
+    a {
+      @include flex-row-between;
+      padding: 0.5rem;
+      font-size: 0.6rem;
+      border-bottom: 1px solid $border-color;
+      > img {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+      p {
+        @include flex-row-center;
+        img {
+          width: 1.2rem;
+          height: 1.2rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+  &-login {
+    background-color: #ffffff;
+    @include flex-column-center;
+    img {
+      width: 50%;
+      margin: 4rem 25% 2rem;
+    }
+    a {
+      font-size: 0.55rem;
+      border: 1px solid $red-color;
+      color: $red-color;
+      @include radius(0.15rem);
+      padding: 0.3rem 1.2rem;
+    }
+  }
+}

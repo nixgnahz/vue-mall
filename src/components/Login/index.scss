@@ -1,0 +1,58 @@
+@import "../../index.scss";
+
+.login {
+  &-logo {
+    width: 50%;
+    margin: 2rem 25% 1rem;
+  }
+  &-menu {
+    width: 80%;
+    margin: 1rem auto;
+    @include flex-row-center;
+    a {
+      @include flex-1;
+      font-size: 0.6rem;
+      text-align: center;
+      span {
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 0.25rem;
+      }
+      &.router-link-active {
+        span {
+          border-bottom: 1px solid $red-color;
+          color: $red-color;
+        }
+      }
+    }
+  }
+  &-input {
+    margin: 1.5rem 10% 0px;
+    width: 80%;
+    .input-box {
+      margin-bottom: 1rem;
+      padding: 0px 0.5rem;
+      border: 1px solid $border-color;
+      height: 1.6rem;
+      position: relative;
+      @include radius(0.15rem);
+      @include flex-row-between;
+      .switch {
+        position: absolute;
+        right: 0.5rem;
+      }
+      .code-btn {
+        font-size: 0.5rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+      }
+    }
+  }
+  &-button {
+    background-color: $red-color;
+    color: #ffffff;
+    font-size: 0.6rem;
+    padding: 0.3rem 0px;
+    @include radius(0.15rem);
+    text-align: center;
+  }
+}

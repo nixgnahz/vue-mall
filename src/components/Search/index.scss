@@ -1,0 +1,95 @@
+@import "../../index.scss";
+
+.search {
+  &-box {
+    @include flex;
+    @include flex-row;
+    align-items: center;
+    font-size: 0.5rem;
+    .search-input {
+      @include flex-1;
+      @include flex;
+      @include flex-row;
+      align-items: center;
+      padding: 0.4rem 2%;
+      margin: 0.5rem 0px 0.5rem 0.5rem;
+      background-color: #ededed;
+      @include radius(0.1rem);
+      input {
+        @include flex-1;
+        background-color: transparent;
+      }
+      img {
+        @include square-img(0.8rem);
+        margin-right: 0.25rem;
+      }
+    }
+    .search-btn {
+      padding: 0.4rem 0.5rem;
+    }
+  }
+  &-list {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    &-title {
+      @include flex;
+      @include flex-row;
+      align-items: center;
+      position: relative;
+      img {
+        @include square-img(0.8rem);
+        margin-right: 0.25rem;
+        &.delete-icon {
+          position: absolute;
+          right: 0px;
+          top: 0px;
+        }
+      }
+    }
+    &-item {
+      @include flex;
+      @include flex-row;
+      @include flex-wrap;
+      p {
+        background-color: #f4f4f2;
+        height: 1.1rem;
+        @include text-center(1.1rem);
+        padding: 0px 0.5rem;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+        @include radius(0.5rem);
+      }
+    }
+  }
+  &-result {
+    li a {
+      @include flex-row-center;
+      padding: 0.5rem;
+      border-bottom: 1px solid $border-color;
+    }
+    .goods-cover {
+      @include square-img(3.4rem);
+      @include cover;
+    }
+    .goods-info {
+      @include flex;
+      @include flex-column;
+      justify-content: space-between;
+      @include flex-1;
+      height: 3.4rem;
+      margin-left: 0.5rem;
+      &-title {
+        font-size: 0.6rem;
+      }
+      &-desc {
+        font-size: 0.5rem;
+        @include multiline-text-overflow(2);
+        color: $light-gray;
+      }
+      &-price {
+        font-size: 0.5rem;
+        color: $red-color;
+      }
+    }
+  }
+}
