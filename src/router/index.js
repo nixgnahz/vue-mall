@@ -13,6 +13,7 @@ import Personal from '@/components/Personal/Index'
 import Search from '@/components/Search/Index'
 import UserInfo from '@/components/UserInfo/Index'
 import Orders from '@/components/Orders/Index'
+import Setting from '@/components/Setting/Index'
 
 Vue.use(Router)
 
@@ -89,6 +90,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: UserInfo
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: Setting
     }
   ]
 })

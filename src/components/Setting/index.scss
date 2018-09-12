@@ -1,0 +1,33 @@
+@import "../../index.scss";
+
+.setting {
+  background-color: $bg-color;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 0.55rem;
+  &-list {
+    background-color: #ffffff;
+    margin-bottom: 0.5rem;
+    a {
+      @include flex-row-between;
+      padding: 0.5rem;
+      border-bottom: 1px solid $border-color;
+      img {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  .logout-btn {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: linear-gradient(to right, #ff8c00, #ff5600);
+    color: #ffffff;
+    height: 1.8rem;
+  }
+}

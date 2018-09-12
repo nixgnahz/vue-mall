@@ -1,6 +1,6 @@
 <template>
     <div class='person-column'>
-        <router-link to='./user'>
+        <router-link to='./setting'>
             <p>
                 <img src='../../assets/image/person/setting.png' />
                 <span>我的设置</span>

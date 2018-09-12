@@ -3,7 +3,7 @@
         <div class='address-edit-position'>
             <div class='address-edit-position-title'>
                 <span>配送至</span>
-                <img src='../../assets/image/icon/close.png' />
+                <img src='../../assets/image/icon/close.png'  @click='hideAddress'/>
             </div>
             <div class='address-choice-detail'>
                 <p @click='changeMenu(index)' v-for='(item, index) in (position.length + 1)' :class='[positionIndex === index ? "active" : ""]'>{{position[index] ? position[index] : "请选择"}}</p>
@@ -71,6 +71,9 @@
                         this.$emit('hideAddress', str, this.positionId[this.positionId.length - 1])
                     }
                 }).catch(()=> {})
+            },
+            hideAddress () {
+                this.$emit('hideAddress')
             }
         }
     }

@@ -25,7 +25,6 @@
                 <img src='../../assets/image/icon/enter.png' />
             </div>
         </div>
-        <button class='save-btn'>保存设置</button>
         <ChangeAvatar v-show='showAvatar' @hide='changeAvatarFlag'/>
         <ChangeName v-show='showName' @hide='changeNameFlag' @change='changeName'/>
         <ChangeSex v-show='showSex' @hide='changeSexFlag'  @change='changeSex' :gender='gender'/>
@@ -37,6 +36,7 @@
     import ChangeName from './ChangeName.vue'
     import ChangeSex from './ChangeSex.vue'
     import {getGender} from '@/api/keyword.js'
+    import {editUserInfo} from '@/api/user.js'
     export default {
         components: {
             ChangeAvatar,
@@ -54,7 +54,11 @@
                 showName: 0,
                 showSex: 0,
                 genderWord: '',
-                gender: []
+                gender: [],
+                toast: {
+                   text: '保存成功',
+                   duration: 1000
+                }
             }
         },
         created () {
@@ -82,14 +86,33 @@
                 this.showSex = this.showSex ? 0 : 1;
             },
             changeName (name) {
-                this.userInfo.name = name;
-                this.changeNameFlag()
+                if (this.userInfo.name == name) {
+                    this.changeNameFlag()
+                } else {
+                    editUserInfo({
+                        name: name
+                    }).then(()=> {
+                        this.$store.dispatch('showToast', this.toast)
+                        this.userInfo.name = name;
+                        this.changeNameFlag()
+                        this.$store.commit('setUserInfo', this.userInfo)
+                    })
+                }
             },
             changeSex (sex) {
-                console.log(sex)
-                this.userInfo.gender = sex;
-                this.exchangeSex()
-                this.changeSexFlag()
+                if (this.userInfo.gender == sex) {
+                    this.changeSexFlag()
+                } else {
+                    editUserInfo({
+                        gender: sex
+                    }).then(()=> {
+                        this.$store.dispatch('showToast', this.toast)
+                        this.changeSexFlag()
+                        this.userInfo.gender = sex;
+                        this.exchangeSex()
+                        this.$store.commit('setUserInfo', this.userInfo)
+                    })
+                }
             }
         }
     }

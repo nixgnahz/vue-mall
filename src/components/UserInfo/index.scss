@@ -2,6 +2,10 @@
 
 .user {
   font-size: 0.55rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color;
   &-item {
     @include flex-row-between;
     background-color: #ffffff;
@@ -72,15 +76,5 @@
       color: $light-gray;
       margin-top: 0.75rem;
     }
-  }
-  .save-btn {
-    background: linear-gradient(to right, #ff8c00, #ff5600);
-    color: #ffffff;
-    @include radius(0.75rem);
-    height: 1.5rem;
-    line-height: 1.5rem;
-    width: 80%;
-    margin: 1.5rem 10% 0px;
-    text-align: center;
   }
 }
