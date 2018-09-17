@@ -1,1 +1,84 @@
 @import "../../index.scss";
+
+.order {
+  background-color: $bg-color;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  &-search {
+    width: 94%;
+    margin: 0.4rem 3%;
+    background-color: #ffffff;
+    @include flex-row-center;
+    @include radius(0.15rem);
+    img {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0px 0.5rem;
+    }
+    input {
+      flex: 1;
+      height: 1.5rem;
+    }
+  }
+  &-menu {
+    font-size: 0.5rem;
+    background-color: #ffffff;
+    @include flex-row-around;
+    p {
+      padding: 0.5rem 0px;
+      &.active {
+        border-bottom: 1px solid $red-color;
+      }
+    }
+  }
+  &-empty {
+    text-align: center;
+    img {
+      width: 5rem;
+      height: 5rem;
+      margin-top: 4rem;
+    }
+    p {
+      font-size: 0.5rem;
+    }
+  }
+  &-list {
+    font-size: 0.55rem;
+    background-color: #ffffff;
+    margin-top: 0.5rem;
+    &-shop {
+      @include flex-row-between;
+      padding: 0.5rem;
+      span {
+        color: $red-color;
+      }
+    }
+    &-total {
+      @include flex;
+      flex-direction: row-reverse;
+      padding: 0.5rem;
+      border-bottom: 1px solid $border-color;
+    }
+    &-action {
+      @include flex;
+      flex-direction: row-reverse;
+      padding: 0.5rem;
+      p {
+        font-size: 0.5rem;
+        height: 1rem;
+        width: 3.5rem;
+        @include flex-row-center;
+        @include radius(0.5rem);
+        &:last-child {
+          border: 1px solid $border-color;
+          margin-right: 0.5rem;
+        }
+        &:first-child {
+          border: 1px solid $red-color;
+          color: $red-color;
+        }
+      }
+    }
+  }
+}
