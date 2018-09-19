@@ -3,7 +3,9 @@
         <InputBox/>
         <History v-show='!showResult' v-if='historyArr.length' :historyArr='historyArr'/>
         <Hot v-show='!showResult' v-if='hotArr.length' :hotArr='hotArr'/>
-        <Result v-show='showResult' :resultArr='resultArr'/>
+        <ul class='search-result' v-show='showResult'>
+            <ResultItem v-for='item in resultArr' :result='item' :key='item.id'/>
+        </ul>
     </section>
 </template>
 
@@ -11,7 +13,7 @@
     import InputBox from './InputBox.vue'
     import History from './History.vue'
     import Hot from './Hot.vue'
-    import Result from './Result.vue'
+    import ResultItem from './ResultItem.vue'
     import {mapState} from 'vuex'
     import {getHotSearch} from '@/api/search'
     export default {
@@ -19,7 +21,7 @@
             InputBox,
             History,
             Hot,
-            Result
+            ResultItem
         },
         data () {
             return {

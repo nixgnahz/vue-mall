@@ -1,1 +1,186 @@
 @import "../../index.scss";
+
+.detail {
+  &-goods {
+    padding: 0px 0.5rem;
+    border-bottom: 0.5rem solid $bg-color;
+    &-title {
+      font-size: 0.6rem;
+      margin: 0.5rem 0px;
+    }
+    &-desc {
+      font-size: 0.5rem;
+    }
+    &-money {
+      @include flex-row-between;
+      font-size: 0.6rem;
+      margin: 0.5rem 0px;
+      .price {
+        @include flex-row-center;
+        .now {
+          color: $red-color;
+        }
+        .origin {
+          color: $light-gray;
+          text-decoration: line-through;
+          @include scale(0.8);
+        }
+      }
+      .sales {
+        color: $light-gray;
+        @include scale(0.8);
+      }
+    }
+    .enter {
+      @include square-img(0.5rem);
+    }
+    &-service {
+      @include flex-row-between;
+      font-size: 0.55rem;
+      padding: 0.5rem 0px;
+      border-top: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      img {
+        @include square-img(0.5rem);
+      }
+    }
+    &-style {
+      font-size: 0.55rem;
+      margin: 0.5rem 0px;
+      @include flex-row-between;
+    }
+  }
+  &-description {
+    padding: 0.5rem;
+    font-size: 0px;
+    img {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &-holder {
+    height: 2rem;
+  }
+  &-action {
+    font-size: 0.55rem;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ffffff;
+    @include flex-row-around;
+    border-top: 1px solid $border-color;
+    img {
+      @include square-img(1rem);
+    }
+    .icon {
+      @include square-img(2rem);
+      @include flex-row-center;
+      border-right: 1px solid $border-color;
+    }
+    .btn {
+      height: 2rem;
+      color: #ffffff;
+      @include flex-1;
+      @include flex-row-center;
+      &.add {
+        background-color: #f99800;
+      }
+      &.buy {
+        background-color: #ff3b70;
+      }
+    }
+  }
+  .detail-box {
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    font-size: 0.55rem;
+    .service-title {
+      @include flex-row-center;
+      padding: 0.4rem;
+      position: relative;
+      border-bottom: 1px solid $border-color;
+      img {
+        position: absolute;
+        right: 0.5rem;
+        @include square-img(1rem);
+      }
+    }
+    .service-list {
+      img {
+        @include square-img(0.7rem);
+        margin-right: 0.5rem;
+      }
+      padding: 0.5rem;
+      @include flex;
+      @include flex-row;
+      align-items: center;
+      p {
+        @include flex;
+        @include flex-column;
+        span {
+          &.explain {
+            color: $light-gray;
+            @include scale(0.8);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+    .style-title {
+      @include flex;
+      @include row-between;
+      padding: 0.25rem 0.5rem;
+      &-cover {
+        width: 4rem;
+        height: 4rem;
+        @include cover;
+        margin-top: -1.2rem;
+        border: 3px solid $bg-color;
+        @include radius(0.1rem);
+      }
+      &-info {
+        width: 8rem;
+        height: 2.8rem;
+        @include flex;
+        @include flex-column;
+        justify-content: space-between;
+        .price {
+          color: $red-color;
+        }
+      }
+      img {
+        @include square-img(1rem);
+      }
+    }
+    .style-list {
+      padding: 0.25rem 0.5rem;
+      border-bottom: 1px solid $border-color;
+      &-title {
+        margin: 0.5rem 0px;
+      }
+      ul {
+        @include flex;
+        @include flex-row;
+        @include flex-wrap;
+        li {
+          background-color: #f5f5f5;
+          margin-right: 0.5rem;
+          margin-bottom: 0.5rem;
+          padding: 0.15rem 0.35rem;
+          @include radius(0.1rem);
+        }
+      }
+    }
+    .sure-btn {
+      background: linear-gradient(to right, #ff8c00, #ff5600);
+      color: #ffffff;
+      width: 90%;
+      height: 1.5rem;
+      margin: 0.5rem 5%;
+      @include radius(0.75rem);
+      @include text-center(1.5rem);
+    }
+  }
+}

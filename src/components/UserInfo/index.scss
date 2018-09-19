@@ -14,14 +14,12 @@
     &-content {
       @include flex-row-between;
       .avatar {
-        width: 2.5rem;
-        height: 2.5rem;
+        @include square-img(2.5rem);
         @include cover;
         @include radius(50%);
       }
       img {
-        width: 0.6rem;
-        height: 0.6rem;
+        @include square-img(0.6rem);
         margin-left: 0.5rem;
       }
     }
@@ -45,8 +43,7 @@
         padding: 0.45rem 0.55rem;
         border-top: 1px solid $border-color;
         img {
-          width: 1rem;
-          height: 1rem;
+          @include square-img(1rem);
           margin-right: 0.25rem;
         }
       }

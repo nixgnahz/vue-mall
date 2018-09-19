@@ -39,10 +39,9 @@
 </script>
 
 <style scoped lang='scss'>
+    @import "../../index.scss";
     .mask-box {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-row-center;
         .modal {
             background: #fff;
             border-radius: 0.15rem;
@@ -60,12 +59,9 @@
                 margin: 0.75rem 0px;
             }
             &-btn {
-                display: flex;
-                align-items: center;
-                flex-direction: row;
+                @include flex-row-center;
                 color: #44b549;
                 font-weight: 400;
-                justify-content: center;
                 border-top: 1px solid #ebebeb;
                 p {
                     flex: 1;

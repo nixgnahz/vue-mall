@@ -3,7 +3,7 @@
         <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
         <div class='desc'>{{data.title}}</div>
         <div class='detail'>
-            <p>¥{{data.price}}</p>
+            <p>¥{{price}}</p>
             <p>已售{{data.sales}}件</p>
         </div>
     </router-link>
@@ -11,7 +11,12 @@
 
 <script>
     export default {
-        props: ['data']
+        props: ['data'],
+        computed: {
+            price () {
+                return (this.data.price / 100).toFixed(2)
+            }
+        }
     }
 </script>
 

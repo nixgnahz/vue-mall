@@ -14,8 +14,7 @@
       padding: 0.5rem;
       border-bottom: 1px solid $border-color;
       img {
-        width: 0.6rem;
-        height: 0.6rem;
+        @include square-img(0.6rem);
       }
     }
     &:last-child {

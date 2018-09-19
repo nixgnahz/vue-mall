@@ -12,8 +12,7 @@
       line-height: 1.8;
     }
     img {
-      width: 1.5rem;
-      height: 1.5rem;
+      @include square-img(1.5rem);
       padding: 0.75rem;
     }
   }
@@ -24,8 +23,7 @@
     border-bottom: 0.35rem solid $bg-color;
     padding: 0.5rem;
     > img {
-      width: 1rem;
-      height: 1rem;
+      @include square-img(1rem);
       margin-right: 0.5rem;
     }
     &-info {
@@ -70,8 +68,7 @@
     border-top: 0.35rem solid $bg-color;
     border-bottom: 0.35rem solid $bg-color;
     img {
-      width: 1rem;
-      height: 1rem;
+      @include square-img(1rem);
       margin-right: 0.25rem;
     }
   }
@@ -101,8 +98,7 @@
       height: 1rem;
       @include radius(0.5rem);
       border: 1px solid $border-color;
-      text-align: center;
-      line-height: 1rem;
+      @include text-center(1rem);
       margin: 0.5rem 0.25rem;
       &:last-child {
         color: $red-color;

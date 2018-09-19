@@ -16,10 +16,9 @@
 </script>
 
 <style scoped lang='scss'>
+    @import "../../index.scss";
     .switch {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-row-center;
         input[type="checkbox"] {
             display: none;
         }

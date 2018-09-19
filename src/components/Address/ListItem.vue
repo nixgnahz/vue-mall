@@ -9,8 +9,8 @@
         </div>
         <p class='address-list-item-address'>{{data.positionStr}}{{data.detailAddress}}</p>
         <div class='address-list-item-action'>
-            <BaseChooseItem :selected='data.isDefault'>
-                <span @click='changeDefault'>设为默认地址</span>
+            <BaseChooseItem :selected='data.isDefault' @change='changeDefault'>
+                <span>设为默认地址</span>
             </BaseChooseItem>
             <div class='address-list-item-action-edit'>
                 <p @click='editAddress'>

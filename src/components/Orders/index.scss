@@ -12,8 +12,7 @@
     @include flex-row-center;
     @include radius(0.15rem);
     img {
-      width: 0.8rem;
-      height: 0.8rem;
+      @include square-img(0.8rem);
       margin: 0px 0.5rem;
     }
     input {
@@ -35,8 +34,7 @@
   &-empty {
     text-align: center;
     img {
-      width: 5rem;
-      height: 5rem;
+      @include square-img(5rem);
       margin-top: 4rem;
     }
     p {

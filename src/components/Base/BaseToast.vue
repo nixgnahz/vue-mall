@@ -21,15 +21,14 @@
 </script>
 
 <style scoped lang='scss'>
+    @import "../../index.scss";
     .toast-mask {
         position: fixed;
         width: 100%;
         height: 100%;
         top: 0px;
         left: 0px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-row-center;
         font-size: 0.55rem;
         z-index: 10000;
         .toast {

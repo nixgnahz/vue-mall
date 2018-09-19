@@ -1,1 +1,88 @@
 @import "../../index.scss";
+
+.cart {
+  &-empty {
+    font-size: 0.5rem;
+    @include flex-column-center;
+    padding: 1.5rem 0px;
+    border-bottom: 0.25rem solid $bg-color;
+    img {
+      @include square-img(5rem);
+    }
+  }
+  &-goods {
+    @include flex-row-between;
+    padding: 0.5rem 0.25rem;
+    position: relative;
+    border-bottom: 1px solid $border-color;
+    &-cover {
+      @include cover;
+      @include square-img(3.2rem);
+    }
+    &-info {
+      width: 9rem;
+      font-size: 0.5rem;
+      .desc {
+        @include multiline-text-overflow(2);
+      }
+      .param {
+        color: $light-gray;
+        @include scale(0.85);
+        transform-origin: left;
+        margin: 0.05rem 0px;
+      }
+      .price {
+        color: $red-color;
+      }
+    }
+    &-action {
+      @include flex-row-between;
+      position: absolute;
+      right: 0.25rem;
+      bottom: 0.5rem;
+      p {
+        width: 1rem;
+        height: 0.8rem;
+        @include text-center(0.8rem);
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        &.num {
+          width: 1.6rem;
+        }
+        &:first-child, &:last-child {
+          color: $light-gray;
+          border-left: 1px solid $border-color;
+          border-right: 1px solid $border-color;
+        }
+      }
+    }
+  }
+  &-action {
+    position: fixed;
+    bottom: 2.05rem;
+    font-size: 0.5rem;
+    width: 100%;
+    background-color: #ffffff;
+    height: 2rem;
+    z-index: 100;
+    @include flex-row-between;
+    .total {
+      span {
+        &:last-child {
+          color: $red-color;
+        }
+      }
+    }
+    .pay-btn {
+      width: 4rem;
+      height: 2rem;
+      background-color: $red-color;
+      color: #ffffff;
+      @include flex-row-center;
+      p {
+        margin-left: 0.25rem;
+        @include right-triangle(#ffffff, 0.3rem, 0.25rem);
+      }
+    }
+  }
+}
