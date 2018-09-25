@@ -1,5 +1,5 @@
 <template>
-    <router-link class='person-info' to='./user'>
+    <router-link class='person-info' :to='{name: "user"}'>
         <div class='person-info-avatar' :style='{backgroundImage: "url(" + userInfo.avatar + ")"}'></div>
         <div class='person-info-user'>
             <p class='person-info-user-name'>{{userInfo.name}}</p>

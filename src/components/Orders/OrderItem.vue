@@ -1,6 +1,6 @@
 <template>
     <div class='order-list'>
-        <router-link to='./info'>
+        <router-link :to='{name: "info"}'>
             <div class='order-list-shop'>
                 <p>{{order.shop}}</p>
                 <span>待支付</span>

@@ -3,18 +3,24 @@ import Router from 'vue-router'
 
 import Address from '@/components/Address/Index'
 import Cart from '@/components/Cart/Index'
-import Category from '@/components/Category/Index'
 import GoodsDetail from '@/components/GoodsDetail/Index'
 import Home from '@/components/Home/Index'
-import Login from '@/components/Login/Index'
-import Password from '@/components/Login/Password'
-import Message from '@/components/Login/Message'
 import Personal from '@/components/Personal/Index'
 import Search from '@/components/Search/Index'
 import UserInfo from '@/components/UserInfo/Index'
 import Orders from '@/components/Orders/Index'
 import OrderDetail from '@/components/OrderDetail/Index'
 import Setting from '@/components/Setting/Index'
+import PayDetail from '@/components/PayDetail/Index'
+import EditReceipt from '@/components/EditReceipt/Index'
+
+import Category from '@/components/Category/Index'
+import CategoryList from '@/components/Category/CategoryList'
+import CategoryResult from '@/components/Category/CategoryResult'
+
+import Login from '@/components/Login/Index'
+import Password from '@/components/Login/Password'
+import Message from '@/components/Login/Message'
 
 Vue.use(Router)
 
@@ -35,14 +41,42 @@ export default new Router({
       component: Cart
     },
     {
+      path: '/receipt',
+      name: 'receipt',
+      component: EditReceipt
+    },
+    {
       path: '/category',
       name: 'category',
-      component: Category
+      component: Category,
+      children: [
+        {
+          path: '/',
+          redirect: {
+            path: 'list'
+          }
+        },
+        {
+          path: 'list',
+          name: 'list',
+          component: CategoryList
+        },
+        {
+          path: 'result/:id',
+          name: 'result',
+          component: CategoryResult
+        }
+      ]
     },
     {
       path: '/detail/:id',
       name: 'detail',
       component: GoodsDetail
+    },
+    {
+      path: '/pay/:id',
+      name: 'pay',
+      component: PayDetail
     },
     {
       path: '/home',

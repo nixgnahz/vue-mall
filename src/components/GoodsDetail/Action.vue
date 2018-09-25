@@ -1,7 +1,7 @@
 <template>
     <div class='detail-action'>
         <p class='icon'>
-            <router-link to='./home'>
+            <router-link :to='{name: "home"}'>
                 <img src='../../assets/image/icon/home.png'/>
             </router-link>
         </p>
@@ -9,7 +9,7 @@
             <img src='../../assets/image/icon/collection.png'/>
         </p>
         <p class='icon'>
-            <router-link to='./cart'>
+            <router-link :to='{name: "cart"}'>
                 <img src='../../assets/image/icon/cart.png'/>
             </router-link>
         </p>

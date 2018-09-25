@@ -1,25 +1,25 @@
 <template>
     <section class='setting'>
         <div class='setting-list'>
-            <router-link to='./user'>
+            <router-link :to='{name: "user"}'>
                 <p>账号管理</p>
                 <img src='../../assets/image/icon/enter.png' />
             </router-link>
-            <router-link to='./address'>
+            <router-link :to='{name: "address"}'>
                 <p>地址管理</p>
                 <img src='../../assets/image/icon/enter.png' />
             </router-link>
         </div>
         <div class='setting-list'>
-            <router-link to='./feedback'>
+            <router-link :to='{name: "feedback"}'>
                 <p>问题反馈</p>
                 <img src='../../assets/image/icon/enter.png' />
             </router-link>
-            <router-link to='./question'>
+            <router-link :to='{name: "question"}'>
                 <p>常见问题</p>
                 <img src='../../assets/image/icon/enter.png' />
             </router-link>
-            <router-link to='./about'>
+            <router-link :to='{name: "about"}'>
                 <p>关于我们</p>
                 <img src='../../assets/image/icon/enter.png' />
             </router-link>

@@ -1,0 +1,125 @@
+@import "../../index.scss";
+
+.pay {
+  &-address {
+    @include flex-row-between;
+    padding: 0.15rem 0.5rem 0.35rem;
+    border-bottom: 0.35rem solid $bg-color;
+    img {
+      &.address {
+        @include square-img(1rem);
+      }
+      &.enter {
+        @include square-img(0.7rem);
+      }
+    }
+    &-info {
+      width: 11rem;
+      .name {
+        font-weight: bolder;
+        font-size: 0.65rem;
+      }
+      .tel {
+        font-size: 0.55rem;
+      }
+      .detail {
+        font-size: 0.55rem;
+        @include multiline-text-overflow(2);
+      }
+    }
+  }
+  &-goods {
+    &-detail {
+      @include flex-row-between;
+      padding: 0.35rem;
+      border-bottom: 0.35rem solid $bg-color;
+      .cover {
+        @include cover;
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+      > div {
+        height: 2.6rem;
+        @include flex;
+        @include flex-column;
+        justify-content: space-between;
+      }
+      .desc {
+        font-size: 0.5rem;
+        width: 8rem;
+        p {
+          &:first-child {
+            @include multiline-text-overflow(2);
+          }
+        }
+      }
+      .price {
+        font-size: 0.55rem;
+        height: 2.6rem;
+        align-items: flex-end;
+        p {
+          &:first-child {
+            color: $red-color;
+          }
+        }
+      }
+    }
+  }
+  &-money {
+    font-size: 0.6rem;
+    &-list {
+      border-bottom: 0.35rem solid $bg-color;
+      .title {
+        padding: 0.5rem;
+        border-bottom: 1px solid $bg-color;
+      }
+      .item {
+        @include flex-row-between;
+        padding: 0.5rem;
+        border-bottom: 1px solid $bg-color;
+        &:last-child {
+          border-bottom: none;
+        }
+        img {
+          @include square-img(0.5rem);
+        }
+        span {
+          color: $red-color;
+        }
+      }
+    }
+  }
+  &-holder {
+    height: 2rem;
+  }
+  &-action {
+    @include flex-row-between;
+    background-color: #ffffff;
+    z-index: auto;
+    font-size: 0.55rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid $border-color;
+    > p {
+      margin-left: 0.5rem;
+      span {
+        color: $red-color;
+      }
+    }
+    div {
+      @include flex-row-between;
+      span {
+        @include scale(0.8);
+        color: $light-gray;
+      }
+      p {
+        width: 4.5rem;
+        height: 2rem;
+        color: #ffffff;
+        @include text-center(2rem);
+        background-color: $red-color;
+      }
+    }
+  }
+}
