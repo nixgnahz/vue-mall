@@ -1,0 +1,84 @@
+@import "../../index.scss";
+
+.feedback {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  font-size: 0.6rem;
+  background-color: $bg-color;
+  &-box {
+    background-color: #ffffff;
+  }
+  &-title {
+    padding: 0.5rem 0px;
+    margin: 0px 0.5rem;
+    border-bottom: 1px solid $border-color;
+  }
+  .title {
+    @include flex-row-between;
+    span {
+      &:last-child {
+        color: $light-gray;
+      }
+    }
+  }
+  .desc {
+    @include flex;
+    padding: 0.5rem;
+  }
+  textarea {
+    @include flex-1;
+    height: 3rem;
+    resize: none;
+    outline: none;
+    border: none;
+  }
+  &-pic {
+    padding: 0.5rem 0px;
+    margin: 0px 0.5rem;
+    border-top: 1px solid $border-color;
+    .content {
+      margin-top: 0.5rem;
+      @include flex-row-between;
+      @include flex-wrap;
+      p {
+        @include square-img(3rem);
+        @include flex-row-center;
+        border: 1px solid $border-color;
+        img {
+          @include square-img(2rem);
+        }
+      }
+      .cover {
+        @include square-img(3rem);
+        @include cover;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+  .tel-tip {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+    color: $light-gray;
+  }
+  .tel-input {
+    background-color: #ffffff;
+    @include flex-row-between;
+    padding: 0.5rem;
+    p {
+      margin-right: 1rem;
+    }
+    input {
+      @include flex-1;
+    }
+  }
+  .submit-btn {
+    background-color: #1aac19;
+    color: #ffffff;
+    width: 92%;
+    height: 1.6rem;
+    @include text-center(1.6rem);
+    @include radius(0.15rem);
+    margin: 0.8rem 4% 0px;
+  }
+}

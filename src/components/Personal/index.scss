@@ -76,7 +76,7 @@
   &-column {
     background-color: #ffffff;
     margin-bottom: 0.25rem;
-    a {
+    a, div {
       @include flex-row-between;
       padding: 0.5rem;
       font-size: 0.6rem;
@@ -106,6 +106,23 @@
       color: $red-color;
       @include radius(0.15rem);
       padding: 0.3rem 1.2rem;
+    }
+  }
+  .contact-box {
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 2.05rem;
+    width: 100%;
+    font-size: 0.6rem;
+    p {
+      height: 1.8rem;
+      @include text-center(1.8rem);
+      border-bottom: 1px solid $border-color;
+    }
+    div {
+      border-top: 3px solid $border-color;
+      height: 1.8rem;
+      @include text-center(1.8rem);
     }
   }
 }

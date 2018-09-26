@@ -2,7 +2,32 @@ import Vue from 'vue'
 
 const cart = {
   state: {
-    cartList: [],
+    cartList: [
+      {
+        id: 1,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+        name: '粗跟漏趾凉鞋女百搭2018夏季新款韩版时尚一字扣带女鞋',
+        param: {
+          color: '米色',
+          size: '35'
+        },
+        price: '16.9',
+        num: 1,
+        selected: true
+      },
+      {
+        id: 2,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
+        name: '2017夏季新款韩版宽松收腰显廋短袖牛仔连衣裙女中长款休闲长裙',
+        param: {
+          color: '浅蓝色',
+          size: 'XS'
+        },
+        price: '26.9',
+        num: 1,
+        selected: true
+      }
+    ],
     total: '0.00',
     allSelected: true
   },

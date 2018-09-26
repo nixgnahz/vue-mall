@@ -1,8 +1,8 @@
 <template>
-    <router-link :to='{name: "detail", param: {id: data.id}}'>
+    <router-link :to='{name: "detail", params: {id: data.id}}'>
         <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
         <div class='info'>
-            <div class='desc'>{{data.title}}</div>
+            <div class='desc'>{{data.description}}</div>
             <p class='price'>¥{{price}}</p>
             <p class='sales'>销量 {{data.sales}}</p>
         </div>

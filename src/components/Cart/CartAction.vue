@@ -7,7 +7,7 @@
             <span>合计</span>
             <span>¥{{total}}</span>
         </p>
-        <div class='pay-btn'>
+        <div class='pay-btn' @click='payOrder'>
             <span>去结算</span>
             <p></p>
         </div>
@@ -31,6 +31,10 @@
         methods: {
             changeAll () {
                 this.$store.dispatch('changeAll')
+            },
+            payOrder () {
+                if (this.total <= 0) return;
+                this.$router.push({name: 'pay', params: {id: 1}})
             }
         }
     }

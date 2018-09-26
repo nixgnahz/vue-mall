@@ -2,10 +2,11 @@
     <section class='person'>
         <LoginMask v-if='showLogin'/>
         <div v-else>
+            <ContactMask v-if='showContact' @change='changeContact'/>
             <UserInfo/>
             <OrderList/>
             <RowList/>
-            <ColumnList/>
+            <ColumnList @change='changeContact'/>
             <Recommend/>
             <BaseMenuHolder/>
         </div>
@@ -15,6 +16,7 @@
 
 <script>
     import LoginMask from './LoginMask.vue'
+    import ContactMask from './ContactMask.vue'
     import UserInfo from './UserInfo.vue'
     import OrderList from './OrderList.vue'
     import RowList from './RowList.vue'
@@ -25,6 +27,7 @@
     import {getUserInfo} from '@/api/user.js'
     export default {
         components: {
+            ContactMask,
             LoginMask,
             UserInfo,
             OrderList,
@@ -36,7 +39,8 @@
         },
         data () {
             return {
-                showLogin: 1
+                showLogin: 1,
+                showContact: 0,
             }
         },
         created () {
@@ -44,6 +48,11 @@
                 this.showLogin = 0;
                 this.$store.commit('setUserInfo', res.data)
             })
+        },
+        methods: {
+            changeContact () {
+                this.showContact = !this.showContact;
+            }
         }
     }
 </script>

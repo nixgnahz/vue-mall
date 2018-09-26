@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.question {
+  background-color: $bg-color;
+  font-size: 0.6rem;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  img {
+    @include square-img(0.6rem);
+  }
+  &-item {
+    &-title {
+      padding: 0.6rem 0.4rem;
+      @include flex;
+      @include flex-row;
+      align-items: center;
+      .line {
+        height: 0.6rem;
+        width: 0.1rem;
+        background-color: $red-color;
+        margin-right: 0.5rem;
+      }
+    }
+    &-content {
+      .title {
+        @include flex-row-between;
+        background-color: #ffffff;
+        padding: 0.4rem;
+        border-bottom: 1px solid $border-color;
+      }
+      .content {
+        padding: 0.4rem;
+        line-height: 1.5;
+        font-size: 0.5rem;
+        p {
+          margin: 0.15rem 0px;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+}

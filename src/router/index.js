@@ -14,6 +14,13 @@ import Setting from '@/components/Setting/Index'
 import PayDetail from '@/components/PayDetail/Index'
 import EditReceipt from '@/components/EditReceipt/Index'
 
+import Ticket from '@/components/Ticket/Index'
+import Collect from '@/components/Collect/Index'
+import Records from '@/components/Records/Index'
+import Payback from '@/components/Payback/Index'
+import Question from '@/components/Question/Index'
+import Feedback from '@/components/Feedback/Index'
+
 import Category from '@/components/Category/Index'
 import CategoryList from '@/components/Category/CategoryList'
 import CategoryResult from '@/components/Category/CategoryResult'
@@ -29,6 +36,31 @@ export default new Router({
     {
       path: '/',
       redirect: '/home'
+    },
+    {
+      path: '/ticket',
+      name: 'ticket',
+      component: Ticket
+    },
+    {
+      path: '/collect',
+      name: 'collect',
+      component: Collect
+    },
+    {
+      path: '/records',
+      name: 'records',
+      component: Records
+    },
+    {
+      path: '/payback',
+      name: 'payback',
+      component: Payback
+    },
+    {
+      path: '/question',
+      name: 'question',
+      component: Question
     },
     {
       path: '/address',
@@ -47,13 +79,12 @@ export default new Router({
     },
     {
       path: '/category',
-      name: 'category',
       component: Category,
       children: [
         {
           path: '/',
           redirect: {
-            path: 'list'
+            name: 'list'
           }
         },
         {
@@ -85,13 +116,12 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'login',
       component: Login,
       children: [
         {
           path: '/',
           redirect: {
-            path: 'password'
+            name: 'password'
           }
         },
         {
@@ -101,7 +131,7 @@ export default new Router({
         },
         {
           path: 'message',
-          name: 'messgae',
+          name: 'message',
           component: Message
         }
       ]
@@ -122,7 +152,12 @@ export default new Router({
       component: Orders
     },
     {
-      path: '/info',
+      path: '/feedback',
+      name: 'feedback',
+      component: Feedback
+    },
+    {
+      path: '/info/:id',
       name: 'info',
       component: OrderDetail
     },

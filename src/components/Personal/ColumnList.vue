@@ -14,13 +14,13 @@
             </p>
             <img src='../../assets/image/icon/enter.png' />
         </router-link>
-        <router-link :to='{name: "contact"}'>
+        <div @click='changeContact'>
             <p>
                 <img src='../../assets/image/person/contact.png' />
                 <span>联系客服</span>
             </p>
             <img src='../../assets/image/icon/enter.png' />
-        </router-link>
+        </div>
         <router-link :to='{name: "question"}'>
             <p>
                 <img src='../../assets/image/person/question.png' />
@@ -28,9 +28,22 @@
             </p>
             <img src='../../assets/image/icon/enter.png' />
         </router-link>
+        <router-link :to='{name: "feedback"}'>
+            <p>
+                <img src='../../assets/image/person/callback.png' />
+                <span>问题反馈</span>
+            </p>
+            <img src='../../assets/image/icon/enter.png' />
+        </router-link>
     </div>
 </template>
 
 <script>
-
+    export default {
+        methods: {
+            changeContact () {
+                this.$emit('change')
+            }
+        }
+    }
 </script>

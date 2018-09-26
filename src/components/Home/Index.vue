@@ -3,6 +3,7 @@
         <Search/>
         <Swiper/>
         <Menu/>
+        <Recommend/>
         <BaseMenuHolder/>
         <TabBar/>
     </section>
@@ -12,6 +13,7 @@
     import Search from './Search.vue'
     import Menu from './Menu.vue'
     import Swiper from './Swiper.vue'
+    import Recommend from '../Recommend/Index.vue'
     import BaseMenuHolder from '../Base/BaseMenuHolder.vue'
     import TabBar from '../Menu/Index.vue'
     export default {
@@ -19,6 +21,7 @@
             Search,
             Menu,
             Swiper,
+            Recommend,
             BaseMenuHolder,
             TabBar
         }
