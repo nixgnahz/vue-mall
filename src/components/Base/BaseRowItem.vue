@@ -1,12 +1,12 @@
 <template>
-    <router-link :to='{name: "detail", params: {id: data.id}}'>
+    <div class='base-row' @click='linkTo'>
         <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
         <div class='desc'>{{data.description}}</div>
         <div class='detail'>
             <p>¥{{price}}</p>
             <p>销量 {{data.sales}}</p>
         </div>
-    </router-link>
+    </div>
 </template>
 
 <script>
@@ -16,13 +16,23 @@
             price () {
                 return (this.data.price / 100).toFixed(2)
             }
+        },
+        methods: {
+            linkTo () {
+                this.$router.push({
+                    name: 'detail',
+                    params: {
+                       id: this.data.id
+                    }
+                })
+            }
         }
     }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
     @import "../../index.scss";
-    a {
+    .base-row {
         .cover {
             background-size: cover;
             width: 100%;

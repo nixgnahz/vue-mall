@@ -6,7 +6,7 @@
     padding: 0.15rem 0.5rem 0.35rem;
     border-bottom: 0.35rem solid $bg-color;
     img {
-      &.address {
+      &.address-icon {
         @include square-img(1rem);
       }
       &.enter {

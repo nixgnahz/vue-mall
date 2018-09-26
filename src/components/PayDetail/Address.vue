@@ -1,7 +1,7 @@
 <template>
     <router-link :to='{name: "address"}'>
         <div class='pay-address'>
-            <img src='../../assets/image/person/address.png' class='address'/>
+            <img src='../../assets/image/person/address.png' class='address-icon'/>
             <div class='pay-address-info'>
                 <p>
                     <span class='name'>张欣</span>

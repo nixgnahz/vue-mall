@@ -17,7 +17,7 @@
   &-list {
     @include flex-row-between;
     @include flex-wrap;
-    a {
+    .base-row {
       background-color: #ffffff;
       width: 49%;
       margin-bottom: 2%;

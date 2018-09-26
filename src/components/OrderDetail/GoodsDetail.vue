@@ -1,7 +1,9 @@
 <template>
     <div class='order-detail-goods'>
         <p class='order-detail-goods-shop'>小米官方商城</p>
-        <BaseGoodsItem :order='order'/>
+        <router-link :to='{name: "detail", params: {id: order.id}}'>
+            <BaseGoodsItem :order='order'/>
+        </router-link>
         <div class='order-detail-goods-price'>
             <p>商品金额</p>
             <p>¥{{order.price}}</p>

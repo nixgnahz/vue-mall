@@ -1,5 +1,5 @@
 <template>
-    <div class='person'>
+    <div class='person-receipt'>
         <div class='item'>
             <div>
                 <span class='must'>*</span>
