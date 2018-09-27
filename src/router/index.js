@@ -17,9 +17,9 @@ import EditReceipt from '@/components/EditReceipt/Index'
 import Ticket from '@/components/Ticket/Index'
 import Collect from '@/components/Collect/Index'
 import Records from '@/components/Records/Index'
-import Payback from '@/components/Payback/Index'
 import Question from '@/components/Question/Index'
 import Feedback from '@/components/Feedback/Index'
+import About from '@/components/About/Index'
 
 import Category from '@/components/Category/Index'
 import CategoryList from '@/components/Category/CategoryList'
@@ -28,6 +28,10 @@ import CategoryResult from '@/components/Category/CategoryResult'
 import Login from '@/components/Login/Index'
 import Password from '@/components/Login/Password'
 import Message from '@/components/Login/Message'
+
+import Refund from '@/components/Refund/Index'
+import RefundList from '@/components/Refund/RefundList'
+import RefundDetail from '@/components/Refund/RefundDetail'
 
 Vue.use(Router)
 
@@ -53,9 +57,26 @@ export default new Router({
       component: Records
     },
     {
-      path: '/payback',
-      name: 'payback',
-      component: Payback
+      path: '/refund',
+      component: Refund,
+      children: [
+        {
+          path: '/',
+          redirect: {
+            name: 'refundList'
+          }
+        },
+        {
+          path: 'list',
+          name: 'refundList',
+          component: RefundList
+        },
+        {
+          path: 'detail/:id',
+          name: 'refundDetail',
+          component: RefundDetail
+        }
+      ]
     },
     {
       path: '/question',
@@ -165,6 +186,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: UserInfo
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     },
     {
       path: '/setting',

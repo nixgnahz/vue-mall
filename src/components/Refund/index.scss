@@ -1,0 +1,210 @@
+@import "../../index.scss";
+
+.refund{
+  &-list {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: $bg-color;
+    li {
+      margin-bottom: 0.5rem;
+      padding: 0px 0.5rem;
+      background-color: #ffffff;
+      .title {
+        @include flex-row-between;
+        padding: 0.5rem 0px;
+        border-bottom: 1px solid $border-color;
+        p {
+          font-size: 0.6rem;
+        }
+        span {
+          font-size: 0.5rem;
+          color: $light-gray;
+          @include scale(0.9);
+        }
+      }
+      .goods {
+        padding: 0.5rem 0px;
+        @include flex-row-between;
+        .cover {
+          @include cover;
+          @include square-img(2.8rem);
+        }
+        .info {
+          width: 8rem;
+          height: 2.8rem;
+          @include flex;
+          @include flex-column;
+          justify-content: space-between;
+          .desc {
+            font-size: 0.55rem;
+            @include multiline-text-overflow(2);
+          }
+          .param {
+            font-size: 0.5rem;
+            @include scale(0.8);
+            transform-origin: left;
+            color: $light-gray;
+          }
+        }
+        .price {
+          height: 2.8rem;
+          @include flex;
+          @include flex-column;
+          align-items: flex-end;
+          justify-content: space-between;
+          p {
+            font-size: 0.6rem;
+            color: $red-color;
+          }
+          span {
+            font-size: 0.5rem;
+            color: $light-gray;
+          }
+        }
+      }
+      .total {
+        text-align: right;
+        padding-bottom: 0.35rem;
+        border-bottom: 1px dashed $border-color;
+        span {
+          font-size: 0.5rem;
+          &:first-child {
+            display: inline-block;
+            color: $light-gray;
+            @include scale(0.9);
+          }
+        }
+      }
+      .detail-btn {
+        @include flex;
+        @include flex-row;
+        justify-content: flex-end;
+        div {
+          width: 3.5rem;
+          height: 1.2rem;
+          margin: 0.5rem;
+          font-size: 0.55rem;
+          color: $light-gray;
+          @include text-center(1.2rem);
+          @include radius(0.1rem);
+          border: 1px solid $light-gray;
+        }
+      }
+    }
+  }
+  &-detail {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    background-color: $bg-color;
+    .status {
+      background-color: $red-color;
+      color: #ffffff;
+      font-size: 0.55rem;
+      padding: 0.75rem 1.25rem;
+      p {
+        &:last-child {
+          margin-top: 0.25rem;
+        }
+      }
+    }
+    .money {
+      background-color: #ffffff;
+      @include flex-row-between;
+      padding: 0.5rem;
+      font-size: 0.6rem;
+      border-bottom: 1px solid $border-color;
+      p {
+        &:last-child {
+          color: $red-color;
+        }
+      }
+    }
+    .info {
+      background-color: #ffffff;
+      margin: 0.5rem 0px;
+      .title {
+        font-size: 0.55rem;
+        padding: 0.5rem;
+      }
+      .goods {
+        @include flex-row-between;
+        padding: 0.5rem;
+        background-color: $bg-color;
+        .cover {
+          @include square-img(2.5rem);
+          @include cover;
+          margin-right: 0.5rem;
+        }
+        .desc {
+          @include flex-1;
+          font-size: 0.55rem;
+          p {
+            &:last-child {
+              color: $light-gray;
+              @include scale(0.8);
+              margin-top: 0.25rem;
+              transform-origin: left;
+            }
+          }
+        }
+      }
+      .order {
+        font-size: 0.5rem;
+        color: $light-gray;
+        padding: 0.4rem 0.5rem;
+        p {
+          line-height: 1.8;
+          @include scale(0.9);
+          transform-origin: left;
+        }
+      }
+    }
+    .address-info {
+      background-color: #ffffff;
+      font-size: 0.55rem;
+      padding: 0.5rem;
+      border-bottom: 1px solid $bg-color;
+      .title {
+        margin-bottom: 0.6rem;
+        font-weight: bolder;
+      }
+      .tel {
+        margin-bottom: 0.25rem;
+      }
+    }
+    .user-info {
+      background-color: #ffffff;
+      font-size: 0.55rem;
+      padding: 0.5rem;
+      p {
+        &:last-child {
+          margin-top: 0.25rem;
+        }
+      }
+    }
+    .btn-holder {
+      height: 3rem;
+    }
+    .delete-btn {
+      width: 100%;
+      position: fixed;
+      bottom: 0px;
+      font-size: 0.55rem;
+      background-color: #ffffff;
+      @include flex;
+      justify-content: flex-end;
+      border-top: 1px solid $border-color;
+      p {
+        color: $dark-gray;
+        width: 4rem;
+        height: 1.2rem;
+        margin: 0.5rem;
+        @include radius(0.6rem);
+        @include text-center(1.2rem);
+        border: 1px solid $light-gray;
+      }
+    }
+  }
+}

@@ -17,6 +17,11 @@
             editFlag () {
                 return this.$store.state.address.editFlag
             }
+        },
+        created () {
+            if (this.$store.state.address.editFlag) {
+                this.$store.commit('changeEditFlag')
+            }
         }
     }
 </script>

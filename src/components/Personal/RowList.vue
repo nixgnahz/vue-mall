@@ -12,8 +12,8 @@
           <img src='../../assets/image/person/records.png' />
           <p>浏览记录</p>
         </router-link>
-        <router-link :to='{name: "payback"}'>
-          <img src='../../assets/image/person/payback.png' />
+        <router-link :to='{name: "refundList"}'>
+          <img src='../../assets/image/person/refund.png' />
           <p>我的退款</p>
         </router-link>
     </div>

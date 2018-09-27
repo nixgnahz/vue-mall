@@ -30,7 +30,7 @@
         </router-link>
         <router-link :to='{name: "feedback"}'>
             <p>
-                <img src='../../assets/image/person/callback.png' />
+                <img src='../../assets/image/person/feedback.png' />
                 <span>问题反馈</span>
             </p>
             <img src='../../assets/image/icon/enter.png' />
