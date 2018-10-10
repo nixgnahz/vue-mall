@@ -1,0 +1,94 @@
+@import "../../index.scss";
+
+@mixin content($width, $height) {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+}
+
+.ticket {
+  .expire {
+    margin: 0.5rem;
+    font-size: 0.5rem;
+    color: $light-gray;
+    span {
+      color: $red-color;
+      margin: 0px 0.15rem;
+    }
+  }
+  &-item {
+    @include flex-row-center;
+    font-size: 0.5rem;
+    width: 100%;
+    margin-top: 0.15rem;
+    &-money {
+      position: relative;
+      img {
+        height: 4rem;
+      }
+      .content {
+        @include content(100%, 4rem);
+        color: #ffffff;
+        @include flex-column-center;
+        justify-content: center;
+      }
+      .money {
+        span {
+          font-size: 1rem;
+          margin-left: 0.25rem;
+        }
+      }
+      .condition {
+        margin-top: 0.1rem;
+      }
+    }
+    &-desc {
+      position: relative;
+      img {
+        height: 4.35rem;
+      }
+      .content {
+        margin-left: 4%;
+        @include content(96%, 4.35rem);
+        @include flex;
+        @include flex-column;
+        justify-content: center;
+      }
+      .name {
+        font-size: 0.7rem;
+        font-weight: bolder;
+        margin-bottom: 0.5rem;
+      }
+      .time {
+        color: $light-gray;
+        @include scale(0.85);
+        @include transform-origin(left);
+      }
+      .tip {
+        color: $light-gray;
+        @include scale(0.85);
+        @include transform-origin(left);
+      }
+      .use-btn {
+        position: absolute;
+        right: 0.5rem;
+        color: $red-color;
+        background-color: #fcd5d8;
+        padding: 0px 0.25rem;
+        height: 1rem;
+        @include text-center(1rem);
+        @include radius(0.5rem);
+        p {
+          @include scale(0.8);
+        }
+      }
+    }
+  }
+  .over {
+    font-size: 0.5rem;
+    margin: 1rem auto;
+    text-align: center;
+  }
+}

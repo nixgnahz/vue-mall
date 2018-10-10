@@ -95,7 +95,7 @@
   transform: scale($scale);
 }
 
-@mixin translate ($size) {
+@mixin translate($size) {
   transform: translate($size);
 }
 
@@ -162,4 +162,12 @@
 @mixin text-center($height) {
   text-align: center;
   line-height: $height;
+}
+
+@mixin transform-origin($dir: center) {
+  -webkit-transform-origin: $dir;
+  -moz-transform-origin: $dir;
+  -ms-transform-origin: $dir;
+  -o-transform-origin: $dir;
+  transform-origin: $dir;
 }
