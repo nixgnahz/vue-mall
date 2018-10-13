@@ -1,7 +1,7 @@
 <template>
     <swiper :options="options" :not-next-tick="options.notNextTick">
         <swiper-slide v-for="item in swipers" :key="item.id">
-            <router-link :to="{name: 'activity', params: {id: item.id}}">
+            <router-link :to="{name: item.path, params: {id: item.id}}">
                 <img :src="item.cover" />
             </router-link>
         </swiper-slide>

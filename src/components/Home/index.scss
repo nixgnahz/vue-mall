@@ -6,11 +6,13 @@
     @include flex;
     @include flex-row;
     align-items: center;
-    background-color: #ededed;
+    background-color: #ffffff;
     width: 88%;
     padding: 0.4rem 2%;
     margin: 0.5rem 4%;
     @include radius(0.1rem);
+    position: absolute;
+    z-index: 100;
     img {
       @include square-img(0.8rem);
       margin-right: 0.25rem;
@@ -33,6 +35,16 @@
       &.active {
         border-bottom: 2px solid $red-color;
       }
+    }
+  }
+  .detail-list {
+    @include flex-row-between;
+    @include flex-wrap;
+    background-color: $bg-color;
+    .base-row {
+      background-color: #ffffff;
+      width: 49%;
+      margin-bottom: 2%;
     }
   }
 }

@@ -65,6 +65,7 @@
     background-color: #ffffff;
     height: 2rem;
     z-index: 100;
+    border-top: 1px solid $border-color;
     @include flex-row-between;
     .total {
       span {

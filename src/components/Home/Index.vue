@@ -1,9 +1,9 @@
 <template>
     <section class='home'>
         <Search/>
-        <Menu/>
         <Swiper :swipers='swipers' v-if='swipers.length'/>
-        <Recommend/>
+        <Menu/>
+        <Detail/>
         <BaseMenuHolder/>
         <TabBar/>
     </section>
@@ -13,15 +13,15 @@
     import Search from './Search.vue'
     import Menu from './Menu.vue'
     import Swiper from './Swiper.vue'
-    import Recommend from '../Recommend/Index.vue'
+    import Detail from './Detail.vue'
     import BaseMenuHolder from '../Base/BaseMenuHolder.vue'
     import TabBar from '../Menu/Index.vue'
     export default {
         components: {
             Search,
-            Menu,
             Swiper,
-            Recommend,
+            Menu,
+            Detail,
             BaseMenuHolder,
             TabBar
         },
