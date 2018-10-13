@@ -87,8 +87,20 @@
     }
   }
   .over {
+    color: $dark-gray;
     font-size: 0.5rem;
-    margin: 1rem auto;
+    margin: 2rem auto 0.6rem;
     text-align: center;
+  }
+  &-tip {
+    color: $dark-gray;
+    font-size: 0.5rem;
+    @include flex-row-center;
+    margin-bottom: 2rem;
+    p {
+      border-left: 0.05rem solid $dark-gray;
+      height: 0.65rem;
+      margin: 0px 0.5rem;
+    }
   }
 }
