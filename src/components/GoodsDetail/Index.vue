@@ -1,6 +1,6 @@
 <template>
     <section class='detail'>
-        <Swiper/>
+        <Swiper :swipers='swipers' v-if='swipers.length'/>
         <Description @changeServiceFlag='changeServiceFlag' @changeStyleFlag='changeStyleFlag'/>
         <Detail/>
         <div class='detail-holder'></div>
@@ -29,7 +29,21 @@
         data () {
             return {
                 serviceFlag: 0,
-                styleFlag: 0
+                styleFlag: 0,
+                swipers: [
+                    {
+                        id: 1,
+                        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png'
+                    },
+                    {
+                        id: 2,
+                        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/3/4/4/d/5b49aa016c765.png'
+                    },
+                    {
+                        id: 3,
+                        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/1/5/f/5b49aa09d4552.png'
+                    }
+                ]
             }
         },
         methods: {
