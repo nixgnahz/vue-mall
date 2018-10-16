@@ -1,8 +1,30 @@
 <template>
     <section>
-        <div class='category-list'>
-            <Menu :menuArr='classArr' :activeIndex='activeIndex' @change='changeMenu'/>
-            <Content :contentArr='contentArr'/>
+        <div class='category-list' ref='parent'>
+            <ul class='category-menu' ref='menuWrapper'>
+                <li v-for='(item, index) in classArr' :class='[activeIndex == index ? "active" : "inactive"]' :key='item.id' @click='changeMenu(index, $event)'>{{item.title}}</li>
+            </ul>
+            <div class='category-content' ref="detailWrapper">
+                <div>
+                    <div class='lists' v-for='item_ in classArr' :key='item_.id'>
+                        <div class='list' v-for='(item, index) in item_.content' :key='item.id'>
+                            <div class='title'>
+                                <p class='line'></p>
+                                <span>{{item.title}}</span>
+                                <p class='line'></p>
+                            </div>
+                            <ul class='item'>
+                                <li v-for='itm in item_.content[index].list' :key='itm.id'>
+                                    <router-link :to="{name: 'result', params: {id: itm.id}}">
+                                        <div class='cover' :style='{backgroundImage: "url(" + itm.cover + ")"}'></div>
+                                        <p>{{itm.title}}</p>
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <BaseMenuHolder/>
         <TabBar/>
@@ -38,6 +60,11 @@
                 id: 4,
                 title: '小米Max 3',
                 cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 5,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
               }
             ]
           },
@@ -64,6 +91,11 @@
                 id: 4,
                 title: '小米Max 3',
                 cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 5,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
               }
             ]
           },
@@ -88,6 +120,31 @@
               },
               {
                 id: 4,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 5,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 6,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 7,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 8,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 9,
                 title: '小米Max 3',
                 cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
               }
@@ -991,31 +1048,72 @@
         ]
       }
     ]
-    import Menu from './Menu.vue'
-    import Content from './Content.vue'
+    import BScroll from 'better-scroll'
     import BaseMenuHolder from '../Base/BaseMenuHolder.vue'
     import TabBar from '../Menu/Index.vue'
     export default {
         components: {
             BaseMenuHolder,
-            TabBar,
-            Menu,
-            Content
+            TabBar
         },
         data () {
             return {
                 classArr: classArr,
-                activeIndex: 0
+                listHeight: [],
+                detailWrapperY: 0
             }
         },
         computed: {
-            contentArr () {
-                return this.classArr[this.activeIndex].content
+            activeIndex () {
+                for (let i = 0, l = this.listHeight.length; i < l; i++) {
+                    let topHeight = this.listHeight[i];
+                    let bottomHeight = this.listHeight[i + 1];
+                    if (!bottomHeight || (this.detailWrapperY >= topHeight && this.detailWrapperY < bottomHeight)) {
+                        return i;
+                    }
+                }
+                return 0;
             }
         },
+        created () {
+            this.$nextTick(() => {
+                setTimeout(()=> {
+                    this.calculateHeight()
+                    this.initScroll()
+                }, 500)
+            })
+        },
         methods: {
-            changeMenu (index) {
-                this.activeIndex = index;
+            changeMenu (index, event) {
+                if (!event._constructed) return;
+                let contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
+                let el = contentList[index];
+                this.detailWrapper.scrollToElement(el, 300);
+            },
+            calculateHeight () {
+                let menu = this.$refs.parent.querySelectorAll('.category-menu');
+                let height = menu[0].clientHeight;
+                this.$refs.parent.style.height = height + "px";
+                this.$refs.detailWrapper.style.height = height + "px";
+                let contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
+                let gap = 0;
+                this.listHeight = [gap];
+                for (let i = 0; i < contentList.length; i++) {
+                  gap += contentList[i].clientHeight;
+                  this.listHeight.push(gap)
+                }
+            },
+            initScroll () {
+                this.menuWrapper = new BScroll(this.$refs.menuWrapper, {
+                  click: true
+                })
+                this.detailWrapper = new BScroll(this.$refs.detailWrapper, {
+                  click: true,
+                  probeType: 3
+                })
+                this.detailWrapper.on('scroll', (pos)=> {
+                  this.detailWrapperY = Math.abs(Math.round(pos.y))
+                })
             }
         }
     }
