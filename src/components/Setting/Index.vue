@@ -47,8 +47,10 @@
                 this.modalFlag = false;
             },
             sure () {
+                this.$store.commit('showLoad')
                 logout().then(()=> {
                     this.modalFlag = false;
+                    this.$store.commit('hideLoad')
                     this.$store.commit('setUserInfo', {})
                     this.$router.replace('./person')
                 })

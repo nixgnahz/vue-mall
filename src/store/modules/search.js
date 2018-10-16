@@ -38,10 +38,14 @@ const search = {
   actions: {
     getSearchResult (context, keyword) {
       if (!keyword) return;
+      context.commit('showLoad')
       getSearchResult(keyword).then((res) => {
+        context.commit('hideLoad')
         context.commit('addHistory', keyword)
         context.commit('showResult', res.data)
-      }).catch(() => {})
+      }).catch(() => {
+        context.commit('hideLoad')
+      })
     }
   }
 }

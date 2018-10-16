@@ -89,9 +89,11 @@
                 if (this.userInfo.name == name) {
                     this.changeNameFlag()
                 } else {
+                    this.$store.commit('showLoad')
                     editUserInfo({
                         name: name
                     }).then(()=> {
+                        this.$store.commit('hideLoad')
                         this.$store.dispatch('showToast', this.toast)
                         this.userInfo.name = name;
                         this.changeNameFlag()
@@ -103,9 +105,11 @@
                 if (this.userInfo.gender == sex) {
                     this.changeSexFlag()
                 } else {
+                    this.$store.commit('showLoad')
                     editUserInfo({
                         gender: sex
                     }).then(()=> {
+                        this.$store.commit('hideLoad')
                         this.$store.dispatch('showToast', this.toast)
                         this.changeSexFlag()
                         this.userInfo.gender = sex;

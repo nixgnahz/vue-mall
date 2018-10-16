@@ -51,27 +51,43 @@ const address = {
       })
     },
     addAddress (context, address) {
+      context.commit('showLoad')
       addAddress(address).then((res)=> {
+        context.commit('hideLoad')
         context.dispatch('getAddressList')
         context.commit('changeEditFlag')
+      }).catch(()=> {
+        context.commit('hideLoad')
       })
     },
     deleteAddress (context, id) {
+      context.commit('showLoad')
       deleteAddress(id).then((res)=> {
+        context.commit('hideLoad')
         context.commit('deleteAddress', id)
+      }).catch(()=> {
+        context.commit('hideLoad')
       })
     },
     editAddress (context, address) {
+      context.commit('showLoad')
       editAddress(address.id, address).then((res)=> {
+        context.commit('hideLoad')
         context.dispatch('getAddressList')
         context.commit('changeEditFlag')
+      }).catch(()=> {
+        context.commit('hideLoad')
       })
     },
     changeDefault (context, address) {
+      context.commit('showLoad')
       editAddress(address.id, {
         isDefault: address.isDefault ? 0: 1
       }).then((res)=> {
+        context.commit('hideLoad')
         context.dispatch('getAddressList')
+      }).catch(()=> {
+        context.commit('hideLoad')
       })
     }
   }

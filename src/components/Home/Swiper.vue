@@ -33,22 +33,3 @@
         }
     }
 </script>
-
-<style lang='scss'>
-    .swiper-container {
-        img {
-            width: 100%;
-        }
-        .dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: rgba(255, 255, 255, 0.7);
-            border-radius: 4px;
-            margin: 0px 0.15rem;
-        }
-        .dot_active {
-            width: 20px;
-        }
-    }
-</style>

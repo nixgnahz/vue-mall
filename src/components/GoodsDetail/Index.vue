@@ -5,8 +5,12 @@
         <Detail/>
         <div class='detail-holder'></div>
         <Action/>
-        <ServiceDetail v-if='serviceFlag' @change='changeServiceFlag'/>
-        <StyleDetail v-if='styleFlag' @change='changeStyleFlag'/>
+        <transition name='slide-left'>
+            <ServiceDetail v-if='serviceFlag' @change='changeServiceFlag'/>
+        </transition>
+        <transition name='slide-left'>
+            <StyleDetail v-if='styleFlag' @change='changeStyleFlag'/>
+        </transition>
     </section>
 </template>
 

@@ -32,12 +32,33 @@
                 this.showPassword = this.showPassword ? 0: 1;
             },
             login () {
-                if (!this.account || !this.password  ) return;
+                if (!this.account) {
+                    this.$store.dispatch('showToast', {
+                        text: '请输入用户名',
+                        duration: 1000
+                    })
+                    return;
+                }
+                if (!this.password) {
+                    this.$store.dispatch('showToast', {
+                        text: '请输入密码',
+                        duration: 1000
+                    })
+                    return;
+                }
+                this.$store.commit('showLoad')
                   login({  
                     account: this.account,  
                     password: this.password  
                 }).then(()=> {  
                     this.$router.replace('/person')
+                    this.$store.commit('hideLoad')
+                }).catch((res)=> {
+                    this.$store.dispatch('showToast', {
+                        text: '用户名或密码错误',
+                        duration: 1000
+                    })
+                    this.$store.commit('hideLoad')
                 })
             }
         }

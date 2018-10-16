@@ -20,8 +20,12 @@
             <img src='../../assets/image/icon/enter.png' v-else/>
         </div>
         <div class='address-btn save-btn' @click='saveAddress'>保存</div>
-        <Label v-if='labelFlag' @hideLabel='hideLabel'/>
-        <Address v-if='addressFlag' @hideAddress='hideAddress'/>
+        <transition name='slide-left'>
+            <Label v-if='labelFlag' @hideLabel='hideLabel'/>
+        </transition>
+        <transition name='slide-left'>
+            <Address v-if='addressFlag' @hideAddress='hideAddress'/>
+        </transition>
     </div>
 </template>
 
@@ -68,13 +72,7 @@
                 let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
                 if (!reg.test(this.address.phone)) return;
                 if (this.address.id) {
-                    for (var key in this.address) {
-                        if (this.address[key] != this.$store.state.address.address[key]) {
-                            this.$store.dispatch('editAddress', this.address)
-                            return;
-                        }
-                    }
-                    this.$store.commit('changeEditFlag')
+                    this.$store.dispatch('editAddress', this.address)
                 } else{
                     this.$store.dispatch('addAddress', this.address)
                 }

@@ -61,6 +61,16 @@
       }
     }
   }
+  &-empty {
+    @include flex-column-center;
+    img {
+      width: 4rem;
+      margin: 0.5rem;
+    }
+    p {
+      font-size: 0.5rem;
+    }
+  }
   &-result {
     li a {
       @include flex-row-center;
