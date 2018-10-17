@@ -64,6 +64,14 @@
         }
       }
     }
+    .lists {
+      padding-top: 0.5rem;
+      .list {
+        &:first-child {
+          margin-top: 0px;
+        }
+      }
+    }
   }
   &-result {
     background-color: $bg-color;

@@ -35,6 +35,50 @@
 </template>
 
 <script>
+    const resultArr = [
+      {
+        id: 1,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
+        description: '红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄',
+        price: '109900',
+        sales: 99
+      },
+      {
+        id: 2,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
+        description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
+        price: '3990',
+        sales: '53'
+      },
+      {
+        id: 3,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
+        description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
+        price: '3990',
+        sales: '53'
+      },
+      {
+        id: 4,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
+        description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
+        price: '3990',
+        sales: '53'
+      },
+      {
+        id: 5,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+        description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
+        price: '3990',
+        sales: '53'
+      },
+      {
+        id: 6,
+        cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
+        description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
+        price: '3990',
+        sales: '53'
+      }
+    ]
     import BaseRowItem from '../Base/BaseRowItem.vue'
     import BaseColumnItem from '../Base/BaseColumnItem.vue'
     export default {
@@ -46,50 +90,7 @@
             return {
                 filter: 0,
                 style: 0,
-                resultArr: [
-                  {
-                    id: 1,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
-                    description: '红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄，千元全面屏，红米Note5-AI双摄',
-                    price: '109900',
-                    sales: 99
-                  },
-                  {
-                    id: 2,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/f/d/b/6/5b480e18a57f4.jpeg',
-                    description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
-                    price: '3990',
-                    sales: '53'
-                  },
-                  {
-                    id: 3,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/d/c/9/9/5b481040c7f32.jpeg',
-                    description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
-                    price: '3990',
-                    sales: '53'
-                  },
-                  {
-                    id: 4,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg',
-                    description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
-                    price: '3990',
-                    sales: '53'
-                  },
-                  {
-                    id: 5,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
-                    description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
-                    price: '3990',
-                    sales: '53'
-                  },
-                  {
-                    id: 6,
-                    cover: 'http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/a/8/f/2/5b480e2033050.jpeg',
-                    description: '抹茶酵素梅 快速减肚腩 通便排毒 减肥瘦身 月月瘦200g',
-                    price: '3990',
-                    sales: '53'
-                  }
-                ]
+                resultArr: resultArr
             }
         },
         methods: {

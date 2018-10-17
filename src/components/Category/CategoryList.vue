@@ -158,7 +158,7 @@
         content: [
           {
             id: 1,
-            title: '热卖',
+            title: '夏装',
             list: [
               {
                 id: 1,
@@ -189,7 +189,7 @@
           },
           {
             id: 2,
-            title: '上装',
+            title: '春秋装',
             list: [
               {
                 id: 1,
@@ -225,7 +225,7 @@
           },
           {
             id: 3,
-            title: '下装',
+            title: '冬装',
             list: [
               {
                 id: 1,
@@ -252,7 +252,7 @@
         content: [
           {
             id: 1,
-            title: '热卖',
+            title: '夏装',
             list: [
               {
                 id: 1,
@@ -278,7 +278,7 @@
           },
           {
             id: 2,
-            title: '上装',
+            title: '春秋装',
             list: [
               {
                 id: 1,
@@ -304,7 +304,7 @@
           },
           {
             id: 3,
-            title: '下装',
+            title: '冬装',
             list: [
               {
                 id: 1,
@@ -357,7 +357,7 @@
           },
           {
             id: 2,
-            title: '内衣',
+            title: '女士',
             list: [
               {
                 id: 1,
@@ -383,7 +383,7 @@
           },
           {
             id: 3,
-            title: '内裤',
+            title: '男士',
             list: [
               {
                 id: 1,
@@ -415,7 +415,7 @@
         content: [
           {
             id: 1,
-            title: '热门',
+            title: '单鞋',
             list: [
               {
                 id: 1,
@@ -441,7 +441,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '凉鞋',
             list: [
               {
                 id: 1,
@@ -473,7 +473,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '凉鞋',
             list: [
               {
                 id: 1,
@@ -499,7 +499,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '运动鞋',
             list: [
               {
                 id: 1,
@@ -531,7 +531,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '手表',
             list: [
               {
                 id: 1,
@@ -557,7 +557,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '戒指',
             list: [
               {
                 id: 1,
@@ -589,7 +589,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '护肤品',
             list: [
               {
                 id: 1,
@@ -615,7 +615,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '化妆品',
             list: [
               {
                 id: 1,
@@ -647,7 +647,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '护理',
             list: [
               {
                 id: 1,
@@ -673,7 +673,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '个人卫生',
             list: [
               {
                 id: 1,
@@ -705,7 +705,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '婴儿用品',
             list: [
               {
                 id: 1,
@@ -731,7 +731,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '孕妇用品',
             list: [
               {
                 id: 1,
@@ -821,7 +821,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '苹果电脑',
             list: [
               {
                 id: 1,
@@ -847,7 +847,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '华硕电脑',
             list: [
               {
                 id: 1,
@@ -879,7 +879,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '运动器械',
             list: [
               {
                 id: 1,
@@ -905,7 +905,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '运动装备',
             list: [
               {
                 id: 1,
@@ -937,7 +937,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '零食',
             list: [
               {
                 id: 1,
@@ -963,7 +963,7 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '生鲜',
             list: [
               {
                 id: 1,
@@ -995,7 +995,7 @@
         content: [
           {
             id: 1,
-            title: '小米手机',
+            title: '儿童玩具',
             list: [
               {
                 id: 1,
@@ -1021,7 +1021,33 @@
           },
           {
             id: 2,
-            title: '红米手机',
+            title: '儿童启蒙教育',
+            list: [
+              {
+                id: 1,
+                title: '小米8',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 2,
+                title: '小米8 SE',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 3,
+                title: '小米MIX 2S',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              },
+              {
+                id: 4,
+                title: '小米Max 3',
+                cover: 'https://i1.mifile.cn/f/i/g/2015/cn-index/6pro140-140.png'
+              }
+            ]
+          },
+          {
+            id: 3,
+            title: '儿童服装',
             list: [
               {
                 id: 1,
