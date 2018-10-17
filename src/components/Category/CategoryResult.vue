@@ -1,37 +1,39 @@
 <template>
-    <div class='category-result'>
-        <div class='menu'>
-            <div>
-                <span @click='changeFilter(0)'>综合</span>
-                <img src='../../assets/image/icon/asc.png' v-show='0 != filter' @click='changeFilter(0)'/>
-                <img src='../../assets/image/icon/asc-fill.png' v-show='0 == filter'/>
+    <BaseScroll @loadMore='loadMore'>
+        <div class='category-result'>
+            <div class='menu'>
+                <div>
+                    <span @click='changeFilter(0)'>综合</span>
+                    <img src='../../assets/image/icon/asc.png' v-show='0 != filter' @click='changeFilter(0)'/>
+                    <img src='../../assets/image/icon/asc-fill.png' v-show='0 == filter'/>
+                </div>
+                <div>
+                    <span @click='changeFilter(1)'>销量</span>
+                    <img src='../../assets/image/icon/asc.png' v-show='1 != filter' @click='changeFilter(1)'/>
+                    <img src='../../assets/image/icon/asc-fill.png' v-show='1 == filter'/>
+                </div>
+                <div @click='changeFilter(2)'>
+                    <span>价格</span>
+                    <p>
+                        <img src='../../assets/image/icon/asc.png' v-show='2 != filter'/>
+                        <img src='../../assets/image/icon/asc-fill.png' v-show='2 == filter'/>
+                        <img src='../../assets/image/icon/desc.png' v-show='3 != filter'/>
+                        <img src='../../assets/image/icon/desc-fill.png' v-show='3 == filter'/>
+                    </p>
+                </div>
+                <div @click='changeStyle'>
+                    <img class='style' src='../../assets/image/icon/row.png' v-show='!style'/>
+                    <img class='style' src='../../assets/image/icon/column.png' v-show='style'/>
+                </div>
             </div>
-            <div>
-                <span @click='changeFilter(1)'>销量</span>
-                <img src='../../assets/image/icon/asc.png' v-show='1 != filter' @click='changeFilter(1)'/>
-                <img src='../../assets/image/icon/asc-fill.png' v-show='1 == filter'/>
+            <div class='result-list row' v-if='!style'>
+                <BaseRowItem class='list-item' v-for='(item, index) in resultArr' :key='index' :data='item'/>
             </div>
-            <div @click='changeFilter(2)'>
-                <span>价格</span>
-                <p>
-                    <img src='../../assets/image/icon/asc.png' v-show='2 != filter'/>
-                    <img src='../../assets/image/icon/asc-fill.png' v-show='2 == filter'/>
-                    <img src='../../assets/image/icon/desc.png' v-show='3 != filter'/>
-                    <img src='../../assets/image/icon/desc-fill.png' v-show='3 == filter'/>
-                </p>
-            </div>
-            <div @click='changeStyle'>
-                <img class='style' src='../../assets/image/icon/row.png' v-show='!style'/>
-                <img class='style' src='../../assets/image/icon/column.png' v-show='style'/>
+            <div class='result-list column' v-if='style'>
+                <BaseColumnItem class='list-item' v-for='(item, index) in resultArr' :key='index' :data='item'/>
             </div>
         </div>
-        <div class='result-list row' v-if='!style'>
-            <BaseRowItem class='list-item' v-for='item in resultArr' :key='item.id' :data='item'/>
-        </div>
-        <div class='result-list column' v-if='style'>
-            <BaseColumnItem class='list-item' v-for='item in resultArr' :key='item.id' :data='item'/>
-        </div>
-    </div>
+    </BaseScroll>
 </template>
 
 <script>
@@ -81,10 +83,12 @@
     ]
     import BaseRowItem from '../Base/BaseRowItem.vue'
     import BaseColumnItem from '../Base/BaseColumnItem.vue'
+    import BaseScroll from '../Base/BaseScroll.vue'
     export default {
         components: {
             BaseRowItem,
-            BaseColumnItem
+            BaseColumnItem,
+            BaseScroll
         },
         data () {
             return {
@@ -110,6 +114,9 @@
                     default:
                         this.filter = 2;
                 }
+            },
+            loadMore () {
+                //分页加载更多
             }
         }
     }
