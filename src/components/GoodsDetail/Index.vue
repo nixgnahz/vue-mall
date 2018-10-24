@@ -50,6 +50,9 @@
                 ]
             }
         },
+        beforeRouteUpdate (to, from, next) {
+            //带有动态参数的路径改变
+        },
         methods: {
             changeServiceFlag () {
                 this.serviceFlag = this.serviceFlag ? 0 : 1;

@@ -36,6 +36,8 @@ import RefundDetail from '@/components/Refund/RefundDetail'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: __dirname,
   routes: [
     {
       path: '/',
@@ -197,5 +199,11 @@ export default new Router({
       name: 'setting',
       component: Setting
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    }
+  }
 })

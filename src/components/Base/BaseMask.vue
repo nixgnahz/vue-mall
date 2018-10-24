@@ -17,7 +17,7 @@
 <style lang='scss'>
     .mask-box {
         position: fixed;
-        z-index: 1;
+        z-index: 101;
         width: 100%;
         height: 100%;
         top: 0px;
