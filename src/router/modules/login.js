@@ -1,6 +1,6 @@
-import Login from '@/components/Login/Index'
-import Password from '@/components/Login/Password'
-import Message from '@/components/Login/Message'
+const Login = (resolve) => require(['@/components/Login/Index'], resolve)
+const Message = (resolve) => require(['@/components/Login/Message'], resolve)
+const Password = (resolve) => require(['@/components/Login/Password'], resolve)
 
 const loginRouter = {
   path: '/login',

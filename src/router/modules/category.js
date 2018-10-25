@@ -1,6 +1,6 @@
-import Category from '@/components/Category/Index'
-import CategoryList from '@/components/Category/CategoryList'
-import CategoryResult from '@/components/Category/CategoryResult'
+const Category = (resolve) => require(['@/components/Category/Index'], resolve)
+const CategoryList = (resolve) => require(['@/components/Category/CategoryList'], resolve)
+const CategoryResult = (resolve) => require(['@/components/Category/CategoryResult'], resolve)
 
 const categoryRouter = {
   path: '/category',

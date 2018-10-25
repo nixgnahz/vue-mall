@@ -1,6 +1,6 @@
-import Refund from '@/components/Refund/Index'
-import RefundList from '@/components/Refund/RefundList'
-import RefundDetail from '@/components/Refund/RefundDetail'
+const Refund = (resolve) => require(['@/components/Refund/Index'], resolve)
+const RefundList = (resolve) => require(['@/components/Refund/RefundList'], resolve)
+const RefundDetail = (resolve) => require(['@/components/Refund/RefundDetail'], resolve)
 
 const refundRouter = {
   path: '/refund',
