@@ -1,205 +1,140 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Address from '@/components/Address/Index'
-import Cart from '@/components/Cart/Index'
-import GoodsDetail from '@/components/GoodsDetail/Index'
-import Home from '@/components/Home/Index'
-import Personal from '@/components/Personal/Index'
-import Search from '@/components/Search/Index'
-import UserInfo from '@/components/UserInfo/Index'
-import Orders from '@/components/Orders/Index'
-import OrderDetail from '@/components/OrderDetail/Index'
-import Setting from '@/components/Setting/Index'
-import PayDetail from '@/components/PayDetail/Index'
-import EditReceipt from '@/components/EditReceipt/Index'
+const Address = (resolve) => require(['@/components/Address/index'], resolve)
+const Cart = (resolve) => require(['@/components/Cart/Index'], resolve)
+const GoodsDetail = (resolve) => require(['@/components/GoodsDetail/Index'], resolve)
+const Home = (resolve) => require(['@/components/Home/Index'], resolve)
+const Personal = (resolve) => require(['@/components/Personal/Index'], resolve)
+const Search = (resolve) => require(['@/components/Search/Index'], resolve)
+const UserInfo = (resolve) => require(['@/components/UserInfo/Index'], resolve)
+const Orders = (resolve) => require(['@/components/Orders/Index'], resolve)
+const Setting = (resolve) => require(['@/components/Setting/Index'], resolve)
+const OrderDetail = (resolve) => require(['@/components/OrderDetail/Index'], resolve)
+const PayDetail = (resolve) => require(['@/components/PayDetail/Index'], resolve)
+const EditReceipt = (resolve) => require(['@/components/EditReceipt/Index'], resolve)
 
-import Ticket from '@/components/Ticket/Index'
-import Collect from '@/components/Collect/Index'
-import Records from '@/components/Records/Index'
-import Question from '@/components/Question/Index'
-import Feedback from '@/components/Feedback/Index'
-import About from '@/components/About/Index'
+const Ticket = (resolve) => require(['@/components/Ticket/Index'], resolve)
+const Collect = (resolve) => require(['@/components/Collect/Index'], resolve)
+const Records = (resolve) => require(['@/components/Records/Index'], resolve)
+const Question = (resolve) => require(['@/components/Question/Index'], resolve)
+const Feedback = (resolve) => require(['@/components/Feedback/Index'], resolve)
+const About = (resolve) => require(['@/components/About/Index'], resolve)
 
-import Category from '@/components/Category/Index'
-import CategoryList from '@/components/Category/CategoryList'
-import CategoryResult from '@/components/Category/CategoryResult'
-
-import Login from '@/components/Login/Index'
-import Password from '@/components/Login/Password'
-import Message from '@/components/Login/Message'
-
-import Refund from '@/components/Refund/Index'
-import RefundList from '@/components/Refund/RefundList'
-import RefundDetail from '@/components/Refund/RefundDetail'
+import refundRouter from './modules/refund'
+import categoryRouter from './modules/category'
+import loginRouter from './modules/login'
 
 Vue.use(Router)
+
+const routes = [
+  refundRouter,
+  categoryRouter,
+  loginRouter,
+  {
+    path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/ticket',
+    name: 'ticket',
+    component: Ticket
+  },
+  {
+    path: '/collect',
+    name: 'collect',
+    component: Collect
+  },
+  {
+    path: '/records',
+    name: 'records',
+    component: Records
+  },
+  {
+    path: '/question',
+    name: 'question',
+    component: Question
+  },
+  {
+    path: '/address',
+    name: 'address',
+    component: Address
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: Cart
+  },
+  {
+    path: '/receipt',
+    name: 'receipt',
+    component: EditReceipt
+  },
+  {
+    path: '/detail/:id',
+    name: 'detail',
+    component: GoodsDetail
+  },
+  {
+    path: '/pay/:id',
+    name: 'pay',
+    component: PayDetail
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/person',
+    name: 'person',
+    component: Personal
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: Orders
+  },
+  {
+    path: '/feedback',
+    name: 'feedback',
+    component: Feedback
+  },
+  {
+    path: '/info/:id',
+    name: 'info',
+    component: OrderDetail
+  },
+  {
+    path: '/user',
+    name: 'user',
+    component: UserInfo
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: About
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: Setting
+  },
+  {
+    path: '*',
+    redirect: '/home'
+  }
+]
 
 export default new Router({
   mode: 'history',
   base: __dirname,
-  routes: [
-    {
-      path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/ticket',
-      name: 'ticket',
-      component: Ticket
-    },
-    {
-      path: '/collect',
-      name: 'collect',
-      component: Collect
-    },
-    {
-      path: '/records',
-      name: 'records',
-      component: Records
-    },
-    {
-      path: '/refund',
-      component: Refund,
-      children: [
-        {
-          path: '/',
-          redirect: {
-            name: 'refundList'
-          }
-        },
-        {
-          path: 'list',
-          name: 'refundList',
-          component: RefundList
-        },
-        {
-          path: 'detail/:id',
-          name: 'refundDetail',
-          component: RefundDetail
-        }
-      ]
-    },
-    {
-      path: '/question',
-      name: 'question',
-      component: Question
-    },
-    {
-      path: '/address',
-      name: 'address',
-      component: Address
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: Cart
-    },
-    {
-      path: '/receipt',
-      name: 'receipt',
-      component: EditReceipt
-    },
-    {
-      path: '/category',
-      component: Category,
-      children: [
-        {
-          path: '/',
-          redirect: {
-            name: 'list'
-          }
-        },
-        {
-          path: 'list',
-          name: 'list',
-          component: CategoryList
-        },
-        {
-          path: 'result/:id',
-          name: 'result',
-          component: CategoryResult
-        }
-      ]
-    },
-    {
-      path: '/detail/:id',
-      name: 'detail',
-      component: GoodsDetail
-    },
-    {
-      path: '/pay/:id',
-      name: 'pay',
-      component: PayDetail
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/login',
-      component: Login,
-      children: [
-        {
-          path: '/',
-          redirect: {
-            name: 'password'
-          }
-        },
-        {
-          path: 'password',
-          name: 'password',
-          component: Password
-        },
-        {
-          path: 'message',
-          name: 'message',
-          component: Message
-        }
-      ]
-    },
-    {
-      path: '/person',
-      name: 'person',
-      component: Personal
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: Search
-    },
-    {
-      path: '/orders',
-      name: 'orders',
-      component: Orders
-    },
-    {
-      path: '/feedback',
-      name: 'feedback',
-      component: Feedback
-    },
-    {
-      path: '/info/:id',
-      name: 'info',
-      component: OrderDetail
-    },
-    {
-      path: '/user',
-      name: 'user',
-      component: UserInfo
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About
-    },
-    {
-      path: '/setting',
-      name: 'setting',
-      component: Setting
-    }
-  ],
+  routes: routes,
   scrollBehavior (to, from, savedPosition) {
     return {
       x: 0,
