@@ -1,6 +1,6 @@
 import {api, instance} from "./common"
 
-const getHotSearch = () => {
+const getHotSearch = ()=> {
   return new Promise((resolve, reject)=> {
     instance.get(api.hot).then((res)=> {
       resolve(res)
@@ -10,9 +10,12 @@ const getHotSearch = () => {
   })
 }
 
-const getSearchResult = (keyword) => {
+const getSearchResult = (keyword)=> {
   return new Promise((resolve, reject)=> {
-    instance.get(api.search + '/' + keyword).then((res)=> {
+    instance({
+      url: api.search + '/' + keyword,
+      method: 'get'
+    }).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)

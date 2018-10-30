@@ -12,7 +12,11 @@ const getUserInfo = ()=> {
 
 const editUserInfo = (params)=> {
   return new Promise((resolve, reject)=> {
-    instance.patch(api.user, params).then((res)=> {
+    instance({
+      url: api.user,
+      method: 'patch',
+      data: params
+    }).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)

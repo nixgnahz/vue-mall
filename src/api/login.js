@@ -2,7 +2,11 @@ import {api, instance} from "./common"
 
 const login = (params)=> {
   return new Promise((resolve, reject)=> {
-    instance.post(api.login, params).then((res)=> {
+    instance({
+      url: api.login,
+      method: 'post',
+      data: params
+    }).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)
@@ -12,7 +16,10 @@ const login = (params)=> {
 
 const logout = ()=> {
   return new Promise((resolve, reject)=> {
-    instance.post(api.logout).then((res)=> {
+    instance({
+      url: api.logout,
+      method: 'post'
+    }).then((res)=> {
       resolve(res)
     }).catch((error)=> {
       reject(error)

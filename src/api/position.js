@@ -2,10 +2,13 @@ import {api, instance} from "./common"
 
 const getPosition = (id)=> {
   return new Promise((resolve, reject)=> {
-    instance.get(api.position + '/' + id).then((res)=> {
-        resolve(res)
+    instance({
+      url: api.position + '/' + id,
+      method: 'get'
+    }).then((res)=> {
+      resolve(res)
     }).catch((error)=> {
-        reject(error)
+      reject(error)
     })
   })
 }
