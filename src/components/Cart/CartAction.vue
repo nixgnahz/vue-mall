@@ -16,18 +16,15 @@
 
 <script>
     import BaseChooseItem from '../Base/BaseChooseItem.vue'
+    import {mapState} from 'vuex'
     export default {
         components: {
             BaseChooseItem
         },
-        computed: {
-            allSelected () {
-                return this.$store.state.cart.allSelected
-            },
-            total () {
-                return this.$store.state.cart.total
-            }
-        },
+        computed: mapState({
+            allSelected: (state)=> state.cart.allSelected,
+            total: (state)=> state.cart.total
+        }),
         methods: {
             changeAll () {
                 this.$store.dispatch('changeAll')

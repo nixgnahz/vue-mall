@@ -21,7 +21,12 @@
         components: {
             BaseChooseItem
         },
-        props: ['goods'],
+        props: {
+            goods: {
+                type: Object,
+                isRequired: true
+            }
+        },
         methods: {
             change () {
                 this.$store.dispatch('changeSelected', this.goods.id)

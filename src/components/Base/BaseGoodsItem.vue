@@ -14,7 +14,13 @@
 
 <script>
     export default {
-        props: ['order']
+        name: 'BaseGoodsItem',
+        props: {
+            order: {
+                type: Object,
+                isRequired: true
+            }
+        }
     }
 </script>
 

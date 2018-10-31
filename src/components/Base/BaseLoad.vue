@@ -4,6 +4,12 @@
     </div>
 </template>
 
+<script>
+    export default {
+        name: 'BaseLoad'
+    }
+</script>
+
 <style lang='scss'>
     @import "../../index.scss";
     .mask-transparent {
@@ -18,14 +24,6 @@
         img {
             width: 1.5rem;
             animation: spin 2s linear infinite;
-        }
-        @-webkit-keyframes spin {
-            from {
-                -webkit-transform: rotate(0deg);
-            }
-            to {
-                -webkit-transform: rotate(360deg);
-            }
         }
     }
 </style>

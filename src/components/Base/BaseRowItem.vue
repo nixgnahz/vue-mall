@@ -11,7 +11,13 @@
 
 <script>
     export default {
-        props: ['data'],
+        name: 'BaseRowItem',
+        props: {
+            data: {
+                type: Object,
+                isRequired: true
+            }
+        },
         computed: {
             price () {
                 return (this.data.price / 100).toFixed(2)

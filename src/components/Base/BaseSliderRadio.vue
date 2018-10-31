@@ -7,6 +7,7 @@
 
 <script>
     export default {
+        name: 'BaseSliderRadio',
         methods: {
             change () {
                 this.$emit('change')

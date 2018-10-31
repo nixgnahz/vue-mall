@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name: 'BaseMask',
         methods: {
             hide () {
                 this.$emit('hide')

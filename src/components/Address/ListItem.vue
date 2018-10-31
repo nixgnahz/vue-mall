@@ -32,7 +32,12 @@
         components: {
             BaseChooseItem
         },
-        props: ['data'],
+        props: {
+            data: {
+                type: Object,
+                isRequired: true
+            }
+        },
         methods: {
             deleteAddress () {
                 this.$store.dispatch('deleteAddress', this.data.id)

@@ -6,11 +6,7 @@
 
 <script>
     export default {
-        data () {
-            return {
-                timer: null
-            }
-        },
+        name: 'BaseToast',
         props: {
             toast: {
                 type: Object,

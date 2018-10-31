@@ -1,5 +1,5 @@
 <template>
-    <BaseScroll @loadMore='loadMore'>
+    <BaseScroll @loadMore='loadMore' @refresh='refresh'>
         <div class='category-result'>
             <div class='menu'>
                 <div>
@@ -22,14 +22,14 @@
                     </p>
                 </div>
                 <div @click='changeStyle'>
-                    <img class='style' src='../../assets/image/icon/row.png' v-show='!style'/>
-                    <img class='style' src='../../assets/image/icon/column.png' v-show='style'/>
+                    <img class='style' src='../../assets/image/icon/row.png' v-show='!columnStyle'/>
+                    <img class='style' src='../../assets/image/icon/column.png' v-show='columnStyle'/>
                 </div>
             </div>
-            <div class='result-list row' v-if='!style'>
+            <div class='result-list row' v-if='!columnStyle'>
                 <BaseRowItem class='list-item' v-for='(item, index) in resultArr' :key='index' :data='item'/>
             </div>
-            <div class='result-list column' v-if='style'>
+            <div class='result-list column' v-if='columnStyle'>
                 <BaseColumnItem class='list-item' v-for='(item, index) in resultArr' :key='index' :data='item'/>
             </div>
         </div>
@@ -93,13 +93,18 @@
         data () {
             return {
                 filter: 0,
-                style: 0,
+                columnStyle: 0,
                 resultArr: resultArr
+            }
+        },
+        destroyed () {
+            if (this.timer) {
+                clearTimeout(this.timer)
             }
         },
         methods: {
             changeStyle (index) {
-                this.style = !this.style;
+                this.columnStyle = !this.columnStyle;
             },
             changeFilter (index) {
                 if (index <= 1) {
@@ -115,8 +120,17 @@
                         this.filter = 2;
                 }
             },
-            loadMore () {
-                //分页加载更多
+            refresh (loaded) {
+                this.timer = setTimeout(()=> {
+                    this.resultArr = resultArr;
+                    loaded()
+                }, 1500)
+            },
+            loadMore (loaded) {
+                this.timer = setTimeout(()=> {
+                    this.resultArr = this.resultArr.concat(resultArr);
+                    loaded()
+                }, 1500)
             }
         }
     }

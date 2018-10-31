@@ -24,9 +24,23 @@
                 backTopFlag: 0
             }
         },
-        created () {
-            let screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
-            window.onscroll = () => {
+        computed: mapState({
+            toastFlag: (state) => state.toast.toastFlag,
+            toast: (state) => state.toast.toast,
+            loadFlag: (state) => state.load.loadFlag
+        }),
+        mounted () {
+            window.addEventListener('scroll', this.handleScroll)
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.handleScroll)
+        },
+        methods: {
+            changeBackTopFlag () {
+                this.backTopFlag = 0;
+            },
+            handleScroll () {
+                let screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
                 let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 if (scrollTop > screenHeight && !this.backTopFlag) {
                     this.backTopFlag = 1;
@@ -34,16 +48,6 @@
                 if (scrollTop <= screenHeight && this.backTopFlag) {
                     this.backTopFlag = 0;
                 }
-            }
-        },
-        computed: mapState({
-            toastFlag: (state) => state.toast.toastFlag,
-            toast: (state) => state.toast.toast,
-            loadFlag: (state) => state.load.loadFlag
-        }),
-        methods: {
-            changeBackTopFlag () {
-                this.backTopFlag = 0;
             }
         }
     }

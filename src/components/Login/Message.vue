@@ -5,7 +5,8 @@
         </div>
         <div class='input-box'>
             <input type='number' placeholder='请输入验证码' v-model.trim.number='code'/>
-            <p class='code-btn'>{{codeTip}}</p>
+            <p class='code-btn' v-if="showTimer">{{time}}秒后重新获取</p>
+            <p class='code-btn' @click='getCode' v-else>获取验证码</p>
         </div>
         <LoginButton @login='login'/>
     </div>
@@ -19,37 +20,63 @@
         },
         data () {
             return {
-                codeTip: '获取验证码',
+                showTimer: 0,
+                time: 60,
                 phone: '',
-                code: ''
+                code: '',
+                interval: null
+            }
+        },
+        destroyed () {
+            if (this.interval) {
+                clearInterval(this.interval)
             }
         },
         methods: {
-            login () {
-                let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
-                if (!this.phone) {
-                    this.$store.dispatch('showToast', {
-                        text: '请输入手机号',
-                        duration: 1000
-                    })
-                    return;
-                }
-                if (!reg.test(this.phone)) {
-                    this.$store.dispatch('showToast', {
-                        text: '请输入正确的手机号',
-                        duration: 1000
-                    })
-                    return;
-                }
+            judgeInput () {
+               let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+               if (!this.phone) {
+                   this.$store.dispatch('showToast', {
+                       text: '请输入手机号',
+                       duration: 1000
+                   })
+                   return false;
+               }
+               if (!reg.test(this.phone)) {
+                   this.$store.dispatch('showToast', {
+                       text: '请输入正确的手机号',
+                       duration: 1000
+                   })
+                   return false;
+               }
+               return true;
+            },
+            getCode () {
+                if (!this.judgeInput()) return;
+                this.$store.dispatch('showToast', {
+                    text: '验证码发送成功',
+                    duration: 1000
+                })
+                this.showTimer = 1;
+                this.interval = setInterval(()=> {
+                    this.time--;
+                    if (this.time <= 0) {
+                        clearInterval(this.interval)
+                        this.showTimer = 0;
+                        this.time = 60;
+                    }
+                }, 1000)
+            },
+            login (getCode) {
+                if (!this.judgeInput()) return;
                 if (!this.code) {
                     this.$store.dispatch('showToast', {
-                        text: '请输入正确验证码',
+                        text: '请输入验证码',
                         duration: 1000
                     })
                     return;
                 }
                 this.$store.commit('showLoad')
-                //通过手机号和短信验证码登录
             }
         }
     }

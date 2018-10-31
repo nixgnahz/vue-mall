@@ -1084,6 +1084,8 @@
         },
         data () {
             return {
+                timer: null,
+                contentList: [],
                 classArr: classArr,
                 listHeight: [],
                 detailWrapperY: 0
@@ -1103,17 +1105,20 @@
         },
         created () {
             this.$nextTick(() => {
-                setTimeout(()=> {
+                this.timer = setTimeout(()=> {
                     this.calculateHeight()
                     this.initScroll()
                 }, 500)
             })
         },
+        destroyed () {
+            if (this.timer) clearTimeout(this.timer)
+            this.detailWrapper.off('scroll', this.handleScroll)
+        },
         methods: {
             changeMenu (index, event) {
                 if (!event._constructed) return;
-                let contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
-                let el = contentList[index];
+                let el = this.contentList[index];
                 this.detailWrapper.scrollToElement(el, 300);
             },
             calculateHeight () {
@@ -1121,11 +1126,11 @@
                 let height = menu[0].clientHeight;
                 this.$refs.parent.style.height = height + "px";
                 this.$refs.detailWrapper.style.height = height + "px";
-                let contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
+                this.contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
                 let gap = 0;
                 this.listHeight = [gap];
-                for (let i = 0; i < contentList.length; i++) {
-                  gap += contentList[i].clientHeight;
+                for (let i = 0; i < this.contentList.length; i++) {
+                  gap += this.contentList[i].clientHeight;
                   this.listHeight.push(gap)
                 }
             },
@@ -1137,9 +1142,10 @@
                   click: true,
                   probeType: 3
                 })
-                this.detailWrapper.on('scroll', (pos)=> {
-                  this.detailWrapperY = Math.abs(Math.round(pos.y))
-                })
+                this.detailWrapper.on('scroll', this.handleScroll)
+            },
+            handleScroll (pos) {
+                this.detailWrapperY = Math.abs(Math.round(pos.y));
             }
         }
     }

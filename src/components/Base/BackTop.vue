@@ -6,6 +6,7 @@
 
 <script>
     export default {
+        name: 'BackTop',
         methods: {
             backTop () {
                 document.documentElement.scrollTop = document.body.scrollTop = 0;

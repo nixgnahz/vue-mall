@@ -8,7 +8,13 @@
 
 <script>
     export default {
-        props: ['selected'],
+        name: 'BaseChooseItem',
+        props: {
+            selected: {
+                type: [Number, Boolean],
+                isRequired: true
+            }
+        },
         methods: {
             change () {
                 this.$emit('change')

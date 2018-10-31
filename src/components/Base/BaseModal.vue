@@ -14,6 +14,7 @@
 <script>
     import BaseMask from './BaseMask.vue'
     export default {
+        name: 'BaseModal',
         components: {
             BaseMask
         },
@@ -23,7 +24,7 @@
                 isRequired: true
             },
             cancelFlag: {
-                type: Boolean,
+                type: [Boolean, Number],
                 default: true
             }
         },
