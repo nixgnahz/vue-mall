@@ -14,7 +14,7 @@
                     <span>{{imgArr.length}}/3</span>
                 </p>
                 <div class='content'>
-                    <p>
+                    <p @click='uploadImg'>
                         <img src='../../assets/image/icon/add.png'/>
                     </p>
                     <div class='cover' v-for='(item, index) in imgArr' :key='index' :style='{backgroundImage: "url(" + item + ")"}'></div>
@@ -26,7 +26,7 @@
             <p>联系方式</p>
             <input type='text' placeholder='邮箱／手机号' v-model.trim='telephone'/>
         </div>
-        <p class='submit-btn' @click='submit'>提交</p>
+        <p :class='["submit-btn", active ? "active" : "inactive"]' @click='submit'>提交</p>
     </section>
 </template>
 
@@ -34,14 +34,28 @@
     export default {
         data () {
             return {
+                active: 0,
                 telephone: '',
                 imgArr: [],
                 detail: ''
             }
         },
+        watch: {
+            detail (newVal) {
+                if (newVal && newVal.length >= 10) {
+                    this.active = 1;
+                } else{
+                    this.active = 0;
+                }
+            }
+        },
         methods: {
             submit () {
-                if (!this.detail || this.detail.length < 10) return;
+                if (!this.active) return;
+            },
+            uploadImg () {
+                if (this.imgArr.length >= 3) return;
+                this.imgArr.push('http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg')
             }
         }
     }

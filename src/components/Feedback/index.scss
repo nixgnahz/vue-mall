@@ -39,7 +39,8 @@
     border-top: 1px solid $border-color;
     .content {
       margin-top: 0.5rem;
-      @include flex-row-between;
+      @include flex-row;
+      @include flex;
       @include flex-wrap;
       p {
         @include square-img(3rem);
@@ -50,6 +51,7 @@
         }
       }
       .cover {
+        margin-left: 0.5rem;
         @include square-img(3rem);
         @include cover;
         border: 1px solid $border-color;
@@ -73,12 +75,17 @@
     }
   }
   .submit-btn {
-    background-color: #1aac19;
     color: #ffffff;
     width: 92%;
     height: 1.6rem;
     @include text-center(1.6rem);
     @include radius(0.15rem);
     margin: 0.8rem 4% 0px;
+    &.inactive {
+      background-color: #cccccc;
+    }
+    &.active {
+      background-color: #1aac19;
+    }
   }
 }
