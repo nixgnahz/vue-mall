@@ -1,6 +1,6 @@
 <template>
     <section class='home'>
-        <Search/>
+        <Search :style='styleObj'/>
         <Swiper :swipers='swipers' v-if='swipers.length'/>
         <Menu/>
         <Detail/>
@@ -45,6 +45,21 @@
                         cover: 'https://t00img.yangkeduo.com/t10img/images/2018-07-15/6ffb686c00598a665b5323e4fa3eb1d7.jpeg'
                     }
                 ]
+            }
+        },
+        computed: {
+            styleObj () {
+                if (!this.swipers.length) {
+                    return {
+                        'background-color': "#ededed"
+                    }
+                } else{
+                   return {
+                       'background-color': "#ffffff",
+                       'position': "absolute",
+                       'z-index': 100
+                   }
+                }
             }
         }
     }

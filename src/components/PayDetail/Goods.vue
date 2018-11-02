@@ -10,6 +10,11 @@
         components: {
             GoodsItem
         },
-        props: ['goods']
+        props: {
+            goods: {
+                type: Object,
+                isRequired: true
+            }
+        }
     }
 </script>

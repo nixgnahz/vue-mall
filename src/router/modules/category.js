@@ -1,6 +1,6 @@
-const Category = (resolve) => require(['@/components/Category/Index'], resolve)
-const CategoryList = (resolve) => require(['@/components/Category/CategoryList'], resolve)
-const CategoryResult = (resolve) => require(['@/components/Category/CategoryResult'], resolve)
+const Category = (resolve)=> require(['@/components/Category/Index'], resolve)
+const CategoryList = (resolve)=> require(['@/components/Category/CategoryList'], resolve)
+const CategoryResult = (resolve)=> require(['@/components/Category/CategoryResult'], resolve)
 
 const categoryRouter = {
   path: '/category',

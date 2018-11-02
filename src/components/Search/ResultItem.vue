@@ -13,7 +13,12 @@
 
 <script>
     export default {
-        props: ['result'],
+        props: {
+            result: {
+                type: Object,
+                isRequired: true
+            }
+        },
         computed: {
             price () {
                 return (this.result.price / 100).toFixed(2)

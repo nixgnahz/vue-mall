@@ -29,7 +29,7 @@
         },
         methods: {
             changePasswordType () {
-                this.showPassword = this.showPassword ? 0: 1;
+                this.showPassword = !this.showPassword;
             },
             login () {
                 if (!this.account) {

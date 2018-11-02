@@ -1,25 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const Address = (resolve) => require(['@/components/Address/index'], resolve)
-const Cart = (resolve) => require(['@/components/Cart/Index'], resolve)
-const GoodsDetail = (resolve) => require(['@/components/GoodsDetail/Index'], resolve)
-const Home = (resolve) => require(['@/components/Home/Index'], resolve)
-const Personal = (resolve) => require(['@/components/Personal/Index'], resolve)
-const Search = (resolve) => require(['@/components/Search/Index'], resolve)
-const UserInfo = (resolve) => require(['@/components/UserInfo/Index'], resolve)
-const Orders = (resolve) => require(['@/components/Orders/Index'], resolve)
-const Setting = (resolve) => require(['@/components/Setting/Index'], resolve)
-const OrderDetail = (resolve) => require(['@/components/OrderDetail/Index'], resolve)
-const PayDetail = (resolve) => require(['@/components/PayDetail/Index'], resolve)
-const EditReceipt = (resolve) => require(['@/components/EditReceipt/Index'], resolve)
+const Address = (resolve)=> require(['@/components/Address/index'], resolve)
+const Cart = (resolve)=> require(['@/components/Cart/Index'], resolve)
+const GoodsDetail = (resolve)=> require(['@/components/GoodsDetail/Index'], resolve)
+const Home = (resolve)=> require(['@/components/Home/Index'], resolve)
+const Personal = (resolve)=> require(['@/components/Personal/Index'], resolve)
+const Search = (resolve)=> require(['@/components/Search/Index'], resolve)
+const UserInfo = (resolve)=> require(['@/components/UserInfo/Index'], resolve)
+const Orders = (resolve)=> require(['@/components/Orders/Index'], resolve)
+const Setting = (resolve)=> require(['@/components/Setting/Index'], resolve)
+const OrderDetail = (resolve)=> require(['@/components/OrderDetail/Index'], resolve)
+const PayDetail = (resolve)=> require(['@/components/PayDetail/Index'], resolve)
+const EditReceipt = (resolve)=> require(['@/components/EditReceipt/Index'], resolve)
 
-const Ticket = (resolve) => require(['@/components/Ticket/Index'], resolve)
-const Collect = (resolve) => require(['@/components/Collect/Index'], resolve)
-const Records = (resolve) => require(['@/components/Records/Index'], resolve)
-const Question = (resolve) => require(['@/components/Question/Index'], resolve)
-const Feedback = (resolve) => require(['@/components/Feedback/Index'], resolve)
-const About = (resolve) => require(['@/components/About/Index'], resolve)
+const Ticket = (resolve)=> require(['@/components/Ticket/Index'], resolve)
+const Collect = (resolve)=> require(['@/components/Collect/Index'], resolve)
+const Records = (resolve)=> require(['@/components/Records/Index'], resolve)
+const Question = (resolve)=> require(['@/components/Question/Index'], resolve)
+const Feedback = (resolve)=> require(['@/components/Feedback/Index'], resolve)
+const About = (resolve)=> require(['@/components/About/Index'], resolve)
+const Activity = (resolve)=> require(['@/components/Activity/Index'], resolve)
 
 import refundRouter from './modules/refund'
 import categoryRouter from './modules/category'
@@ -124,6 +125,11 @@ const routes = [
     path: '/setting',
     name: 'setting',
     component: Setting
+  },
+  {
+    path: '/activity/:id',
+    name: 'activity',
+    component: Activity
   },
   {
     path: '*',

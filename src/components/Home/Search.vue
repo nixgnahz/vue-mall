@@ -4,3 +4,9 @@
         <span>请输入商品名称</span>
     </router-link>
 </template>
+
+<script>
+    export default {
+
+    }
+</script>

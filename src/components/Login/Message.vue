@@ -67,7 +67,7 @@
                     }
                 }, 1000)
             },
-            login (getCode) {
+            login () {
                 if (!this.judgeInput()) return;
                 if (!this.code) {
                     this.$store.dispatch('showToast', {

@@ -6,13 +6,10 @@
     @include flex;
     @include flex-row;
     align-items: center;
-    background-color: #ffffff;
     width: 88%;
     padding: 0.4rem 2%;
     margin: 0.5rem 4%;
     @include radius(0.1rem);
-    position: absolute;
-    z-index: 100;
     img {
       @include square-img(0.8rem);
       margin-right: 0.25rem;

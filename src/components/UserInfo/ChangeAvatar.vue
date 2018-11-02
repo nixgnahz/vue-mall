@@ -1,6 +1,6 @@
 <template>
     <BaseMask @hide='hide'>
-        <div class='user-box' @click='(e)=> {e.stopPropagation()}'>
+        <div class='user-box' @click.stop>
             <p class='user-box-title'>修改头像</p>
             <div class='user-box-content'>
                 <p @click='showAlbum'>
@@ -24,14 +24,10 @@
         },
         methods: {
             hide () {
-                return this.$emit('hide')
+                this.$emit('hide')
             },
-            showAlbum () {
-
-            },
-            takePhotos () {
-
-            }
+            showAlbum () {},
+            takePhotos () {}
         }
     }
 </script>

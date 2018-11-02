@@ -16,6 +16,11 @@
         components: {
             KeywordItem
         },
-        props: ['hotArr']
+        props: {
+            hotArr: {
+                type: Array,
+                default: ()=> []
+            }
+        }
     }
 </script>

@@ -1,9 +1,7 @@
 <template>
     <swiper :options="options" :not-next-tick="options.notNextTick">
         <swiper-slide v-for="item in swipers" :key="item.id">
-            <router-link :to="{name: 'activity', params: {id: item.id}}">
-                <img :src="item.cover" />
-            </router-link>
+            <img :src="item.cover" />
         </swiper-slide>
         <div class="swiper-pagination" v-if="options.pagination" slot="pagination"/>
     </swiper>
@@ -13,7 +11,12 @@
     import 'swiper/dist/css/swiper.css'
     import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
-        props: ['swipers'],
+        props: {
+            swipers: {
+                type: Array,
+                default: ()=> []
+            }
+        },
         components: {
             swiper,
             swiperSlide

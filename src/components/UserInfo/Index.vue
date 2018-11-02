@@ -77,13 +77,13 @@
                 }
             },
             changeAvatarFlag () {
-                this.showAvatar = this.showAvatar ? 0 : 1;
+                this.showAvatar = !this.showAvatar;
             },
             changeNameFlag () {
-                this.showName = this.showName ? 0 : 1;
+                this.showName = !this.showName;
             },
             changeSexFlag () {
-                this.showSex = this.showSex ? 0 : 1;
+                this.showSex = !this.showSex;
             },
             changeName (name) {
                 if (this.userInfo.name == name) {

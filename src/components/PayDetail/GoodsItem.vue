@@ -14,6 +14,11 @@
 
 <script>
     export default {
-        props: ['goods']
+        props: {
+            goods: {
+                type: Object,
+                isRequired: true
+            }
+        }
     }
 </script>

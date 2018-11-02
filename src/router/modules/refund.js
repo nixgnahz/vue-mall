@@ -1,6 +1,6 @@
-const Refund = (resolve) => require(['@/components/Refund/Index'], resolve)
-const RefundList = (resolve) => require(['@/components/Refund/RefundList'], resolve)
-const RefundDetail = (resolve) => require(['@/components/Refund/RefundDetail'], resolve)
+const Refund = (resolve)=> require(['@/components/Refund/Index'], resolve)
+const RefundList = (resolve)=> require(['@/components/Refund/RefundList'], resolve)
+const RefundDetail = (resolve)=> require(['@/components/Refund/RefundDetail'], resolve)
 
 const refundRouter = {
   path: '/refund',

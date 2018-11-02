@@ -17,7 +17,12 @@
         components: {
             KeywordItem
         },
-        props: ['historyArr'],
+        props: {
+            historyArr: {
+                type: Array,
+                default: ()=> []
+            }
+        },
         methods: {
             deleteHistory () {
                 this.$store.commit('deleteHistory')
