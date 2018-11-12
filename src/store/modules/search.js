@@ -21,7 +21,7 @@ const search = {
       state.keyword = '';
     },
     addHistory (state, keyword) {
-      for (var i in state.historyArr) {
+      for (let i in state.historyArr) {
         if (state.historyArr[i] === keyword) {
           return;
         }

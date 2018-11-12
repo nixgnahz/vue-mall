@@ -69,7 +69,7 @@
         },
         methods: {
             exchangeSex () {
-                for (var i in this.gender) {
+                for (let i in this.gender) {
                     if (this.gender[i].id == this.userInfo.gender) {
                         this.genderWord = this.gender[i].name;
                         return;

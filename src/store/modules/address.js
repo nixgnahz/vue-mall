@@ -37,7 +37,7 @@ const address = {
       state.editFlag = !state.editFlag;
     },
     deleteAddress (state, id) {
-      for(var i in state.addressList) {
+      for(let i in state.addressList) {
         if (id == state.addressList[i].id) {
           state.addressList.splice(i, 1)
         }

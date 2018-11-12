@@ -65,7 +65,7 @@
                 this.address.position_id = id;
             },
             saveAddress () {
-                for (var key in this.address) {
+                for (let key in this.address) {
                     if (key === 'isDefault' || key === 'tag' || key === 'id') continue;
                     if (!this.address[key]) return;
                 }
