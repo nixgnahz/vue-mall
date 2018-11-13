@@ -1,6 +1,6 @@
 <template>
     <li>
-        <router-link :to="{name: "detail", params: {id: result.id}}">
+        <router-link :to="{name: 'detail', params: {id: result.id}}">
             <div class="goods-cover" :style="{backgroundImage: 'url(' + result.cover + ')'}"></div>
             <div class="goods-info">
                 <p class="goods-info-title">{{result.name}}</p>

@@ -26,7 +26,7 @@
             <p>联系方式</p>
             <input type="text" placeholder="邮箱／手机号" v-model.trim="telephone"/>
         </div>
-        <p :class="["submit-btn", active ? 'active' : 'inactive']" @click="submit">提交</p>
+        <p :class="['submit-btn', active ? 'active' : 'inactive']" @click="submit">提交</p>
     </section>
 </template>
 
