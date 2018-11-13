@@ -27,15 +27,15 @@
         },
         methods: {
             loadMore (loaded) {
-                this.showBottom = 1;
+                this.showBottom = 1
                 this.$emit('loadMore',()=> {
-                    this.showBottom = 0;
+                    this.showBottom = 0
                 })
             },
             refresh () {
-                this.showTop = 1;
+                this.showTop = 1
                 this.$emit('refresh', ()=> {
-                    this.showTop = 0;
+                    this.showTop = 0
                 })
             }
         }

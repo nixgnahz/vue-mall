@@ -30,7 +30,7 @@
                 this.$store.dispatch('changeAll')
             },
             payOrder () {
-                if (this.total <= 0) return;
+                if (this.total <= 0) return
                 this.$router.push({name: 'pay', params: {id: 1}})
             }
         }

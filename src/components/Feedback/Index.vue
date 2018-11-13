@@ -43,18 +43,18 @@
         watch: {
             detail (newVal) {
                 if (newVal && newVal.length >= 10) {
-                    this.active = 1;
+                    this.active = 1
                 } else{
-                    this.active = 0;
+                    this.active = 0
                 }
             }
         },
         methods: {
             submit () {
-                if (!this.active) return;
+                if (!this.active) return
             },
             uploadImg () {
-                if (this.imgArr.length >= 3) return;
+                if (this.imgArr.length >= 3) return
                 this.imgArr.push('http://y1y-src.oss-cn-shanghai.aliyuncs.com/uploads/Q/Qdh4nAHglce5Bkn7PTKf/c/4/6/6/5b3de734c20e0.jpeg')
             }
         }

@@ -46,12 +46,12 @@
                 this.$emit('change')
             },
             changeColor (index) {
-                if (this.colorIndex == index) return;
-                this.colorIndex = index;
+                if (this.colorIndex == index) return
+                this.colorIndex = index
             },
             changeSize (index) {
-                if (this.sizeIndex == index) return;
-                this.sizeIndex = index;
+                if (this.sizeIndex == index) return
+                this.sizeIndex = index
             },
             submitStyle () {
                 this.$emit('change')

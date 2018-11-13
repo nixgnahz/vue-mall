@@ -6,10 +6,10 @@ const load = {
   },
   mutations: {
     showLoad (state) {
-      state.loadFlag = 1;
+      state.loadFlag = 1
     },
     hideLoad (state) {
-      state.loadFlag = 0;
+      state.loadFlag = 0
     }
   }
 }

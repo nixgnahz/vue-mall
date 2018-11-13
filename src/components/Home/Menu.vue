@@ -19,12 +19,12 @@
         },
         created () {
             getCategory().then((res)=> {
-                this.categoryArr = res.data;
+                this.categoryArr = res.data
             })
         },
         methods: {
             changeMenu (index) {
-                this.activeIndex = index;
+                this.activeIndex = index
             }
         }
     }

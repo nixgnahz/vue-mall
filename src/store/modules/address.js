@@ -28,13 +28,13 @@ const address = {
           tag: ''
         }
       }
-      state.address = address;
+      state.address = address
     },
     getAddressList (state, list) {
-      state.addressList = list;
+      state.addressList = list
     },
     changeEditFlag (state) {
-      state.editFlag = !state.editFlag;
+      state.editFlag = !state.editFlag
     },
     deleteAddress (state, id) {
       for(let i in state.addressList) {

@@ -40,34 +40,34 @@
         },
         created () {
              getPosition(1).then((res)=> {
-                 this.positionArr.push(res.data);
+                 this.positionArr.push(res.data)
              }).catch(()=> {})
         },
         methods: {
             changeMenu (index) {
-                this.positionIndex = index;
+                this.positionIndex = index
             },
             choosePosition (index) {
-                if (!this.waitFlag) return;
-                this.waitFlag = 0;
-                let id = this.positionArr[this.positionIndex][index].id;
-                let name = this.positionArr[this.positionIndex][index].name;
+                if (!this.waitFlag) return
+                this.waitFlag = 0
+                let id = this.positionArr[this.positionIndex][index].id
+                let name = this.positionArr[this.positionIndex][index].name
                 this.positionId.push(id)
                 getPosition(id).then((res)=> {
-                    this.waitFlag = 1;
+                    this.waitFlag = 1
                     if (res.data.length) {
-                        this.positionArr = this.positionArr.slice(0, this.positionIndex + 1);
-                        this.positionId = this.positionId.slice(0, this.positionIndex + 1);
-                        this.position = this.position.slice(0, this.positionIndex);
+                        this.positionArr = this.positionArr.slice(0, this.positionIndex + 1)
+                        this.positionId = this.positionId.slice(0, this.positionIndex + 1)
+                        this.position = this.position.slice(0, this.positionIndex)
                         this.position.push(name)
-                        this.positionArr.push(res.data);
-                        this.positionIndex++;
+                        this.positionArr.push(res.data)
+                        this.positionIndex++
                     } else{
-                        let str = '';
+                        let str = ''
                         this.position.map((item)=> {
-                            str += item;
+                            str += item
                         })
-                        str += name;
+                        str += name
                         this.$emit('hideAddress', str, this.positionId[this.positionId.length - 1])
                     }
                 }).catch(()=> {})

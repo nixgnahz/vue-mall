@@ -104,31 +104,31 @@
         },
         methods: {
             changeStyle (index) {
-                this.columnStyle = !this.columnStyle;
+                this.columnStyle = !this.columnStyle
             },
             changeFilter (index) {
                 if (index <= 1) {
-                    if (this.filter == index) return;
-                    this.filter = index;
-                    return;
+                    if (this.filter == index) return
+                    this.filter = index
+                    return
                 }
                 switch (this.filter) {
                     case 2:
-                        this.filter = 3;
-                        break;
+                        this.filter = 3
+                        break
                     default:
-                        this.filter = 2;
+                        this.filter = 2
                 }
             },
             refresh (loaded) {
                 this.timer = setTimeout(()=> {
-                    this.resultArr = resultArr;
+                    this.resultArr = resultArr
                     loaded()
                 }, 1500)
             },
             loadMore (loaded) {
                 this.timer = setTimeout(()=> {
-                    this.resultArr = this.resultArr.concat(resultArr);
+                    this.resultArr = this.resultArr.concat(resultArr)
                     loaded()
                 }, 1500)
             }

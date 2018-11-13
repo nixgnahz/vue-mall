@@ -38,7 +38,7 @@
         }),
         created () {
             getHotSearch().then((res)=> {
-                this.hotArr = res.data;
+                this.hotArr = res.data
             }).catch(()=> {})
         }
     }

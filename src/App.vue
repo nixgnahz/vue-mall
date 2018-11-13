@@ -37,16 +37,16 @@
         },
         methods: {
             changeBackTopFlag () {
-                this.backTopFlag = 0;
+                this.backTopFlag = 0
             },
             handleScroll () {
-                let screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
-                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                let screenHeight = document.documentElement.clientHeight || document.body.clientHeight
+                let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
                 if (scrollTop > screenHeight && !this.backTopFlag) {
-                    this.backTopFlag = 1;
+                    this.backTopFlag = 1
                 }
                 if (scrollTop <= screenHeight && this.backTopFlag) {
-                    this.backTopFlag = 0;
+                    this.backTopFlag = 0
                 }
             }
         }

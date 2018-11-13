@@ -7,11 +7,11 @@ const toast = {
   },
   mutations: {
     showToast (state, toast) {
-      state.toast = toast;
-      state.toastFlag = 1;
+      state.toast = toast
+      state.toastFlag = 1
     },
     hideToast (state) {
-      state.toastFlag = 0;
+      state.toastFlag = 0
     }
   },
   actions: {

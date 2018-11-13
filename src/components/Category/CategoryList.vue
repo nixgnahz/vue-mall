@@ -1094,13 +1094,13 @@
         computed: {
             activeIndex () {
                 for (let i = 0, l = this.listHeight.length; i < l; i++) {
-                    let topHeight = this.listHeight[i];
-                    let bottomHeight = this.listHeight[i + 1];
+                    let topHeight = this.listHeight[i]
+                    let bottomHeight = this.listHeight[i + 1]
                     if (!bottomHeight || (this.detailWrapperY >= topHeight && this.detailWrapperY < bottomHeight)) {
-                        return i;
+                        return i
                     }
                 }
-                return 0;
+                return 0
             }
         },
         created () {
@@ -1117,20 +1117,20 @@
         },
         methods: {
             changeMenu (index, event) {
-                if (!event._constructed) return;
-                let el = this.contentList[index];
-                this.detailWrapper.scrollToElement(el, 300);
+                if (!event._constructed) return
+                let el = this.contentList[index]
+                this.detailWrapper.scrollToElement(el, 300)
             },
             calculateHeight () {
-                let menu = this.$refs.parent.querySelectorAll('.category-menu');
-                let height = menu[0].clientHeight;
-                this.$refs.parent.style.height = height + "px";
-                this.$refs.detailWrapper.style.height = height + "px";
-                this.contentList = this.$refs.detailWrapper.querySelectorAll('.lists');
-                let gap = 0;
-                this.listHeight = [gap];
+                let menu = this.$refs.parent.querySelectorAll('.category-menu')
+                let height = menu[0].clientHeight
+                this.$refs.parent.style.height = height + "px"
+                this.$refs.detailWrapper.style.height = height + "px"
+                this.contentList = this.$refs.detailWrapper.querySelectorAll('.lists')
+                let gap = 0
+                this.listHeight = [gap]
                 for (let i = 0; i < this.contentList.length; i++) {
-                  gap += this.contentList[i].clientHeight;
+                  gap += this.contentList[i].clientHeight
                   this.listHeight.push(gap)
                 }
             },
@@ -1145,7 +1145,7 @@
                 this.detailWrapper.on('scroll', this.handleScroll)
             },
             handleScroll (pos) {
-                this.detailWrapperY = Math.abs(Math.round(pos.y));
+                this.detailWrapperY = Math.abs(Math.round(pos.y))
             }
         }
     }

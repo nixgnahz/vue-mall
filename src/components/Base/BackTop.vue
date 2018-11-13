@@ -9,7 +9,7 @@
         name: 'BackTop',
         methods: {
             backTop () {
-                document.documentElement.scrollTop = document.body.scrollTop = 0;
+                document.documentElement.scrollTop = document.body.scrollTop = 0
                 this.$emit('backTop')
             }
         }

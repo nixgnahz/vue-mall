@@ -29,7 +29,7 @@
         },
         methods: {
             changePasswordType () {
-                this.showPassword = !this.showPassword;
+                this.showPassword = !this.showPassword
             },
             login () {
                 if (!this.account) {
@@ -37,14 +37,14 @@
                         text: '请输入用户名',
                         duration: 1000
                     })
-                    return;
+                    return
                 }
                 if (!this.password) {
                     this.$store.dispatch('showToast', {
                         text: '请输入密码',
                         duration: 1000
                     })
-                    return;
+                    return
                 }
                 this.$store.commit('showLoad')
                   login({  

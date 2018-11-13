@@ -9,21 +9,21 @@ const search = {
   },
   mutations: {
     changeKeyword (state, keyword) {
-      state.keyword = keyword;
+      state.keyword = keyword
     },
     showResult (state, result) {
-      state.showResult = 1;
-      state.resultArr = result;
+      state.showResult = 1
+      state.resultArr = result
     },
     hideResult (state) {
-      state.showResult = 0;
-      state.resultArr = [];
-      state.keyword = '';
+      state.showResult = 0
+      state.resultArr = []
+      state.keyword = ''
     },
     addHistory (state, keyword) {
       for (let i in state.historyArr) {
         if (state.historyArr[i] === keyword) {
-          return;
+          return
         }
       }
       state.historyArr.unshift(keyword)
@@ -32,12 +32,12 @@ const search = {
       }
     },
     deleteHistory (state) {
-      state.historyArr = [];
+      state.historyArr = []
     }
   },
   actions: {
     getSearchResult (context, keyword) {
-      if (!keyword) return;
+      if (!keyword) return
       context.commit('showLoad')
       getSearchResult(keyword).then((res) => {
         context.commit('hideLoad')

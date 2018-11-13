@@ -7,12 +7,12 @@ const recommend = {
   },
   mutations: {
     getRecommend (state, list) {
-      state.recommendArr = list;
+      state.recommendArr = list
     }
   },
   actions: {
     getRecommend (context) {
-      if (context.state.recommendArr.length) return;
+      if (context.state.recommendArr.length) return
       getRecommend().then((res)=> {
         context.commit('getRecommend', res.data)
       })

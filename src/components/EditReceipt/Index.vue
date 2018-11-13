@@ -45,40 +45,40 @@
         watch: {
             'company.name' (newVal) {
                 if (newVal && this.company.code) {
-                    this.active = 1;
+                    this.active = 1
                 } else{
-                    this.active = 0;
+                    this.active = 0
                 }
             },
             'company.code' (newVal) {
                 if (newVal && this.company.name) {
-                    this.active = 1;
+                    this.active = 1
                 } else{
-                    this.active = 0;
+                    this.active = 0
                 }
             },
             'person.name' (newVal) {
                 if (newVal) {
-                    this.active = 1;
+                    this.active = 1
                 } else{
-                    this.active = 0;
+                    this.active = 0
                 }
             },
             receiptType (newVal) {
                 if ((newVal && this.company.name && this.company.code) || (!newVal && this.person.name)) {
-                    this.active = 1;
+                    this.active = 1
                 } else{
-                    this.active = 0;
+                    this.active = 0
                 }
             }
         },
         methods: {
             changeReceiptType (index) {
-                if (this.receiptType == index) return;
-                this.receiptType = index;
+                if (this.receiptType == index) return
+                this.receiptType = index
             },
             saveReceipt () {
-                if (!this.active) return;
+                if (!this.active) return
                 if (this.receiptType) {
                     this.saveCompany()
                 } else{

@@ -47,7 +47,7 @@
         watch: {
             label: function (val) {
                 if (val && this.activeIndex) {
-                    this.activeIndex = 0;
+                    this.activeIndex = 0
                 }
             }
         },
@@ -55,14 +55,14 @@
             saveLabel () {
                 switch (this.activeIndex) {
                     case 1:
-                        this.label = '家';
-                        break;
+                        this.label = '家'
+                        break
                     case 2:
-                        this.label = '公司';
-                        break;
+                        this.label = '公司'
+                        break
                     case 3:
-                        this.label = '学校';
-                        break;
+                        this.label = '学校'
+                        break
                 }
                 this.$emit('hideLabel', this.label)
             },
@@ -70,7 +70,7 @@
                 this.$emit('hideLabel')
             },
             changeLabel (index) {
-                this.activeIndex = index;
+                this.activeIndex = index
             }
         }
     }

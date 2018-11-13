@@ -63,7 +63,7 @@
         },
         created () {
             getGender().then((res)=> {
-                this.gender = res.data;
+                this.gender = res.data
                 this.exchangeSex()
             })
         },
@@ -71,19 +71,19 @@
             exchangeSex () {
                 for (let i in this.gender) {
                     if (this.gender[i].id == this.userInfo.gender) {
-                        this.genderWord = this.gender[i].name;
-                        return;
+                        this.genderWord = this.gender[i].name
+                        return
                     }
                 }
             },
             changeAvatarFlag () {
-                this.showAvatar = !this.showAvatar;
+                this.showAvatar = !this.showAvatar
             },
             changeNameFlag () {
-                this.showName = !this.showName;
+                this.showName = !this.showName
             },
             changeSexFlag () {
-                this.showSex = !this.showSex;
+                this.showSex = !this.showSex
             },
             changeName (name) {
                 if (this.userInfo.name == name) {
@@ -95,7 +95,7 @@
                     }).then(()=> {
                         this.$store.commit('hideLoad')
                         this.$store.dispatch('showToast', this.toast)
-                        this.userInfo.name = name;
+                        this.userInfo.name = name
                         this.changeNameFlag()
                         this.$store.commit('setUserInfo', this.userInfo)
                     })
@@ -112,7 +112,7 @@
                         this.$store.commit('hideLoad')
                         this.$store.dispatch('showToast', this.toast)
                         this.changeSexFlag()
-                        this.userInfo.gender = sex;
+                        this.userInfo.gender = sex
                         this.exchangeSex()
                         this.$store.commit('setUserInfo', this.userInfo)
                     })

@@ -6,7 +6,7 @@ const order = {
   },
   mutations: {
     changeActiveIndex (state, index) {
-      state.activeIndex = index;
+      state.activeIndex = index
     }
   }
 }

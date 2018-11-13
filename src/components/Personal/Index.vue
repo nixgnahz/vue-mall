@@ -45,13 +45,13 @@
         },
         created () {
             getUserInfo().then((res)=> {
-                this.showLogin = 0;
+                this.showLogin = 0
                 this.$store.commit('setUserInfo', res.data)
             })
         },
         methods: {
             changeContact () {
-                this.showContact = !this.showContact;
+                this.showContact = !this.showContact
             }
         }
     }

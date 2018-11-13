@@ -50,27 +50,27 @@
         },
         methods: {
             showLabel () {
-                this.labelFlag = 1;
+                this.labelFlag = 1
             },
             hideLabel (tag) {
-                this.labelFlag = 0;
-                if (tag) this.address.tag = tag;
+                this.labelFlag = 0
+                if (tag) this.address.tag = tag
             },
             showAddress () {
-                this.addressFlag = 1;
+                this.addressFlag = 1
             },
             hideAddress (str, id) {
-                this.addressFlag = 0;
-                this.address.positionStr = str;
-                this.address.position_id = id;
+                this.addressFlag = 0
+                this.address.positionStr = str
+                this.address.position_id = id
             },
             saveAddress () {
                 for (let key in this.address) {
-                    if (key === 'isDefault' || key === 'tag' || key === 'id') continue;
-                    if (!this.address[key]) return;
+                    if (key === 'isDefault' || key === 'tag' || key === 'id') continue
+                    if (!this.address[key]) return
                 }
-                let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
-                if (!reg.test(this.address.phone)) return;
+                let reg = /^[1][3,4,5,7,8][0-9]{9}$/
+                if (!reg.test(this.address.phone)) return
                 if (this.address.id) {
                     this.$store.dispatch('editAddress', this.address)
                 } else{

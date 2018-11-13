@@ -52,10 +52,10 @@
         },
         methods: {
             changeServiceFlag () {
-                this.serviceFlag = !this.serviceFlag;
+                this.serviceFlag = !this.serviceFlag
             },
             changeStyleFlag () {
-                this.styleFlag = !this.styleFlag;
+                this.styleFlag = !this.styleFlag
             }
         }
     }

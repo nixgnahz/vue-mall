@@ -141,8 +141,8 @@
         },
         methods: {
             changeQuestion (id) {
-                if (this.activeId == id) return;
-                this.activeId = id;
+                if (this.activeId == id) return
+                this.activeId = id
             }
         }
     }

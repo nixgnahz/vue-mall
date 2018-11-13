@@ -44,19 +44,19 @@
         },
         methods: {
             cancel () {
-                this.modalFlag = false;
+                this.modalFlag = false
             },
             sure () {
                 this.$store.commit('showLoad')
                 logout().then(()=> {
-                    this.modalFlag = false;
+                    this.modalFlag = false
                     this.$store.commit('hideLoad')
                     this.$store.commit('setUserInfo', {})
                     this.$router.replace('./person')
                 })
             },
             logout () {
-                this.modalFlag = true;
+                this.modalFlag = true
                 this.modal = {
                     title: '温馨提示',
                     content: '确定要退出当前帐号？'
@@ -67,5 +67,5 @@
 </script>
 
 <style lang="scss">
-    @import "./index.scss";
+    @import "./index.scss"
 </style>
