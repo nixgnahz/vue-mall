@@ -1,6 +1,6 @@
 <template>
-    <div class='back-top' @click='backTop'>
-        <img src='../../assets/image/icon/back-top.png' />
+    <div class="back-top" @click="backTop">
+        <img src="../../assets/image/icon/back-top.png" />
     </div>
 </template>
 
@@ -16,7 +16,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     .back-top {
         position: fixed;
         bottom: 3rem;

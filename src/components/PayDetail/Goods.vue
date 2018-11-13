@@ -1,6 +1,6 @@
 <template>
-    <div class='pay-goods'>
-        <GoodsItem :goods='goods'/>
+    <div class="pay-goods">
+        <GoodsItem :goods="goods"/>
     </div>
 </template>
 

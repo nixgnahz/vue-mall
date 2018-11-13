@@ -1,5 +1,5 @@
 <template>
-    <p @click='search'>{{value}}</p>
+    <p @click="search">{{value}}</p>
 </template>
 
 <script>

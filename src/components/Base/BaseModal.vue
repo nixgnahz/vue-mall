@@ -1,11 +1,11 @@
 <template>
     <BaseMask>
-        <div class='modal'>
-            <p class='modal-title'>{{modal.title}}</p>
-            <p class='modal-content'>{{modal.content}}</p>
-            <div class='modal-btn'>
-                <p @click='cancel' v-if='cancelFlag'>取消</p>
-                <p @click='sure'>确定</p>
+        <div class="modal">
+            <p class="modal-title">{{modal.title}}</p>
+            <p class="modal-content">{{modal.content}}</p>
+            <div class="modal-btn">
+                <p @click="cancel" v-if="cancelFlag">取消</p>
+                <p @click="sure">确定</p>
             </div>
         </div>
     </BaseMask>
@@ -39,7 +39,7 @@
     }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
     @import "../../index.scss";
     .mask-box {
         @include flex-row-center;

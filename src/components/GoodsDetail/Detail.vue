@@ -1,6 +1,6 @@
 <template>
-    <div class='detail-description'>
-        <img :src='item' v-for='(item, index) in detailArr' :key='index'/>
+    <div class="detail-description">
+        <img :src="item" v-for="(item, index) in detailArr" :key="index"/>
     </div>
 </template>
 

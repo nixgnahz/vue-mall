@@ -1,11 +1,11 @@
 <template>
-    <div class='detail'>
-        <div class='cover' :style='{backgroundImage: "url(" + order.cover + ")"}'></div>
-        <div class='desc'>
+    <div class="detail">
+        <div class="cover" :style="{backgroundImage: 'url(' + order.cover + ')'}"></div>
+        <div class="desc">
             <p>{{order.name}}</p>
             <p>{{order.param.color}} {{order.param.size}}</p>
         </div>
-        <div class='price'>
+        <div class="price">
             <p>¥{{order.price}}</p>
             <p>x{{order.num}}</p>
         </div>
@@ -24,7 +24,7 @@
     }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
     @import "../../index.scss";
     .detail {
         font-size: 0.55rem;

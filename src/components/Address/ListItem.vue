@@ -1,24 +1,24 @@
 <template>
-    <div class='address-list-item'>
-        <div class='address-list-item-user'>
-            <p class='address-list-item-user-name'>{{data.consignee}}</p>
-            <p class='address-list-item-user-tel'>{{data.phone}}</p>
-            <div class='address-list-item-user-label' v-if='data.tag'>
+    <div class="address-list-item">
+        <div class="address-list-item-user">
+            <p class="address-list-item-user-name">{{data.consignee}}</p>
+            <p class="address-list-item-user-tel">{{data.phone}}</p>
+            <div class="address-list-item-user-label" v-if="data.tag">
                 <p>{{data.tag}}</p>
             </div>
         </div>
-        <p class='address-list-item-address'>{{data.positionStr}}{{data.detailAddress}}</p>
-        <div class='address-list-item-action'>
-            <BaseChooseItem :selected='data.isDefault' @change='changeDefault'>
+        <p class="address-list-item-address">{{data.positionStr}}{{data.detailAddress}}</p>
+        <div class="address-list-item-action">
+            <BaseChooseItem :selected="data.isDefault" @change="changeDefault">
                 <span>设为默认地址</span>
             </BaseChooseItem>
-            <div class='address-list-item-action-edit'>
-                <p @click='editAddress'>
-                    <img src='../../assets/image/address/edit.png' />
+            <div class="address-list-item-action-edit">
+                <p @click="editAddress">
+                    <img src="../../assets/image/address/edit.png" />
                     <span>编辑</span>
                 </p>
-                <p @click='deleteAddress'>
-                    <img src='../../assets/image/icon/delete.png' />
+                <p @click="deleteAddress">
+                    <img src="../../assets/image/icon/delete.png" />
                     <span>删除</span>
                 </p>
             </div>

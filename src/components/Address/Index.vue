@@ -1,7 +1,7 @@
 <template>
-    <section class='address'>
-        <Edit v-show='editFlag'/>
-        <List v-show='!editFlag'/>
+    <section class="address">
+        <Edit v-show="editFlag"/>
+        <List v-show="!editFlag"/>
     </section>
 </template>
 
@@ -27,5 +27,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

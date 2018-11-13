@@ -1,13 +1,13 @@
 <template>
-    <div class='cart-action'>
-        <BaseChooseItem :selected='allSelected' @change='changeAll'>
+    <div class="cart-action">
+        <BaseChooseItem :selected="allSelected" @change="changeAll">
             <span>全选</span>
         </BaseChooseItem>
-        <p class='total'>
+        <p class="total">
             <span>合计</span>
             <span>¥{{total}}</span>
         </p>
-        <div class='pay-btn' @click='payOrder'>
+        <div class="pay-btn" @click="payOrder">
             <span>去结算</span>
             <p></p>
         </div>

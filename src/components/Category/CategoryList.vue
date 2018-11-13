@@ -1,22 +1,22 @@
 <template>
     <section>
-        <div class='category-list' ref='parent'>
-            <ul class='category-menu' ref='menuWrapper'>
-                <li v-for='(item, index) in classArr' :class='[activeIndex == index ? "active" : "inactive"]' :key='item.id' @click='changeMenu(index, $event)'>{{item.title}}</li>
+        <div class="category-list" ref="parent">
+            <ul class="category-menu" ref="menuWrapper">
+                <li v-for="(item, index) in classArr" :class="[activeIndex == index ? 'active' : 'inactive']" :key="item.id" @click="changeMenu(index, $event)">{{item.title}}</li>
             </ul>
-            <div class='category-content' ref="detailWrapper">
+            <div class="category-content" ref="detailWrapper">
                 <div>
-                    <div class='lists' v-for='item_ in classArr' :key='item_.id'>
-                        <div class='list' v-for='(item, index) in item_.content' :key='item.id'>
-                            <div class='title'>
-                                <p class='line'></p>
+                    <div class="lists" v-for="item_ in classArr" :key="item_.id">
+                        <div class="list" v-for="(item, index) in item_.content" :key="item.id">
+                            <div class="title">
+                                <p class="line"></p>
                                 <span>{{item.title}}</span>
-                                <p class='line'></p>
+                                <p class="line"></p>
                             </div>
-                            <ul class='item'>
-                                <li v-for='itm in item_.content[index].list' :key='itm.id'>
+                            <ul class="item">
+                                <li v-for="itm in item_.content[index].list" :key="itm.id">
                                     <router-link :to="{name: 'result', params: {id: itm.id}}">
-                                        <div class='cover' :style='{backgroundImage: "url(" + itm.cover + ")"}'></div>
+                                        <div class="cover" :style="{backgroundImage: 'url(' + itm.cover + ')'}"></div>
                                         <p>{{itm.title}}</p>
                                     </router-link>
                                 </li>

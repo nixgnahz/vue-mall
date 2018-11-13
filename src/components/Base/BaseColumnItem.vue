@@ -1,10 +1,10 @@
 <template>
-    <div class='base-column' @click='linkTo'>
-        <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
-        <div class='info'>
-            <div class='desc'>{{data.description}}</div>
-            <p class='price'>¥{{price}}</p>
-            <p class='sales'>销量 {{data.sales}}</p>
+    <div class="base-column" @click="linkTo">
+        <div class="cover" :style="{backgroundImage: 'url(' + data.cover + ')'}"></div>
+        <div class="info">
+            <div class="desc">{{data.description}}</div>
+            <p class="price">¥{{price}}</p>
+            <p class="sales">销量 {{data.sales}}</p>
         </div>
         <slot></slot>
     </div>
@@ -37,7 +37,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     @import "../../index.scss";
     .base-column {
         padding: 0.35rem;

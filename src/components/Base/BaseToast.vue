@@ -1,6 +1,6 @@
 <template>
-    <div class='toast-mask'>
-        <div class='toast'>{{toast.text}}</div>
+    <div class="toast-mask">
+        <div class="toast">{{toast.text}}</div>
     </div>
 </template>
 
@@ -16,7 +16,7 @@
     }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
     @import "../../index.scss";
     .toast-mask {
         position: fixed;

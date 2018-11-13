@@ -1,5 +1,5 @@
 <template>
-    <div class='pay-action'>
+    <div class="pay-action">
         <p>
             总价：
             <span>¥39.90</span>

@@ -1,6 +1,6 @@
 <template>
-    <div class='mask-transparent'>
-        <img src='../../assets/image/icon/loading.png' />
+    <div class="mask-transparent">
+        <img src="../../assets/image/icon/loading.png" />
     </div>
 </template>
 
@@ -10,7 +10,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     @import "../../index.scss";
     .mask-transparent {
         position: fixed;

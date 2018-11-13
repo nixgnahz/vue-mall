@@ -1,8 +1,8 @@
 <template>
-    <div class='address-list'>
-        <ListItem v-for='item in addressList' :data='item' :key='item.id'/>
-        <div class='address-btn add-btn' @click='showEdit'>
-            <img src='../../assets/image/address/add.png' />
+    <div class="address-list">
+        <ListItem v-for="item in addressList" :data="item" :key="item.id"/>
+        <div class="address-btn add-btn" @click="showEdit">
+            <img src="../../assets/image/address/add.png" />
             <span>新建地址</span>
         </div>
     </div>

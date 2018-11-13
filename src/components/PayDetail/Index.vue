@@ -1,9 +1,9 @@
 <template>
-    <section class='pay'>
+    <section class="pay">
         <Address/>
-        <Goods v-for='item in goods' :key='item.id' :goods='item'/>
+        <Goods v-for="item in goods" :key="item.id" :goods="item"/>
         <Money/>
-        <div class='pay-holder'></div>
+        <div class="pay-holder"></div>
         <PayAction/>
     </section>
 </template>
@@ -76,5 +76,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

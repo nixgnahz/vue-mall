@@ -1,11 +1,11 @@
 <template>
-    <section class='search'>
+    <section class="search">
         <InputBox/>
-        <History v-show='!showResult' v-if='historyArr.length' :historyArr='historyArr'/>
-        <Hot v-show='!showResult' v-if='hotArr.length' :hotArr='hotArr'/>
-        <SearchEmpty v-show='showResult && !resultArr.length'/>
-        <ul class='search-result' v-show='showResult'>
-            <ResultItem v-for='item in resultArr' :result='item' :key='item.id'/>
+        <History v-show="!showResult" v-if="historyArr.length" :historyArr="historyArr"/>
+        <Hot v-show="!showResult" v-if="hotArr.length" :hotArr="hotArr"/>
+        <SearchEmpty v-show="showResult && !resultArr.length"/>
+        <ul class="search-result" v-show="showResult">
+            <ResultItem v-for="item in resultArr" :result="item" :key="item.id"/>
         </ul>
     </section>
 </template>
@@ -45,5 +45,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

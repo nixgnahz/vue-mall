@@ -1,9 +1,9 @@
 <template>
-    <section class='order'>
+    <section class="order">
         <Search/>
         <Menu/>
-        <OrderItem v-for='item in orders' :order='item' :key='item.id'/>
-        <OrderEmpty v-if='!orders.length'/>
+        <OrderItem v-for="item in orders" :order="item" :key="item.id"/>
+        <OrderEmpty v-if="!orders.length"/>
     </section>
 </template>
 
@@ -43,5 +43,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

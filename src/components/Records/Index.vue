@@ -1,9 +1,9 @@
 <template>
     <div>
-        <BaseColumnItem v-for='item in recordArr' :key='item.id' :data='item'>
-            <div class='action'>
-                <img src='../../assets/image/icon/cart.png'/>
-                <img src='../../assets/image/icon/delete.png'/>
+        <BaseColumnItem v-for="item in recordArr" :key="item.id" :data="item">
+            <div class="action">
+                <img src="../../assets/image/icon/cart.png"/>
+                <img src="../../assets/image/icon/delete.png"/>
             </div>
         </BaseColumnItem>
     </div>

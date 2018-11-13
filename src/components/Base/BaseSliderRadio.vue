@@ -1,7 +1,7 @@
 <template>
-    <p class='switch'>
+    <p class="switch">
         <input type="checkbox" id="show"/>
-        <label for="show" @click='change'></label>
+        <label for="show" @click="change"></label>
     </p>
 </template>
 
@@ -16,7 +16,7 @@
     }
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
     @import "../../index.scss";
     .switch {
         @include flex-row-center;
@@ -34,7 +34,7 @@
             box-sizing: border-box;
         }
         input[type="checkbox"] + label:after {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             left: 0px;

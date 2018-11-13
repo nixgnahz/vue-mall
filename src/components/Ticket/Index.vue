@@ -1,9 +1,9 @@
 <template>
-    <section class='ticket'>
-        <p class='expire'>您有<span>{{expire}}</span>张优惠券即将过期</p>
-        <TicketItem v-for='item in ticketArr' :item='item' :key='item.id'/>
-        <p class='over'>没有更多了～</p>
-        <div class='ticket-tip'>
+    <section class="ticket">
+        <p class="expire">您有<span>{{expire}}</span>张优惠券即将过期</p>
+        <TicketItem v-for="item in ticketArr" :item="item" :key="item.id"/>
+        <p class="over">没有更多了～</p>
+        <div class="ticket-tip">
             <span>查看历史优惠券</span>
             <p></p>
             <span>优惠券说明</span>
@@ -46,5 +46,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss';
+    @import "./index.scss";
 </style>

@@ -1,15 +1,15 @@
 <template>
     <BaseMask>
-        <div class='detail-box'>
-            <div class='service-title'>
+        <div class="detail-box">
+            <div class="service-title">
                 <p>服务说明</p>
-                <img src='../../assets/image/icon/close.png' @click='hideService'/>
+                <img src="../../assets/image/icon/close.png" @click="hideService"/>
             </div>
-            <div class='service-list' v-for='item in serviceArr' :key='item.id'>
-                <img src='../../assets/image/icon/choice.png'/>
-                <p class='service-list-info'>
+            <div class="service-list" v-for="item in serviceArr" :key="item.id">
+                <img src="../../assets/image/icon/choice.png"/>
+                <p class="service-list-info">
                     <span>{{item.title}}</span>
-                    <span class='explain' v-if='item.desc'>{{item.desc}}</span>
+                    <span class="explain" v-if="item.desc">{{item.desc}}</span>
                 </p>
             </div>
         </div>

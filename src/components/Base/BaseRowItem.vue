@@ -1,8 +1,8 @@
 <template>
-    <div class='base-row' @click='linkTo'>
-        <div class='cover' :style='{backgroundImage: "url(" + data.cover + ")"}'></div>
-        <div class='desc'>{{data.description}}</div>
-        <div class='detail'>
+    <div class="base-row" @click="linkTo">
+        <div class="cover" :style="{backgroundImage: 'url(' + data.cover + ')'}"></div>
+        <div class="desc">{{data.description}}</div>
+        <div class="detail">
             <p>¥{{price}}</p>
             <p>销量 {{data.sales}}</p>
         </div>
@@ -36,7 +36,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     @import "../../index.scss";
     .base-row {
         .cover {

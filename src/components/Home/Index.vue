@@ -1,7 +1,7 @@
 <template>
-    <section class='home'>
-        <Search :style='styleObj'/>
-        <Swiper :swipers='swipers' v-if='swipers.length'/>
+    <section class="home">
+        <Search :style="styleObj"/>
+        <Swiper :swipers="swipers" v-if="swipers.length"/>
         <Menu/>
         <Detail/>
         <BaseMenuHolder/>
@@ -66,5 +66,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss';
+    @import "./index.scss";
 </style>

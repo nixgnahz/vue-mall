@@ -1,5 +1,5 @@
 <template>
-    <div class='mask-box' @click='hide'>
+    <div class="mask-box" @click="hide">
         <slot></slot>
     </div>
 </template>
@@ -15,7 +15,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     .mask-box {
         position: fixed;
         z-index: 101;

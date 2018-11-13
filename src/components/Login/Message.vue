@@ -1,14 +1,14 @@
 <template>
-    <div class='login-input'>
-        <div class='input-box'>
-            <input type='number' placeholder='请输入手机号' v-model.trim.number='phone'/>
+    <div class="login-input">
+        <div class="input-box">
+            <input type="number" placeholder="请输入手机号" v-model.trim.number="phone"/>
         </div>
-        <div class='input-box'>
-            <input type='number' placeholder='请输入验证码' v-model.trim.number='code'/>
-            <p class='code-btn' v-if="showTimer">{{time}}秒后重新获取</p>
-            <p class='code-btn' @click='getCode' v-else>获取验证码</p>
+        <div class="input-box">
+            <input type="number" placeholder="请输入验证码" v-model.trim.number="code"/>
+            <p class="code-btn" v-if="showTimer">{{time}}秒后重新获取</p>
+            <p class="code-btn" @click="getCode" v-else>获取验证码</p>
         </div>
-        <LoginButton @login='login'/>
+        <LoginButton @login="login"/>
     </div>
 </template>
 

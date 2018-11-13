@@ -1,6 +1,6 @@
 <template>
-    <div class='detail-list'>
-        <BaseRowItem v-for='item in detailArr' :data='item' :key='item.id'/>
+    <div class="detail-list">
+        <BaseRowItem v-for="item in detailArr" :data="item" :key="item.id"/>
     </div>
 </template>
 

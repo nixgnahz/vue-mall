@@ -1,31 +1,31 @@
 <template>
-    <section class='setting'>
-        <div class='setting-list'>
-            <router-link :to='{name: "user"}'>
+    <section class="setting">
+        <div class="setting-list">
+            <router-link :to="{name: 'user'}">
                 <p>账号管理</p>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </router-link>
-            <router-link :to='{name: "address"}'>
+            <router-link :to="{name: 'address'}">
                 <p>地址管理</p>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </router-link>
         </div>
-        <div class='setting-list'>
-            <router-link :to='{name: "feedback"}'>
+        <div class="setting-list">
+            <router-link :to="{name: 'feedback'}">
                 <p>问题反馈</p>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </router-link>
-            <router-link :to='{name: "question"}'>
+            <router-link :to="{name: 'question'}">
                 <p>常见问题</p>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </router-link>
-            <router-link :to='{name: "about"}'>
+            <router-link :to="{name: 'about'}">
                 <p>关于我们</p>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </router-link>
         </div>
-        <button class='logout-btn' @click='logout'>退出当前账号</button>
-        <BaseModal :modal='modal' v-if='modalFlag' @cancel='cancel' @sure='sure'/>
+        <button class="logout-btn" @click="logout">退出当前账号</button>
+        <BaseModal :modal="modal" v-if="modalFlag" @cancel="cancel" @sure="sure"/>
     </section>
 </template>
 
@@ -67,5 +67,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss';
+    @import "./index.scss";
 </style>

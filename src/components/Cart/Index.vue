@@ -1,8 +1,8 @@
 <template>
-    <section class='cart'>
-        <CartItem v-for='item in goods' :key='item.id' :goods='item'/>
-        <CartEmpty v-if='!goods.length'/>
-        <CartAction v-if='goods.length'/>
+    <section class="cart">
+        <CartItem v-for="item in goods" :key="item.id" :goods="item"/>
+        <CartEmpty v-if="!goods.length"/>
+        <CartAction v-if="goods.length"/>
         <Recommend/>
         <BaseMenuHolder/>
         <TabBar/>
@@ -37,5 +37,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

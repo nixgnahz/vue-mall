@@ -1,7 +1,7 @@
 <template>
-    <section class='refund-list'>
-        <ul v-if='refundList.length'>
-            <RefundListItem v-for='item in refundList' :item='item' :key='item.id'/>
+    <section class="refund-list">
+        <ul v-if="refundList.length">
+            <RefundListItem v-for="item in refundList" :item="item" :key="item.id"/>
         </ul>
     </section>
 </template>

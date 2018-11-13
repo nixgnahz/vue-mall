@@ -1,5 +1,5 @@
 <template>
-    <div class='login-button' @click='login'>登录</div>
+    <div class="login-button" @click="login">登录</div>
 </template>
 
 <script>

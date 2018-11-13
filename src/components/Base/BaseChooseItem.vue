@@ -1,7 +1,7 @@
 <template>
-    <div class='choose-item' @click='change'>
-        <img src='../../assets/image/icon/unselected.png' v-if='!selected'/>
-        <img src='../../assets/image/icon/selected.png' v-if='selected'/>
+    <div class="choose-item" @click="change">
+        <img src="../../assets/image/icon/unselected.png" v-if="!selected"/>
+        <img src="../../assets/image/icon/selected.png" v-if="selected"/>
         <slot></slot>
     </div>
 </template>
@@ -23,7 +23,7 @@
     }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
     @import "../../index.scss";
     .choose-item {
         @include flex-row-center;

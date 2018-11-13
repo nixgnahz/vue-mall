@@ -1,6 +1,6 @@
 <template>
-    <div class='order-menu'>
-        <p v-for='(item, index) in menuArr' :class='[index == activeIndex ? "active" : ""]' @click='changeIndex(index)'>{{item}}</p>
+    <div class="order-menu">
+        <p v-for="(item, index) in menuArr" :class="[index == activeIndex ? 'active' : '']" @click="changeIndex(index)">{{item}}</p>
     </div>
 </template>
 

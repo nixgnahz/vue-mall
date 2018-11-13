@@ -1,15 +1,15 @@
 <template>
-    <section class='detail'>
-        <Swiper :swipers='swipers' v-if='swipers.length'/>
-        <Description @changeServiceFlag='changeServiceFlag' @changeStyleFlag='changeStyleFlag'/>
+    <section class="detail">
+        <Swiper :swipers="swipers" v-if="swipers.length"/>
+        <Description @changeServiceFlag="changeServiceFlag" @changeStyleFlag="changeStyleFlag"/>
         <Detail/>
-        <div class='detail-holder'></div>
+        <div class="detail-holder"></div>
         <Action/>
-        <transition name='slide-left'>
-            <ServiceDetail v-if='serviceFlag' @change='changeServiceFlag'/>
+        <transition name="slide-left">
+            <ServiceDetail v-if="serviceFlag" @change="changeServiceFlag"/>
         </transition>
-        <transition name='slide-left'>
-            <StyleDetail v-if='styleFlag' @change='changeStyleFlag'/>
+        <transition name="slide-left">
+            <StyleDetail v-if="styleFlag" @change="changeStyleFlag"/>
         </transition>
     </section>
 </template>
@@ -62,5 +62,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

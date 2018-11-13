@@ -1,19 +1,19 @@
 <template>
-    <section class='question'>
-        <div class='question-item' v-for='(item, index) in questionArr' :key='index'>
-            <div class='question-item-title'>
-                <p class='line'></p>
+    <section class="question">
+        <div class="question-item" v-for="(item, index) in questionArr" :key="index">
+            <div class="question-item-title">
+                <p class="line"></p>
                 <span>{{item.title}}</span>
             </div>
-            <ul class='question-item-content'>
-                <li v-for='(itm, idx) in item.content' :key='itm.id'>
-                    <p class='title' @click='changeQuestion(itm.id)'>
+            <ul class="question-item-content">
+                <li v-for="(itm, idx) in item.content" :key="itm.id">
+                    <p class="title" @click="changeQuestion(itm.id)">
                         <span>{{itm.title}}</span>
-                        <img src='../../assets/image/icon/up.png' v-show='activeId == itm.id'/>
-                        <img src='../../assets/image/icon/down.png'  v-show='activeId != itm.id'/>
+                        <img src="../../assets/image/icon/up.png" v-show="activeId == itm.id"/>
+                        <img src="../../assets/image/icon/down.png"  v-show="activeId != itm.id"/>
                     </p>
-                    <div class='content' v-show='activeId == itm.id'>
-                        <p v-for='(it, inx) in itm.desc' :key='inx'>● {{it}}</p>
+                    <div class="content" v-show="activeId == itm.id">
+                        <p v-for="(it, inx) in itm.desc" :key="inx">● {{it}}</p>
                     </div>
                 </li>
             </ul>
@@ -149,5 +149,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

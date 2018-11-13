@@ -1,14 +1,14 @@
 <template>
-    <section class='order-detail'>
+    <section class="order-detail">
         <OrderStatus/>
         <OrderAddress/>
         <GoodsDetail/>
-        <div class='order-detail-telephone'>
-            <img src='../../assets/image/icon/tel.png'/>
+        <div class="order-detail-telephone">
+            <img src="../../assets/image/icon/tel.png"/>
             <span>拨打商家电话</span>
         </div>
         <OrderInfo/>
-        <div class='order-detail-holder'></div>
+        <div class="order-detail-holder"></div>
         <OrderAction/>
     </section>
 </template>
@@ -31,5 +31,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <BackTop v-show='backTopFlag' @backTop='changeBackTopFlag'/>
-    <BaseToast v-if='toastFlag' :toast='toast'/>
-    <BaseLoad v-if='loadFlag'/>
+    <BackTop v-show="backTopFlag" @backTop="changeBackTopFlag"/>
+    <BaseToast v-if="toastFlag" :toast="toast"/>
+    <BaseLoad v-if="loadFlag"/>
     <router-view/>
   </div>
 </template>
@@ -54,5 +54,5 @@
 </script>
 
 <style>
-    @import './app.scss'
+    @import "./app.scss"
 </style>

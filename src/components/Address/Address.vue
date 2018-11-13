@@ -1,19 +1,19 @@
 <template>
     <BaseMask>
-        <div class='address-edit-position'>
-            <div class='address-edit-position-title'>
+        <div class="address-edit-position">
+            <div class="address-edit-position-title">
                 <span>配送至</span>
-                <img src='../../assets/image/icon/close.png'  @click='hideAddress'/>
+                <img src="../../assets/image/icon/close.png"  @click="hideAddress"/>
             </div>
-            <div class='address-choice-detail'>
-                <p @click='changeMenu(index)' v-for='(item, index) in (position.length + 1)' :class='[positionIndex === index ? "active" : ""]'>{{position[index] ? position[index] : "请选择"}}</p>
+            <div class="address-choice-detail">
+                <p @click="changeMenu(index)" v-for="(item, index) in (position.length + 1)" :class="[positionIndex === index ? 'active' : '']">{{position[index] ? position[index] : "请选择"}}</p>
             </div>
-            <div class='choice'>
-                <div class='scroll-mask'>
-                  <ul class='level'>
-                      <li v-for='(item, index) in positionArr[positionIndex]' :key='item.id' @click='choosePosition(index)'>
+            <div class="choice">
+                <div class="scroll-mask">
+                  <ul class="level">
+                      <li v-for="(item, index) in positionArr[positionIndex]" :key="item.id" @click="choosePosition(index)">
                           <span>{{item.name}}</span>
-                          <img src='../../assets/image/address/choosed.png' v-if='item.id === positionId[positionIndex]'/>
+                          <img src="../../assets/image/address/choosed.png" v-if="item.id === positionId[positionIndex]"/>
                       </li>
                   </ul>
                 </div>

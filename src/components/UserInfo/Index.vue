@@ -1,33 +1,33 @@
 <template>
-    <section class='user'>
-        <div class='user-item'>
-            <p class='user-item-title'>头像</p>
-            <div class='user-item-content' @click='changeAvatarFlag'>
-                <div class='avatar' :style='{backgroundImage: "url(" + userInfo.avatar + ")"}'></div>
-                <img src='../../assets/image/icon/enter.png' />
+    <section class="user">
+        <div class="user-item">
+            <p class="user-item-title">头像</p>
+            <div class="user-item-content" @click="changeAvatarFlag">
+                <div class="avatar" :style="{backgroundImage: 'url(' + userInfo.avatar + ')'}"></div>
+                <img src="../../assets/image/icon/enter.png" />
             </div>
         </div>
-        <div class='user-item'>
-            <p class='user-item-title'>用户名</p>
-            <div class='user-item-content'>{{userInfo.account}}</div>
+        <div class="user-item">
+            <p class="user-item-title">用户名</p>
+            <div class="user-item-content">{{userInfo.account}}</div>
         </div>
-        <div class='user-item'>
-            <p class='user-item-title'>昵称</p>
-            <div class='user-item-content' @click='changeNameFlag'>
+        <div class="user-item">
+            <p class="user-item-title">昵称</p>
+            <div class="user-item-content" @click="changeNameFlag">
                 <span>{{userInfo.name}}</span>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </div>
         </div>
-        <div class='user-item'>
-            <p class='user-item-title'>性别</p>
-            <div class='user-item-content' @click='changeSexFlag'>
+        <div class="user-item">
+            <p class="user-item-title">性别</p>
+            <div class="user-item-content" @click="changeSexFlag">
                 <span>{{genderWord}}</span>
-                <img src='../../assets/image/icon/enter.png' />
+                <img src="../../assets/image/icon/enter.png" />
             </div>
         </div>
-        <ChangeAvatar v-show='showAvatar' @hide='changeAvatarFlag'/>
-        <ChangeName v-show='showName' @hide='changeNameFlag' @change='changeName'/>
-        <ChangeSex v-show='showSex' @hide='changeSexFlag'  @change='changeSex' :gender='gender'/>
+        <ChangeAvatar v-show="showAvatar" @hide="changeAvatarFlag"/>
+        <ChangeName v-show="showName" @hide="changeNameFlag" @change="changeName"/>
+        <ChangeSex v-show="showSex" @hide="changeSexFlag"  @change="changeSex" :gender="gender"/>
     </section>
 </template>
 
@@ -123,5 +123,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

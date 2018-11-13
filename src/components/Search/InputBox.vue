@@ -1,11 +1,11 @@
 <template>
-    <div class='search-box'>
-        <div class='search-input'>
-            <img src='../../assets/image/icon/search.png' />
-            <input placeholder='请输入商品名称' v-model.trim='keyword'/>
-            <img @click='hideResult' src='../../assets/image/icon/close.png' v-show='showResult'/>
+    <div class="search-box">
+        <div class="search-input">
+            <img src="../../assets/image/icon/search.png" />
+            <input placeholder="请输入商品名称" v-model.trim="keyword"/>
+            <img @click="hideResult" src="../../assets/image/icon/close.png" v-show="showResult"/>
         </div>
-        <p class='search-btn' @click='search'>搜索</p>
+        <p class="search-btn" @click="search">搜索</p>
     </div>
 </template>
 

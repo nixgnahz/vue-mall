@@ -1,5 +1,5 @@
 <template>
-    <div class='order-detail-info'>
+    <div class="order-detail-info">
         <p>订单编号: <span>180710-630372183128023</span></p>
         <p>创建时间: <span>2018-07-10 22:27:21</span></p>
         <p>付款时间: <span>2018-07-10 23:27:21</span></p>

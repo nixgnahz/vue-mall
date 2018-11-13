@@ -1,12 +1,12 @@
 <template>
     <pull-to @bottom-pull="loadMore" @top-pull="refresh">
-        <div class='top-tip' v-if="showTop">
-            <img src='../../assets/image/icon/loading.png'>
+        <div class="top-tip" v-if="showTop">
+            <img src="../../assets/image/icon/loading.png">
             <p>正在努力刷新...</p>
         </div>
         <slot></slot>
-        <div class='bottom-tip' v-if="showBottom">
-            <img src='../../assets/image/icon/loading.png'>
+        <div class="bottom-tip" v-if="showBottom">
+            <img src="../../assets/image/icon/loading.png">
             <p>正在努力加载...</p>
         </div>
     </pull-to>
@@ -42,7 +42,7 @@
     }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
     .top-tip, .bottom-tip {
         font-size: 0.5rem;
         text-align: center;

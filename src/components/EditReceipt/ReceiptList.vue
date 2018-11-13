@@ -1,5 +1,5 @@
 <template>
-    <ul class='receipt-list'>
+    <ul class="receipt-list">
         <li>
             <p>上海白兔网络科技有限公司</p>
             <p>8126371329137871924712</p>

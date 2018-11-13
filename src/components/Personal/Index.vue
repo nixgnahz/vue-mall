@@ -1,12 +1,12 @@
 <template>
-    <section class='person'>
-        <LoginMask v-if='showLogin'/>
+    <section class="person">
+        <LoginMask v-if="showLogin"/>
         <div v-else>
-            <ContactMask v-if='showContact' @change='changeContact'/>
+            <ContactMask v-if="showContact" @change="changeContact"/>
             <UserInfo/>
             <OrderList/>
             <RowList/>
-            <ColumnList @change='changeContact'/>
+            <ColumnList @change="changeContact"/>
             <Recommend/>
             <BaseMenuHolder/>
         </div>
@@ -58,5 +58,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

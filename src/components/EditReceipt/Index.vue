@@ -1,14 +1,14 @@
 <template>
-    <section class='receipt-box'>
+    <section class="receipt-box">
         <ReceiptList/>
-        <div class='edit'>
-            <div class='title'>
-                <BaseChooseItem :selected='receiptType' @change='changeReceiptType(1)'>企业</BaseChooseItem>
-                <BaseChooseItem :selected='!receiptType' @change='changeReceiptType(0)'>个人</BaseChooseItem>
+        <div class="edit">
+            <div class="title">
+                <BaseChooseItem :selected="receiptType" @change="changeReceiptType(1)">企业</BaseChooseItem>
+                <BaseChooseItem :selected="!receiptType" @change="changeReceiptType(0)">个人</BaseChooseItem>
             </div>
-            <CompanyReceipt v-show='receiptType' :receipt='company'/>
-            <PersonReceipt v-show='!receiptType' :receipt='person'/>
-            <div :class='["receipt-btn", active ? "active" : "inactive"]' @click='saveReceipt'>使用该抬头</div>
+            <CompanyReceipt v-show="receiptType" :receipt="company"/>
+            <PersonReceipt v-show="!receiptType" :receipt="person"/>
+            <div :class="["receipt-btn", active ? 'active' : 'inactive']" @click="saveReceipt">使用该抬头</div>
         </div>
     </section>
 </template>
@@ -92,5 +92,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

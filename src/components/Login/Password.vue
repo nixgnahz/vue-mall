@@ -1,13 +1,13 @@
 <template>
-    <div class='login-input'>
-        <div class='input-box'>
-            <input type='text' placeholder='请输入用户名' v-model.trim='account'/>
+    <div class="login-input">
+        <div class="input-box">
+            <input type="text" placeholder="请输入用户名" v-model.trim="account"/>
         </div>
-        <div class='input-box'>
-            <input :type='showPassword ? "text" : "password"' placeholder='请输入密码' v-model.trim='password'/>
-            <BaseSliderRadio @change='changePasswordType'/>
+        <div class="input-box">
+            <input :type="showPassword ? 'text' : 'password'" placeholder="请输入密码" v-model.trim="password"/>
+            <BaseSliderRadio @change="changePasswordType"/>
         </div>
-        <LoginButton @login='login'/>
+        <LoginButton @login="login"/>
     </div>
 </template>
 

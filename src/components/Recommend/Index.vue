@@ -1,11 +1,11 @@
 <template>
-    <section class='recommend' v-if='recommendArr.length'>
-        <div class='recommend-title'>
-            <img src='../../assets/image/icon/recommend.png' />
+    <section class="recommend" v-if="recommendArr.length">
+        <div class="recommend-title">
+            <img src="../../assets/image/icon/recommend.png" />
             <p>精选推荐</p>
         </div>
-        <div class='recommend-list'>
-            <BaseRowItem v-for='item in recommendArr' :data='item' :key='item.id'/>
+        <div class="recommend-list">
+            <BaseRowItem v-for="item in recommendArr" :data="item" :key="item.id"/>
         </div>
     </section>
 </template>
@@ -28,5 +28,5 @@
 </script>
 
 <style lang="scss">
-    @import './index.scss'
+    @import "./index.scss"
 </style>

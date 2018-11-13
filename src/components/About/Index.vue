@@ -1,6 +1,6 @@
 <template>
-    <section class='about'>
-        <img v-for='(item, index) in descArr' :src='item'/>
+    <section class="about">
+        <img v-for="(item, index) in descArr" :src="item"/>
     </section>
 </template>
 
@@ -18,7 +18,7 @@
     }
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
     .about {
         img {
             width: 100%;
