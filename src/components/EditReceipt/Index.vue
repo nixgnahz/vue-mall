@@ -8,7 +8,7 @@
             </div>
             <CompanyReceipt v-show="receiptType" :receipt="company"/>
             <PersonReceipt v-show="!receiptType" :receipt="person"/>
-            <div :class="['receipt-btn', active ? 'active' : 'inactive']" @click="saveReceipt">使用该抬头</div>
+            <div class="receipt-btn" :class="[active ? 'active' : 'inactive']" @click="saveReceipt">使用该抬头</div>
         </div>
     </section>
 </template>

@@ -6,7 +6,7 @@
                 <img src="../../assets/image/icon/close.png"  @click="hideAddress"/>
             </div>
             <div class="address-choice-detail">
-                <p @click="changeMenu(index)" v-for="(item, index) in (position.length + 1)" :class="[positionIndex === index ? 'active' : '']">{{position[index] ? position[index] : "请选择"}}</p>
+                <p @click="changeMenu(index)" v-for="(item, index) in (position.length + 1)" :class="{active: positionIndex == index}">{{position[index] ? position[index] : "请选择"}}</p>
             </div>
             <div class="choice">
                 <div class="scroll-mask">

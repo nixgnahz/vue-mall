@@ -3,7 +3,7 @@
         <div class="user-item">
             <p class="user-item-title">头像</p>
             <div class="user-item-content" @click="changeAvatarFlag">
-                <div class="avatar" :style="{backgroundImage: 'url(' + userInfo.avatar + ')'}"></div>
+                <div class="avatar" :style="{backgroundImage: `url(${userInfo.avatar})`}"></div>
                 <img src="../../assets/image/icon/enter.png" />
             </div>
         </div>

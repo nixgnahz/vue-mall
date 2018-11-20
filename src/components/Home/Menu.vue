@@ -1,7 +1,7 @@
 <template>
     <div class="category-scroll" v-if="categoryArr">
         <ul class="home-category">
-            <li v-for="(item, index) in categoryArr" @click="changeMenu(index)" :class="[index == activeIndex ? 'active' : '']" :key="item.id">
+            <li v-for="(item, index) in categoryArr" @click="changeMenu(index)" :class="{active: index == activeIndex}" :key="item.id">
                 <p>{{item.name}}</p>
             </li>
         </ul>

@@ -1,7 +1,7 @@
 <template>
     <div class="cart-goods">
         <BaseChooseItem :selected="goods.selected" @change="change"></BaseChooseItem>
-        <div class="cart-goods-cover" :style="{backgroundImage: 'url(' + goods.cover + ')'}"></div>
+        <div class="cart-goods-cover" :style="{backgroundImage: `url(${goods.cover})`}"></div>
         <div class="cart-goods-info">
             <p class="desc">{{goods.name}}</p>
             <p class="param">{{goods.param.color}} {{goods.param.size}}</p>

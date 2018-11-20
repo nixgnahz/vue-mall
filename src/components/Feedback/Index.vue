@@ -17,7 +17,7 @@
                     <p @click="uploadImg">
                         <img src="../../assets/image/icon/add.png"/>
                     </p>
-                    <div class="cover" v-for="(item, index) in imgArr" :key="index" :style="{backgroundImage: 'url(' + item + ')'}"></div>
+                    <div class="cover" v-for="(item, index) in imgArr" :key="index" :style="{backgroundImage: `url(${item})`}"></div>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <p>联系方式</p>
             <input type="text" placeholder="邮箱／手机号" v-model.trim="telephone"/>
         </div>
-        <p :class="['submit-btn', active ? 'active' : 'inactive']" @click="submit">提交</p>
+        <p class="submit-btn" :class="[active ? 'active' : 'inactive']" @click="submit">提交</p>
     </section>
 </template>
 

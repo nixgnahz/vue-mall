@@ -5,7 +5,7 @@
             <span>已完成退款</span>
         </div>
         <div class="goods">
-            <div class="cover" :style="{backgroundImage: 'url(' + item.goods.cover + ')'}"></div>
+            <div class="cover" :style="{backgroundImage: `url(${item.goods.cover})`}"></div>
             <div class="info">
                 <p class="desc">{{item.goods.description}}</p>
                 <p class="param">{{item.goods.param.color}} {{item.goods.param.size}}</p>

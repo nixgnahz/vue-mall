@@ -1,6 +1,6 @@
 <template>
     <div class="base-row" @click="linkTo">
-        <div class="cover" :style="{backgroundImage: 'url(' + data.cover + ')'}"></div>
+        <div class="cover" :style="{backgroundImage: `url(${data.cover})`}"></div>
         <div class="desc">{{data.description}}</div>
         <div class="detail">
             <p>¥{{price}}</p>

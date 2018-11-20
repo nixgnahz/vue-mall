@@ -1,6 +1,6 @@
 <template>
     <div class="detail">
-        <div class="cover" :style="{backgroundImage: 'url(' + order.cover + ')'}"></div>
+        <div class="cover" :style="{backgroundImage: `url(${order.cover})`}"></div>
         <div class="desc">
             <p>{{order.name}}</p>
             <p>{{order.param.color}} {{order.param.size}}</p>

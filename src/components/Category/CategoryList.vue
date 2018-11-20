@@ -16,7 +16,7 @@
                             <ul class="item">
                                 <li v-for="itm in item_.content[index].list" :key="itm.id">
                                     <router-link :to="{name: 'result', params: {id: itm.id}}">
-                                        <div class="cover" :style="{backgroundImage: 'url(' + itm.cover + ')'}"></div>
+                                        <div class="cover" :style="{backgroundImage: `url(${itm.cover})`}"></div>
                                         <p>{{itm.title}}</p>
                                     </router-link>
                                 </li>
