@@ -19,6 +19,7 @@
     import {mapState} from 'vuex'
     import {getHotSearch} from '@/api/search'
     export default {
+        name: 'Search',
         components: {
             InputBox,
             History,

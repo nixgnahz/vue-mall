@@ -17,6 +17,7 @@
     import BaseMenuHolder from '../Base/BaseMenuHolder.vue'
     import TabBar from '../Menu/Index.vue'
     export default {
+        name: 'Home',
         components: {
             Search,
             Swiper,

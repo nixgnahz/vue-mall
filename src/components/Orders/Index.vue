@@ -13,6 +13,7 @@
     import OrderItem from './OrderItem.vue'
     import OrderEmpty from './OrderEmpty.vue'
     export default {
+        name: 'Orders',
         components: {
             Search,
             Menu,

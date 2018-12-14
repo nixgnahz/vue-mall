@@ -38,6 +38,7 @@
     import {getGender} from '@/api/keyword.js'
     import {editUserInfo} from '@/api/user.js'
     export default {
+        name: 'UserInfo',
         components: {
             ChangeAvatar,
             ChangeName,

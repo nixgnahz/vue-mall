@@ -12,6 +12,7 @@
 <script>
     import BaseColumnItem from '../Base/BaseColumnItem.vue'
     export default {
+        name: 'Records',
         components: {
             BaseColumnItem
         },

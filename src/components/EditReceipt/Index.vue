@@ -19,6 +19,7 @@
     import CompanyReceipt from './CompanyReceipt.vue'
     import PersonReceipt from './PersonReceipt.vue'
     export default {
+        name: 'EditReceipt',
         components: {
             BaseChooseItem,
             ReceiptList,

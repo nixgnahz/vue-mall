@@ -26,6 +26,7 @@
     import TabBar from '../Menu/Index.vue'
     import {getUserInfo} from '@/api/user.js'
     export default {
+        name: 'Personal',
         components: {
             ContactMask,
             LoginMask,

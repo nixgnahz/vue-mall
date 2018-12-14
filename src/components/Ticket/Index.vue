@@ -14,6 +14,7 @@
 <script>
     import TicketItem from './TicketItem.vue'
     export default {
+        name: 'Ticket',
         components: {
             TicketItem
         },

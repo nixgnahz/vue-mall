@@ -22,6 +22,7 @@
     import ServiceDetail from './ServiceDetail.vue'
     import StyleDetail from './StyleDetail.vue'
     export default {
+        name: 'GoodsDetail',
         components: {
             Swiper,
             Description,

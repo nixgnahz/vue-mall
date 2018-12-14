@@ -33,6 +33,7 @@
     import BaseModal from '../Base/BaseModal.vue'
     import {logout} from '@/api/login.js'
     export default {
+        name: 'Setting',
         components: {
             BaseModal
         },

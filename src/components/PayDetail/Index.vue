@@ -61,6 +61,7 @@
     import Money from './Money.vue'
     import PayAction from './PayAction.vue'
     export default {
+        name: 'PayDetail',
         components: {
             Address,
             Goods,

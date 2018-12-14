@@ -3,7 +3,9 @@
     <BackTop v-show="backTopFlag" @backTop="changeBackTopFlag"/>
     <BaseToast v-if="toastFlag" :toast="toast"/>
     <BaseLoad v-if="loadFlag"/>
-    <router-view/>
+    <keep-alive exclude="Personal">
+        <router-view/>
+    </keep-alive>
   </div>
 </template>
 

@@ -9,6 +9,7 @@
     import List from './List.vue'
     import Edit from './Edit.vue'
     export default {
+        name: 'Address',
         components: {
             List,
             Edit

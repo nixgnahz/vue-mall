@@ -20,6 +20,7 @@
     import GoodsDetail from './GoodsDetail.vue'
     import OrderAction from './OrderAction.vue'
     export default {
+        name: 'OrderDetail',
         components: {
             OrderStatus,
             OrderAddress,

@@ -13,6 +13,7 @@
 <script>
     import BaseRowItem from '../Base/BaseRowItem.vue'
     export default {
+        name: 'Recommend',
         computed: {
             recommendArr () {
                 return this.$store.state.recommend.recommendArr

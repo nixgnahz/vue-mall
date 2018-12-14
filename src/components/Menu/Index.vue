@@ -25,6 +25,7 @@
 
 <script>
     export default {
+        name: 'Menu',
         computed: {
             activeMenu () {
                 return this.$route.name

@@ -23,6 +23,7 @@
 
 <script>
     export default {
+        name: 'Question',
         data () {
             return {
                 activeId: -1,

@@ -32,6 +32,7 @@
 
 <script>
     export default {
+        name: 'Feedback',
         data () {
             return {
                 active: 0,

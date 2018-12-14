@@ -13,6 +13,12 @@
     </section>
 </template>
 
+<script>
+    export default {
+        name: 'Login'
+    }
+</script>
+
 <style lang="scss">
     @import "./index.scss"
 </style>
