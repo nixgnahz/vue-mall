@@ -2,9 +2,12 @@
     <router-view/>
 </template>
 
-<style lang="scss">
-    @import "./index.scss"
+<script>
     export default {
         name: 'Refund'
     }
+</script>
+
+<style lang="scss">
+    @import "./index.scss"
 </style>
