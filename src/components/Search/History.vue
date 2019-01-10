@@ -20,7 +20,7 @@
         props: {
             historyArr: {
                 type: Array,
-                default: ()=> []
+                default: () => []
             }
         },
         methods: {

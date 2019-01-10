@@ -69,7 +69,7 @@
                     if (key === 'isDefault' || key === 'tag' || key === 'id') continue
                     if (!this.address[key]) return
                 }
-                let reg = /^[1][3,4,5,7,8][0-9]{9}$/
+                const reg = /^[1][3,4,5,7,8][0-9]{9}$/
                 if (!reg.test(this.address.phone)) return
                 if (this.address.id) {
                     this.$store.dispatch('editAddress', this.address)

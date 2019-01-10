@@ -6,7 +6,7 @@
             <p>{{goods.param.color}} {{goods.param.size}}</p>
         </div>
         <div class="price">
-            <p>¥{{goods.price}}</p>
+            <p>¥{{goods.price | formatPrice}}</p>
             <p>x{{goods.num}}</p>
         </div>
     </div>

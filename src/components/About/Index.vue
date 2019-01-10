@@ -1,6 +1,6 @@
 <template>
     <section class="about">
-        <img v-for="(item, index) in descArr" :src="item"/>
+        <img v-for="(item, index) in descArr" :src="item" :key="index"/>
     </section>
 </template>
 

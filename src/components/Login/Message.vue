@@ -34,7 +34,7 @@
         },
         methods: {
             judgeInput () {
-               let reg = /^[1][3,4,5,7,8][0-9]{9}$/
+               const reg = /^[1][3,4,5,7,8][0-9]{9}$/
                if (!this.phone) {
                    this.$store.dispatch('showToast', {
                        text: '请输入手机号',

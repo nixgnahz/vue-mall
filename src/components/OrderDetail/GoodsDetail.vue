@@ -6,7 +6,7 @@
         </router-link>
         <div class="order-detail-goods-price">
             <p>商品金额</p>
-            <p>¥{{order.price}}</p>
+            <p>¥{{order.price | formatPrice}}</p>
         </div>
         <div class="order-detail-goods-freight">
             <p>运费</p>
@@ -14,7 +14,7 @@
         </div>
         <div class="order-detail-goods-money">
             <p>实际付款（含运费）</p>
-            <p>¥{{total}}</p>
+            <p>¥{{order.price | sumPrice(order.num)}}</p>
         </div>
     </div>
 </template>
@@ -39,14 +39,9 @@
                      size: '3G+32G'
                    },
                    freight: 0,
-                   price: '1099.00',
-                   num: 1
+                   price: '109900',
+                   num: 2
                  }
-            }
-        },
-        computed: {
-            total () {
-                return (this.order.price * this.order.num).toFixed(2)
             }
         }
     }

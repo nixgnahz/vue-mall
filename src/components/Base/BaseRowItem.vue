@@ -3,7 +3,7 @@
         <div class="cover" :style="{backgroundImage: `url(${data.cover})`}"></div>
         <div class="desc">{{data.description}}</div>
         <div class="detail">
-            <p>¥{{price}}</p>
+            <p>¥{{data.price | formatPrice}}</p>
             <p>销量 {{data.sales}}</p>
         </div>
     </div>
@@ -16,11 +16,6 @@
             data: {
                 type: Object,
                 isRequired: true
-            }
-        },
-        computed: {
-            price () {
-                return (this.data.price / 100).toFixed(2)
             }
         },
         methods: {

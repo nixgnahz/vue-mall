@@ -11,13 +11,13 @@
                 <p class="param">{{item.goods.param.color}} {{item.goods.param.size}}</p>
             </div>
             <div class="price">
-                <p>¥{{price}}</p>
+                <p>¥{{item.goods.price | formatPrice}}</p>
                 <span>x{{item.goods.num}}</span>
             </div>
         </div>
         <div class="total">
             <span>共{{item.goods.num}}件商品</span>
-            <span>退款金额 ¥{{total}}</span>
+            <span>退款金额 ¥{{item.goods.price | sumPrice(item.goods.num)}}</span>
         </div>
         <router-link class="detail-btn" :to="{name: 'refundDetail', params: {id: item.orderId}}">
             <div>退货详情</div>
@@ -27,14 +27,6 @@
 
 <script>
     export default {
-        props: ['item'],
-        computed: {
-            price () {
-                return (this.item.goods.price / 100).toFixed(2)
-            },
-            total () {
-                return (this.item.goods.price * this.item.goods.num / 100).toFixed(2)
-            }
-        }
+        props: ['item']
     }
 </script>

@@ -2,10 +2,10 @@
     <div class="pay-action">
         <p>
             总价：
-            <span>¥39.90</span>
+            <span>¥{{goodsTotal | formatPrice}}</span>
         </p>
         <div>
-            <span>共1件商品</span>
+            <span>共{{goods.length}}件商品</span>
             <p class='pay-btn'>提交订单</p>
         </div>
     </div>
@@ -13,6 +13,19 @@
 
 <script>
     export default {
-
+        props: {
+            goods: {
+                isRequired: true
+            }
+        },
+        computed: {
+            goodsTotal () {
+                let sum = 0
+                this.goods.map((item) => {
+                    sum += item.price * item.num
+                })
+                return sum
+            }
+        }
     }
 </script>

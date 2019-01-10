@@ -4,7 +4,7 @@
         <Goods v-for="item in goods" :key="item.id" :goods="item"/>
         <Money/>
         <div class="pay-holder"></div>
-        <PayAction/>
+        <PayAction :goods="goods"/>
     </section>
 </template>
 
@@ -22,7 +22,7 @@
                 size: '3G+32G'
             },
             freight: 0,
-            price: '1099.00',
+            price: '109900',
             num: 1
         },
         {
@@ -37,7 +37,7 @@
                 size: '3G+32G'
             },
             freight: 0,
-            price: '1099.00',
+            price: '109900',
             num: 1
         },
         {
@@ -52,7 +52,7 @@
                 size: '3G+32G'
             },
             freight: 0,
-            price: '1099.00',
+            price: '109900',
             num: 1
         }
     ]

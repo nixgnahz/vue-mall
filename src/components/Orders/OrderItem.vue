@@ -7,7 +7,7 @@
         <router-link :to="{name: 'info', params: {id: order.id}}">
             <BaseGoodsItem :order="order"/>
         </router-link>
-        <div class="order-list-total">合计：¥{{total}}</div>
+        <div class="order-list-total">合计：¥{{order.price | sumPrice(order.num)}}</div>
         <div class="order-list-action">
             <p>去支付</p>
             <p>取消订单</p>
@@ -25,11 +25,6 @@
             order: {
                 type: Object,
                 isRequired: true
-            }
-        },
-        computed: {
-            total () {
-                return (this.order.price * this.order.num).toFixed(2)
             }
         }
     }

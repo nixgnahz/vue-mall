@@ -5,7 +5,7 @@
         </BaseChooseItem>
         <p class="total">
             <span>合计</span>
-            <span>¥{{total}}</span>
+            <span>¥{{total | formatPrice}}</span>
         </p>
         <div class="pay-btn" @click="payOrder">
             <span>去结算</span>

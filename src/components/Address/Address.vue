@@ -6,7 +6,7 @@
                 <img src="../../assets/image/icon/close.png"  @click="hideAddress"/>
             </div>
             <div class="address-choice-detail">
-                <p @click="changeMenu(index)" v-for="(item, index) in (position.length + 1)" :class="{active: positionIndex == index}">{{position[index] ? position[index] : "请选择"}}</p>
+                <p @click="changeMenu(index)" v-for="(item, index) in (position.length + 1)" :key="index" :class="{active: positionIndex == index}">{{position[index] ? position[index] : "请选择"}}</p>
             </div>
             <div class="choice">
                 <div class="scroll-mask">
@@ -50,8 +50,8 @@
             choosePosition (index) {
                 if (!this.waitFlag) return
                 this.waitFlag = 0
-                let id = this.positionArr[this.positionIndex][index].id
-                let name = this.positionArr[this.positionIndex][index].name
+                const id = this.positionArr[this.positionIndex][index].id
+                const name = this.positionArr[this.positionIndex][index].name
                 this.positionId.push(id)
                 getPosition(id).then((res)=> {
                     this.waitFlag = 1

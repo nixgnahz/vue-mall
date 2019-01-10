@@ -5,7 +5,7 @@
             <div class="goods-info">
                 <p class="goods-info-title">{{result.name}}</p>
                 <p class="goods-info-desc">{{result.description}}</p>
-                <p class="goods-info-price">¥ {{price}}</p>
+                <p class="goods-info-price">¥ {{result.price | formatPrice}}</p>
             </div>
         </router-link>
     </li>
@@ -17,11 +17,6 @@
             result: {
                 type: Object,
                 isRequired: true
-            }
-        },
-        computed: {
-            price () {
-                return (this.result.price / 100).toFixed(2)
             }
         }
     }

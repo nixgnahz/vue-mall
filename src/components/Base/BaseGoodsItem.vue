@@ -6,7 +6,7 @@
             <p>{{order.param.color}} {{order.param.size}}</p>
         </div>
         <div class="price">
-            <p>¥{{order.price}}</p>
+            <p>¥{{order.price | formatPrice}}</p>
             <p>x{{order.num}}</p>
         </div>
     </div>

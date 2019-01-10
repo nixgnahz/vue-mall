@@ -5,7 +5,7 @@
         <div class="cart-goods-info">
             <p class="desc">{{goods.name}}</p>
             <p class="param">{{goods.param.color}} {{goods.param.size}}</p>
-            <p class="price">¥{{goods.price}}</p>
+            <p class="price">¥{{goods.price | formatPrice}}</p>
             <div class="cart-goods-action">
                 <p @click="minus">-</p>
                 <p class="num">{{goods.num}}</p>

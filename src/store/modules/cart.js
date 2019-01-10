@@ -11,7 +11,7 @@ const cart = {
           color: '米色',
           size: '35'
         },
-        price: '16.9',
+        price: '1690',
         num: 1,
         selected: true
       },
@@ -23,8 +23,8 @@ const cart = {
           color: '浅蓝色',
           size: 'XS'
         },
-        price: '26.9',
-        num: 1,
+        price: '2690',
+        num: 2,
         selected: true
       }
     ],
