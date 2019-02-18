@@ -1,6 +1,8 @@
 @import "../../index.scss";
 @import "../../../static/animation";
 
+$border: 1px solid $border-color;
+
 .detail {
   &-goods {
     padding: 0px 0.5rem;
@@ -39,8 +41,8 @@
       @include flex-row-between;
       font-size: 0.55rem;
       padding: 0.5rem 0px;
-      border-top: 1px solid $border-color;
-      border-bottom: 1px solid $border-color;
+      border-top: $border;
+      border-bottom: $border;
       img {
         @include square-img(0.5rem);
       }
@@ -69,14 +71,14 @@
     width: 100%;
     background-color: #ffffff;
     @include flex-row-around;
-    border-top: 1px solid $border-color;
+    border-top: $border;
     img {
       @include square-img(1rem);
     }
     .icon {
       @include square-img(2rem);
       @include flex-row-center;
-      border-right: 1px solid $border-color;
+      border-right: $border;
     }
     .btn {
       height: 2rem;
@@ -101,7 +103,7 @@
       @include flex-row-center;
       padding: 0.4rem;
       position: relative;
-      border-bottom: 1px solid $border-color;
+      border-bottom: $border;
       img {
         position: absolute;
         right: 0.5rem;
@@ -157,7 +159,7 @@
     }
     .style-list {
       padding: 0.25rem 0.5rem;
-      border-bottom: 1px solid $border-color;
+      border-bottom: $border;
       &-title {
         margin: 0.5rem 0px;
       }

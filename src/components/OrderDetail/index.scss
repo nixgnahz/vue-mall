@@ -1,5 +1,7 @@
 @import "../../index.scss";
 
+$border: 1px solid $border-color;
+
 .order-detail {
   &-status {
     background: linear-gradient(to right, #ff8c00, #ff5600);
@@ -53,7 +55,7 @@
     &-money {
       @include flex-row-between;
       padding: 0.5rem;
-      border-top: 1px solid $border-color;
+      border-top: $border;
       p {
         &:last-child {
           color: $red-color;
@@ -77,7 +79,7 @@
     padding: 0px 0.75rem;
     p {
       padding: 0.4rem 0px;
-      border-bottom: 1px solid $border-color;
+      border-bottom: $border;
     }
   }
   &-holder {
@@ -88,17 +90,18 @@
     width: 100%;
     bottom: 0px;
     background-color: #ffffff;
-    border-top: 1px solid $border-color;
+    border-top: $border;
     @include flex;
     @include flex-row;
     justify-content: flex-end;
     font-size: 0.5rem;
     p {
+      $height: 1rem;
       width: 3.5rem;
-      height: 1rem;
-      @include radius(0.5rem);
-      border: 1px solid $border-color;
-      @include text-center(1rem);
+      height: $height;
+      @include radius($height / 2);
+      border: $border;
+      @include text-center($height);
       margin: 0.5rem 0.25rem;
       &:last-child {
         color: $red-color;

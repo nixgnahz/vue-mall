@@ -1,5 +1,7 @@
 @import "../../index.scss";
 
+$border: 1px solid $border-color;
+
 .feedback {
   position: absolute;
   width: 100%;
@@ -12,7 +14,7 @@
   &-title {
     padding: 0.5rem 0px;
     margin: 0px 0.5rem;
-    border-bottom: 1px solid $border-color;
+    border-bottom: $border;
   }
   .title {
     @include flex-row-between;
@@ -36,7 +38,7 @@
   &-pic {
     padding: 0.5rem 0px;
     margin: 0px 0.5rem;
-    border-top: 1px solid $border-color;
+    border-top: $border;
     .content {
       margin-top: 0.5rem;
       @include flex-row;
@@ -45,7 +47,7 @@
       p {
         @include square-img(3rem);
         @include flex-row-center;
-        border: 1px solid $border-color;
+        border: $border;
         img {
           @include square-img(2rem);
         }
@@ -54,7 +56,7 @@
         margin-left: 0.5rem;
         @include square-img(3rem);
         @include cover;
-        border: 1px solid $border-color;
+        border: $border;
       }
     }
   }

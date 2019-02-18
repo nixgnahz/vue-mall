@@ -2,6 +2,7 @@
 @import "../../../static/animation";
 
 $padding: 0.5rem;
+$border: 1px solid $border-color;
 
 .address {
   background-color: $bg-color;
@@ -12,8 +13,10 @@ $padding: 0.5rem;
     &-item {
       background-color: #ffffff;
       margin-bottom: 0.5rem;
-      border-top: 1px solid $border-color;
-      border-bottom: 1px solid $border-color;
+      border: {
+        top: $border;
+        bottom: $border;
+      }
       padding: 0px $padding;
       &:first-child {
         border-top: none;
@@ -30,14 +33,15 @@ $padding: 0.5rem;
           font-size: 0.55rem;
         }
         &-label {
+          $height: 0.75rem;
           font-size: 0.5rem;
           margin-left: 0.5rem;
           background-color: #a6c9f1;
           color: #ffffff;
-          height: 0.75rem;
           padding: 0px 0.25rem;
-          @include text-center(0.75rem);
-          @include radius(0.375rem);
+          height: $height;
+          @include text-center($height);
+          @include radius($height / 2);
           p {
             @include scale(0.8);
             transform-origin: 50% 50%;
@@ -74,7 +78,7 @@ $padding: 0.5rem;
   &-edit {
     &-input {
       background-color: #ffffff;
-      border-bottom: 1px solid $border-color;
+      border-bottom: $border;
       @include flex-row-between;
       font-size: 0.5rem;
       padding: 0.15rem 0.5rem;
@@ -110,7 +114,7 @@ $padding: 0.5rem;
       input {
         width: 75%;
         padding: 0.35rem;
-        border-bottom: 1px solid $border-color;
+        border-bottom: $border;
       }
       .close {
         @include square-img(1rem);
@@ -133,13 +137,14 @@ $padding: 0.5rem;
         }
       }
       .save-btn {
+        $height: 1.5rem;
         background-color: $red-color;
         color: #ffffff;
-        @include radius(0.75rem);
-        height: 1.5rem;
+        @include radius($height / 2);
+        height: $height;
         width: 75%;
         margin: 0.5rem 12.5%;
-        @include text-center(1.5rem);
+        @include text-center($height);
       }
     }
     &-position {
@@ -152,7 +157,7 @@ $padding: 0.5rem;
       &-title {
         height: 1.4rem;
         line-height: 1.4rem;
-        border: 1px solid $border-color;
+        border: $border;
         img {
           @include square-img(1rem);
           position: absolute;
@@ -163,7 +168,7 @@ $padding: 0.5rem;
       .address-choice-detail {
         @include flex;
         @include flex-row;
-        border-bottom: 1px solid $border-color;
+        border-bottom: $border;
         p {
           @include text-overflow;
           width: 20%;
@@ -199,14 +204,15 @@ $padding: 0.5rem;
     }
   }
   &-btn {
+    $height: 1.5rem;
     position: fixed;
     bottom: 0px;
     background-color: $red-color;
     font-size: 0.6rem;
     color: #ffffff;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    @include radius(0.75rem);
+    height: $height;
+    line-height: $height;
+    @include radius($height / 2);
     @include flex-row-center;
     &.add-btn {
       width: 90%;

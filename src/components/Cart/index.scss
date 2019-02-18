@@ -1,5 +1,10 @@
 @import "../../index.scss";
 
+$border: 1px solid $border-color;
+@mixin border {
+  border-bottom: $border;
+}
+
 .cart {
   &-empty {
     font-size: 0.5rem;
@@ -14,7 +19,7 @@
     @include flex-row-between;
     padding: 0.5rem 0.25rem;
     position: relative;
-    border-bottom: 1px solid $border-color;
+    @include border;
     &-cover {
       @include cover;
       @include square-img(3.2rem);
@@ -44,15 +49,15 @@
         width: 1rem;
         height: 0.8rem;
         @include text-center(0.8rem);
-        border-top: 1px solid $border-color;
-        border-bottom: 1px solid $border-color;
+        border-top: $border;
+        @include border;
         &.num {
           width: 1.6rem;
         }
         &:first-child, &:last-child {
           color: $light-gray;
-          border-left: 1px solid $border-color;
-          border-right: 1px solid $border-color;
+          border-left: $border;
+          border-right: $border;
         }
       }
     }
@@ -65,7 +70,7 @@
     background-color: #ffffff;
     height: 2rem;
     z-index: 100;
-    border-top: 1px solid $border-color;
+    border-top: $border;
     @include flex-row-between;
     .total {
       span {
