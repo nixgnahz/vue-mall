@@ -37,10 +37,9 @@
             resultArr: (state) => state.search.resultArr,
             historyArr: (state) => state.search.historyArr
         }),
-        created () {
-            getHotSearch().then((res)=> {
-                this.hotArr = res.data
-            }).catch(()=> {})
+        async created () {
+            const res = await getHotSearch()
+            this.hotArr = res.data
         }
     }
 </script>

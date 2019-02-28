@@ -38,39 +38,37 @@
                 position: []
             }
         },
-        created () {
-             getPosition(1).then((res)=> {
-                 this.positionArr.push(res.data)
-             }).catch(()=> {})
+        async created () {
+            const res = await getPosition(1)
+            this.positionArr.push(res.data)
         },
         methods: {
             changeMenu (index) {
                 this.positionIndex = index
             },
-            choosePosition (index) {
+            async choosePosition (index) {
                 if (!this.waitFlag) return
                 this.waitFlag = 0
                 const id = this.positionArr[this.positionIndex][index].id
                 const name = this.positionArr[this.positionIndex][index].name
                 this.positionId.push(id)
-                getPosition(id).then((res)=> {
-                    this.waitFlag = 1
-                    if (res.data.length) {
-                        this.positionArr = this.positionArr.slice(0, this.positionIndex + 1)
-                        this.positionId = this.positionId.slice(0, this.positionIndex + 1)
-                        this.position = this.position.slice(0, this.positionIndex)
-                        this.position.push(name)
-                        this.positionArr.push(res.data)
-                        this.positionIndex++
-                    } else{
-                        let str = ''
-                        this.position.map((item)=> {
-                            str += item
-                        })
-                        str += name
-                        this.$emit('hideAddress', str, this.positionId[this.positionId.length - 1])
-                    }
-                }).catch(()=> {})
+                const res = await getPosition(id)
+                this.waitFlag = 1
+                if (res.data.length) {
+                    this.positionArr = this.positionArr.slice(0, this.positionIndex + 1)
+                    this.positionId = this.positionId.slice(0, this.positionIndex + 1)
+                    this.position = this.position.slice(0, this.positionIndex)
+                    this.position.push(name)
+                    this.positionArr.push(res.data)
+                    this.positionIndex++
+                } else {
+                    let str = ''
+                    this.position.map((item)=> {
+                        str += item
+                    })
+                    str += name
+                    this.$emit('hideAddress', str, this.positionId[this.positionId.length - 1])
+                }
             },
             hideAddress () {
                 this.$emit('hideAddress')

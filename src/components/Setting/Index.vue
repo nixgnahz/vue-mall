@@ -47,14 +47,13 @@
             cancel () {
                 this.modalFlag = false
             },
-            sure () {
+            async sure () {
                 this.$store.commit('showLoad')
-                logout().then(()=> {
-                    this.modalFlag = false
-                    this.$store.commit('hideLoad')
-                    this.$store.commit('setUserInfo', {})
-                    this.$router.replace('./person')
-                })
+                await logout()
+                this.modalFlag = false
+                this.$store.commit('hideLoad')
+                this.$store.commit('setUserInfo', {})
+                this.$router.replace('./person')
             },
             logout () {
                 this.modalFlag = true

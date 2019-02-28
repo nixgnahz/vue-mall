@@ -62,11 +62,10 @@
                 }
             }
         },
-        created () {
-            getGender().then((res)=> {
-                this.gender = res.data
-                this.exchangeSex()
-            })
+        async created () {
+            const res = await getGender()
+            this.gender = res.data
+            this.exchangeSex()
         },
         methods: {
             exchangeSex () {
@@ -86,37 +85,31 @@
             changeSexFlag () {
                 this.showSex = !this.showSex
             },
-            changeName (name) {
+            async changeName (name) {
                 if (this.userInfo.name == name) {
                     this.changeNameFlag()
                 } else {
                     this.$store.commit('showLoad')
-                    editUserInfo({
-                        name: name
-                    }).then(()=> {
-                        this.$store.commit('hideLoad')
-                        this.$store.dispatch('showToast', this.toast)
-                        this.userInfo.name = name
-                        this.changeNameFlag()
-                        this.$store.commit('setUserInfo', this.userInfo)
-                    })
+                    await editUserInfo({ name: name })
+                    this.$store.commit('hideLoad')
+                    this.$store.dispatch('showToast', this.toast)
+                    this.userInfo.name = name
+                    this.changeNameFlag()
+                    this.$store.commit('setUserInfo', this.userInfo)
                 }
             },
-            changeSex (sex) {
+            async changeSex (sex) {
                 if (this.userInfo.gender == sex) {
                     this.changeSexFlag()
                 } else {
                     this.$store.commit('showLoad')
-                    editUserInfo({
-                        gender: sex
-                    }).then(()=> {
-                        this.$store.commit('hideLoad')
-                        this.$store.dispatch('showToast', this.toast)
-                        this.changeSexFlag()
-                        this.userInfo.gender = sex
-                        this.exchangeSex()
-                        this.$store.commit('setUserInfo', this.userInfo)
-                    })
+                    await editUserInfo({ gender: sex })
+                    this.$store.commit('hideLoad')
+                    this.$store.dispatch('showToast', this.toast)
+                    this.changeSexFlag()
+                    this.userInfo.gender = sex
+                    this.exchangeSex()
+                    this.$store.commit('setUserInfo', this.userInfo)
                 }
             }
         }

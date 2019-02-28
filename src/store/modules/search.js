@@ -36,15 +36,15 @@ const search = {
     }
   },
   actions: {
-    getSearchResult (context, keyword) {
+    getSearchResult ({ commit }, keyword) {
       if (!keyword) return
-      context.commit('showLoad')
+      commit('showLoad')
       getSearchResult(keyword).then((res) => {
-        context.commit('hideLoad')
-        context.commit('addHistory', keyword)
-        context.commit('showResult', res.data)
+        commit('hideLoad')
+        commit('addHistory', keyword)
+        commit('showResult', res.data)
       }).catch(() => {
-        context.commit('hideLoad')
+        commit('hideLoad')
       })
     }
   }

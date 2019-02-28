@@ -140,7 +140,7 @@ const routes = [
 export default new Router({
   mode: 'history',
   base: __dirname,
-  routes: routes,
+  routes,
   scrollBehavior (to, from, savedPosition) {
     return {
       x: 0,

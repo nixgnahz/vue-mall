@@ -15,10 +15,10 @@ const toast = {
     }
   },
   actions: {
-    showToast (context, toast) {
-      context.commit('showToast', toast)
+    showToast ({ commit }, toast) {
+      commit('showToast', toast)
       setTimeout(()=> {
-          context.commit('hideToast')
+          commit('hideToast')
       }, toast.duration)
     }
   }

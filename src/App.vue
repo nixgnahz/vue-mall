@@ -4,7 +4,7 @@
     <BaseToast v-if="toastFlag" :toast="toast"/>
     <BaseLoad v-if="loadFlag"/>
     <keep-alive exclude="Personal">
-        <router-view/>
+      <router-view></router-view>
     </keep-alive>
   </div>
 </template>
@@ -13,7 +13,7 @@
     import BaseToast from '@/components/Base/BaseToast.vue'
     import BackTop from '@/components/Base/BackTop.vue'
     import BaseLoad from '@/components/Base/BaseLoad.vue'
-    import {mapState} from 'vuex'
+    import { mapState } from 'vuex'
     export default {
         name: 'App',
         components: {

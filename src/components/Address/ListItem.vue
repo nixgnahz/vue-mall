@@ -7,7 +7,7 @@
                 <p>{{data.tag}}</p>
             </div>
         </div>
-        <p class="address-list-item-address">{{data.positionStr}}{{data.detailAddress}}</p>
+        <p class="address-list-item-address">{{data.positionStr}} {{data.detailAddress}}</p>
         <div class="address-list-item-action">
             <BaseChooseItem :selected="data.isDefault" @change="changeDefault">
                 <span>设为默认地址</span>

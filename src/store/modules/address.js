@@ -45,49 +45,48 @@ const address = {
     }
   },
   actions: {
-    getAddressList (context) {
-      getAddressList().then((res)=> {
-        context.commit('getAddressList', res.data)
-      })
+    async getAddressList (context) {
+      const res = await getAddressList()
+      context.commit('getAddressList', res.data)
     },
-    addAddress (context, address) {
-      context.commit('showLoad')
+    addAddress ({ commit, dispatch }, address) {
+      commit('showLoad')
       addAddress(address).then((res)=> {
-        context.commit('hideLoad')
-        context.dispatch('getAddressList')
-        context.commit('changeEditFlag')
+        commit('hideLoad')
+        dispatch('getAddressList')
+        commit('changeEditFlag')
       }).catch(()=> {
-        context.commit('hideLoad')
+        commit('hideLoad')
       })
     },
-    deleteAddress (context, id) {
-      context.commit('showLoad')
+    deleteAddress ({ commit }, id) {
+      commit('showLoad')
       deleteAddress(id).then((res)=> {
-        context.commit('hideLoad')
-        context.commit('deleteAddress', id)
+        commit('hideLoad')
+        commit('deleteAddress', id)
       }).catch(()=> {
-        context.commit('hideLoad')
+        commit('hideLoad')
       })
     },
-    editAddress (context, address) {
-      context.commit('showLoad')
+    editAddress ({ commit, dispatch }, address) {
+      commit('showLoad')
       editAddress(address.id, address).then((res)=> {
-        context.commit('hideLoad')
-        context.dispatch('getAddressList')
-        context.commit('changeEditFlag')
+        commit('hideLoad')
+        dispatch('getAddressList')
+        commit('changeEditFlag')
       }).catch(()=> {
-        context.commit('hideLoad')
+        commit('hideLoad')
       })
     },
-    changeDefault (context, address) {
-      context.commit('showLoad')
+    changeDefault ({ commit, dispatch }, address) {
+      commit('showLoad')
       editAddress(address.id, {
         isDefault: address.isDefault ? 0: 1
       }).then((res)=> {
-        context.commit('hideLoad')
-        context.dispatch('getAddressList')
+        commit('hideLoad')
+        dispatch('getAddressList')
       }).catch(()=> {
-        context.commit('hideLoad')
+        commit('hideLoad')
       })
     }
   }

@@ -11,11 +11,10 @@ const recommend = {
     }
   },
   actions: {
-    getRecommend (context) {
+    async getRecommend (context) {
       if (context.state.recommendArr.length) return
-      getRecommend().then((res)=> {
-        context.commit('getRecommend', res.data)
-      })
+      const res = await getRecommend()
+      context.commit('getRecommend', res.data)
     }
   }
 }

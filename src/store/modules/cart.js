@@ -92,20 +92,20 @@ const cart = {
     getCartList (context) {
       context.commit('changeTotal')
     },
-    changeSelected (context, id) {
-      context.commit('changeSelected', id)
-      context.commit('changeTotal')
+    changeSelected ({ commit }, id) {
+      commit('changeSelected', id)
+      commit('changeTotal')
     },
     changeAll (context) {
       context.commit('changeAll')
     },
-    addNum (context, id) {
-      context.commit('addNum', id)
-      context.commit('changeTotal')
+    addNum ({ commit }, id) {
+      commit('addNum', id)
+      commit('changeTotal')
     },
-    minusNum (context, id) {
-      context.commit('minusNum', id)
-      context.commit('changeTotal')
+    minusNum ({ commit }, id) {
+      commit('minusNum', id)
+      commit('changeTotal')
     }
   }
 }

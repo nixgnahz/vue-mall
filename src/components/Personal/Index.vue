@@ -44,11 +44,10 @@
                 showContact: 0,
             }
         },
-        created () {
-            getUserInfo().then((res)=> {
-                this.showLogin = 0
-                this.$store.commit('setUserInfo', res.data)
-            })
+        async created () {
+            const res = await getUserInfo()
+            this.showLogin = 0
+            this.$store.commit('setUserInfo', res.data)
         },
         methods: {
             changeContact () {
